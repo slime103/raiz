@@ -3,10 +3,14 @@
 (tools/etymology_doc.md) and hand-authored enrichment (tools/enrich.py) into the
 canonical flat tables data/words.csv and data/sentences.csv.
 
+SUPERSEDED: this wrote the v1 one-row-per-item words.csv. The data is now schema v2
+(words.csv = lemmas, forms.csv, phrases.csv; see data/SCHEMA.md). Kept for history only.
+
 After seeding, the CSVs are the source of truth. Do not re-run this unless you
 want to overwrite hand edits (it refuses to overwrite without --force).
 """
 import csv, re, sys, shutil
+sys.exit("seed_words.py is the retired v1 seeder; edit data/*.csv directly (see data/SCHEMA.md).")
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from enrich import E, S

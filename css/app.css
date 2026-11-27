@@ -147,3 +147,29 @@ dl{margin:0}dt{font-size:13px;color:var(--muted);margin-top:6px}dd{margin:0 0 4p
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;z-index:20;max-width:90%}
 .loading{text-align:center;color:var(--muted);margin-top:40px}
 .about ul{padding-left:18px}
+/* ---- dictionary v2: filters, forms, phrases ---- */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.fchip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 11px;font-size:14px;color:var(--muted)}
+.fchip small{opacity:.7;margin-left:2px}
+.fchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.lesson small{font-weight:500;opacity:.7}
+.words .forms{font:400 15px var(--sans);color:var(--muted)}
+.words .via{font:400 15px var(--sans);color:var(--accent)}
+.wt{display:inline-block;font:600 11px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-2);border-radius:6px;padding:1px 6px;margin-right:4px;vertical-align:1px}
+.en-head{margin:6px 0 0;font-size:16px}
+.forms-sec .form-card{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:10px 0;scroll-margin-top:80px;transition:background .6s,border-color .6s}
+.form-card.hl{background:var(--close-bg);border-color:var(--close);box-shadow:0 0 0 2px var(--close-bg)}
+.form-card header{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.form-card h4{font:600 20px var(--serif);margin:0}
+.form-card .meters{margin-left:auto}
+.flabel{font-size:13px;color:var(--muted)}
+.fen{margin:4px 0;font-size:15px}
+.form-card details{margin:6px 0;font-size:15px}
+.form-card summary{color:var(--accent);cursor:pointer}
+.play.sm{width:30px;height:30px;font-size:13px}
+.tag.ref{margin-left:auto;font-size:11px;background:var(--line);color:var(--muted);border-radius:6px;padding:1px 6px}
+.components{list-style:none;padding-left:0!important}
+.components li{padding:6px 0;border-bottom:1px solid var(--line)} .components li:last-child{border:0}
+.components a{font:600 18px var(--serif)}
+.plinks{list-style:none;padding-left:0!important}
+.clue-tag{display:inline-block;margin:0 0 6px;font-size:13px;color:var(--accent);background:var(--accent-2);border-radius:999px;padding:2px 10px}
