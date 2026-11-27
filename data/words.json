@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "data_hash": "924bdca5bb",
+ "data_hash": "b117c4e084",
  "words": [
   {
    "id": "o_senhor",
@@ -2773,6 +2773,716 @@
     "pimsleur",
     "lesson05"
    ]
+  },
+  {
+   "id": "nao_muito",
+   "lesson": 6,
+   "portuguese": "não muito",
+   "english": "not much",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "nao_muito.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A small shake of the head over a short pile — not a lot.",
+   "root": "Latin nōn + multum ‘much, many’",
+   "source_language": "Latin",
+   "root_image": "Latin nōn = not; multum = much, many. Together: not a large amount.",
+   "definition_pt": "Uma quantidade pequena: não é uma quantidade grande.",
+   "literal": "\"not much\"",
+   "parts": "não (not) + muito (much, a lot)",
+   "parts_meaning": "não < Latin nōn \"not\"; muito < Latin multum \"much, many\"",
+   "origin": "The same nōn → não and multum → muito already in earlier lessons, now joined: não muito.",
+   "history": [
+    "English link: English much is Germanic (Old English micel). The Latin multum survived in English as multi-, multiply, multitude. Portuguese keeps one everyday word, muito, and negates it with não."
+   ],
+   "cognates": [
+    "English multi-, multiply, multitude",
+    "Spanish no mucho",
+    "Italian non molto",
+    "French pas beaucoup (different words)"
+   ],
+   "pt_family": [
+    "muito (much, very)",
+    "muitos (many)",
+    "não é muito (it's not much)",
+    "pouco (little)"
+   ],
+   "synonyms": [
+    "pouco"
+   ],
+   "antonyms": [
+    "muito"
+   ],
+   "culture": [],
+   "notes": [
+    "Não muito answers a question about amount: Você sabe português? — Não muito."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "quantos",
+   "lesson": 6,
+   "portuguese": "quantos",
+   "english": "how many",
+   "part_of_speech": "interrogative adjective / pronoun (masc. pl.)",
+   "is_object": false,
+   "audio": "quantos.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Eyes moving over a group, counting one by one: how many are there?",
+   "root": "Latin quantus ‘how great, how much’",
+   "source_language": "Latin",
+   "root_image": "Latin quantus = of what size, how great. The question is about the measure of a group.",
+   "definition_pt": "Pergunta o número: um, dois, muitos?",
+   "literal": "\"how many\" (masculine plural)",
+   "parts": "quant- (how much / how great) + -os (masc. plural)",
+   "parts_meaning": "quantus = \"how great, how much\"; -os agrees with a masculine plural noun (quantos dólares)",
+   "origin": "Latin quantus → Portuguese quanto (how much, singular) and quantos (how many, masculine plural). Feminine plural: quantas. Intervocalic -nt- stayed, unlike some other clusters.",
+   "history": [
+    "English link: English quantity, quantitative, quantum, and the question-word how much/how many (Germanic how + much). Quantity is the learned Latin cousin; everyday English uses how many."
+   ],
+   "cognates": [
+    "English quantity, quantitative, quantum",
+    "Spanish cuántos",
+    "Italian quanti",
+    "French combien (different word) / quant- in quantité"
+   ],
+   "pt_family": [
+    "quanto (how much, singular)",
+    "quanta (fem. sg.)",
+    "quantas (fem. pl.)",
+    "quantidade (quantity)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Quantos for masculine plural (quantos dólares, quantos reais). Quantas for feminine (quantas malas). Quanto / quanta for a singular mass or amount."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "sua",
+   "lesson": 6,
+   "portuguese": "sua",
+   "english": "your (fem.)",
+   "part_of_speech": "possessive adjective (fem.)",
+   "is_object": false,
+   "audio": "sua.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Something held out toward the other person: this belongs to them.",
+   "root": "Latin suus ‘his, her, its, their own’",
+   "source_language": "Latin",
+   "root_image": "Latin suus = one's own, belonging to the person already in view — not to me, to them.",
+   "definition_pt": "De você: a carteira é sua, não é minha.",
+   "literal": "\"one's own\" → \"your\" (with você)",
+   "parts": "single possessive (feminine); masculine seu",
+   "parts_meaning": "sua < Latin sua, feminine of suus \"his/her/its/their own\"",
+   "origin": "Latin suus, sua, suum was a reflexive possessive (\"one's own\"). In Portuguese, seu / sua is used for você (and for ele / ela): a sua carteira = your wallet, because você takes 3rd-person forms. Masculine: seu. Plural: seus / suas.",
+   "history": [
+    "Why English split: English your is a 2nd-person word (related to you). Portuguese sua is historically \"his/her/its own\" (Latin suus), reused for você because você comes from \"Your Grace\" and still behaves like a 3rd person. English possessive her/his/its and the learned form sui- (suicide, \"of oneself\") keep parts of that Latin family."
+   ],
+   "cognates": [
+    "Spanish su / suya",
+    "Italian sua",
+    "French sa",
+    "English sui- (suicide, sui generis)"
+   ],
+   "pt_family": [
+    "seu (your, masc.)",
+    "seus / suas (your, plural)",
+    "minha (my, fem.)",
+    "meu (my, masc.)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Agrees with the thing owned, not with the owner: a sua carteira, o seu hotel, a sua mala. Used with você (and with ele / ela)."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "muitos_dolares",
+   "lesson": 6,
+   "portuguese": "muitos dólares",
+   "english": "many dollars",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "muitos_dolares.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A thick sheaf of dollar notes filling the hands.",
+   "root": "Latin multum ‘much, many’ + German Thaler (Joachimsthaler)",
+   "source_language": "Latin; German",
+   "root_image": "multus = many, a packed crowd; the dollar's name is the Thaler, a coin from Joachim's Valley, now in a thick stack.",
+   "definition_pt": "Uma grande quantidade de dólares.",
+   "literal": "\"many dollars\"",
+   "parts": "muitos (many, masc. pl.) + dólares (dollars)",
+   "parts_meaning": "muitos is the masculine plural of muito < Latin multum; dólares is the plural of dólar, from German Thaler",
+   "origin": "muito agrees in number and gender: muito (adv.), muita, muitos, muitas. With dólares (masculine plural) it is muitos dólares. The noun dólar is the same Thaler / Joachimsthaler borrowing as in Lesson 5.",
+   "history": [
+    "English link: many is Germanic; multi- keeps the Latin root. dollar and dólar are the same Thaler word."
+   ],
+   "cognates": [
+    "English many dollars (Germanic many + the same dollar)",
+    "Spanish muchos dólares",
+    "Italian molti dollari"
+   ],
+   "pt_family": [
+    "muito (much, very)",
+    "muitas (many, fem.)",
+    "dólar / dólares",
+    "muitos reais"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "muitos agrees with dólares (masc. pl.). Feminine would be muitas."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "carteira",
+   "lesson": 6,
+   "portuguese": "carteira",
+   "english": "wallet",
+   "part_of_speech": "noun (fem.)",
+   "is_object": true,
+   "audio": "carteira.mp3",
+   "photo": "carteira.jpg",
+   "photo_credit": "Eugene Pik (Eugenepik) / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Leather_bi-fold_wallet_by_Eugene_Pik_(2021)_04.jpg",
+   "scene": "A leather fold resting on the table, bills and a card tucked inside.",
+   "root": "Portuguese carta ‘paper, letter’ + -eira (container / place for)",
+   "source_language": "Latin (via carta)",
+   "root_image": "Latin charta (from Greek chartēs) = a sheet of papyrus, a paper, a letter. An -eira is a place or holder for that thing: a paper-holder, a place for documents and bills.",
+   "definition_pt": "Uma coisa pequena para guardar o seu dinheiro.",
+   "literal": "\"paper/letter-holder\" → wallet",
+   "parts": "cart- (paper, letter) + -eira (place or container for)",
+   "parts_meaning": "carta < Latin charta \"paper, letter\" (from Greek chartēs); -eira = a place or thing that holds that",
+   "origin": "Portuguese carta (letter, paper, charter) + the suffix -eira, which makes a container or place for something. A carteira is originally a holder for papers; it came to mean the wallet you carry, and also certain official documents kept in one.",
+   "history": [
+    "English link: English card, chart, charter, carton, and cartoon all go back to the same Latin / Greek charta, a sheet of paper. Wallet is a different, possibly Germanic word. Portuguese kept the \"paper-holder\" picture."
+   ],
+   "cognates": [
+    "English card, chart, charter, carton",
+    "Spanish cartera (wallet, bag)",
+    "Italian cartella / portafoglio",
+    "French carte (card) / portefeuille (wallet)"
+   ],
+   "pt_family": [
+    "carta (letter)",
+    "cartão (card)",
+    "carteira de motorista (driver's license)",
+    "carteira de trabalho (work card)",
+    "carteira de identidade (ID card)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [
+    "In Brazil carteira is the everyday wallet, but the same word is used for official booklets and cards: carteira de motorista (driver's license), carteira de trabalho (the formal work card), carteira de identidade (ID). Context tells you which one."
+   ],
+   "notes": [
+    "Feminine: a carteira, uma carteira. Plural: carteiras."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "na_sua_carteira",
+   "lesson": 6,
+   "portuguese": "na sua carteira",
+   "english": "in your wallet",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "na_sua_carteira.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Fingers opening a wallet; the money is inside it, in their fold.",
+   "root": "Latin in + illam + suus + carta + -eira",
+   "source_language": "Latin",
+   "root_image": "in = in, inside; a + sua mark the wallet as hers/yours; the wallet itself is the paper-holder. The whole picture is: inside the fold that belongs to the other person.",
+   "definition_pt": "Dentro da carteira de você.",
+   "literal": "\"in the your wallet\"",
+   "parts": "na (in the, fem.) + sua (your, fem.) + carteira (wallet)",
+   "parts_meaning": "na = em + a (in + the, feminine); sua = your (fem.); carteira = wallet",
+   "origin": "na is the regular contraction of em + a, the same pattern as no = em + o. sua agrees with carteira (feminine). The three pieces fuse into one everyday phrase: na sua carteira.",
+   "history": [
+    "English link: English in is the Germanic cousin of Latin in. English has no everyday contraction like na (in + the). The possessive, as with sua, is a 3rd-person form used for você."
+   ],
+   "cognates": [
+    "Spanish en tu cartera / en su cartera",
+    "Italian nella tua cartella (different noun)",
+    "French dans ton portefeuille"
+   ],
+   "pt_family": [
+    "no (em + o)",
+    "na (em + a)",
+    "nos / nas",
+    "sua carteira (your wallet)",
+    "na minha carteira (in my wallet)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "na = em + a. With a masculine noun it would be no (no hotel). sua agrees with carteira."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "dois",
+   "lesson": 6,
+   "portuguese": "dois",
+   "english": "two",
+   "part_of_speech": "number (masc.)",
+   "is_object": false,
+   "audio": "dois.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two fingers held up; a pair of things side by side.",
+   "root": "Latin duo ‘two’",
+   "source_language": "Latin",
+   "root_image": "Latin duo = two: a pair, one and one together.",
+   "definition_pt": "O número 2.",
+   "literal": "\"two\" (masculine)",
+   "parts": "single numeral (masculine); feminine duas",
+   "parts_meaning": "dois < Latin duōs, accusative of duo \"two\"",
+   "origin": "Latin duo → Portuguese dois (masculine) and duas (feminine). The -s is from the accusative duōs. A regular pair like um / uma: dois dólares, duas malas.",
+   "history": [
+    "English link: two is the Germanic cousin of Latin duo (same Indo-European root). English also borrowed the Latin family later: duo, dual, duet, double, dozen (via duodecim, \"two and ten\")."
+   ],
+   "cognates": [
+    "English two, duo, dual, duet, double, dozen",
+    "Spanish dos",
+    "Italian due",
+    "French deux"
+   ],
+   "pt_family": [
+    "duas (fem.)",
+    "doze (twelve)",
+    "segundo (second)",
+    "duplo (double)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dois with masculine nouns (dois dólares, dois reais, dois hotéis). duas with feminine (duas malas, duas carteiras)."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "mas",
+   "lesson": 6,
+   "portuguese": "mas",
+   "english": "but",
+   "part_of_speech": "conjunction",
+   "is_object": false,
+   "audio": "mas.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A path that turns — you were going one way, then a hand stops you and points the other.",
+   "root": "Latin magis ‘more’",
+   "source_language": "Latin",
+   "root_image": "Latin magis = more, to a greater degree. The contrast sense grew out of \"more than that\": you add a turn, a correction, a however.",
+   "definition_pt": "Uma palavra que vira a ideia: “eu quero, mas não tenho.”",
+   "literal": "\"more\" → \"but\"",
+   "parts": "single conjunction",
+   "parts_meaning": "mas < Latin magis \"more, rather\"",
+   "origin": "Latin magis \"more\" developed a contrastive sense (\"rather, but rather\") in spoken Latin and became Portuguese mas and Spanish más / pero, French mais, Italian ma. The old \"more\" meaning in Portuguese is now mais (with an i), a slightly different development of the same Latin word; mas kept the \"but\" job.",
+   "history": [
+    "Why English split: English but is Germanic. The Latin magis family survived in English as major, majority, majesty, maximum, plus the prefix mag- (magnify, magnificent). French mais is the same word as Portuguese mas, still meaning \"but.\""
+   ],
+   "cognates": [
+    "English major, majority, majesty, maximum, magnify",
+    "Spanish mas (literary \"but\") / más (\"more\") / pero (\"but\")",
+    "French mais",
+    "Italian ma"
+   ],
+   "pt_family": [
+    "mais (more)",
+    "maior (bigger, greater)",
+    "máximo (maximum)",
+    "mas não (but not)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Don't confuse mas (\"but\") with mais (\"more\"). They sound similar in some speech, but they are spelled differently and mean different things. Eu tenho dois, mas não é muito vs. eu tenho mais dólares."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "nao_e_muito",
+   "lesson": 6,
+   "portuguese": "não é muito",
+   "english": "it's not much",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "nao_e_muito.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Looking at a small amount and shaking the head: that isn't a lot.",
+   "root": "Latin nōn + est + multum",
+   "source_language": "Latin",
+   "root_image": "nōn = not; est = it is; multum = much. The amount standing in front of you is not a large one.",
+   "definition_pt": "Não é uma quantidade grande.",
+   "literal": "\"it is not much\"",
+   "parts": "não (not) + é (is) + muito (much)",
+   "parts_meaning": "não < nōn; é < Latin est \"is\"; muito < multum",
+   "origin": "A whole-clause version of não muito: é (from Latin est, already in Lesson 1) sits in the middle, so the phrase is a full sentence, \"it is not much.\"",
+   "history": [
+    "English link: English is and much are both Germanic. The Latin pieces survived as non- and multi-; Portuguese just says the everyday words in a line: não é muito."
+   ],
+   "cognates": [
+    "Spanish no es mucho",
+    "Italian non è molto",
+    "French ce n'est pas beaucoup"
+   ],
+   "pt_family": [
+    "não muito (not much)",
+    "é (is)",
+    "muito (much)",
+    "é muito pouco (it's very little)"
+   ],
+   "synonyms": [
+    "é pouco"
+   ],
+   "antonyms": [
+    "é muito"
+   ],
+   "culture": [],
+   "notes": [],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "e_muito_pouco",
+   "lesson": 6,
+   "portuguese": "é muito pouco",
+   "english": "it's very little",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "e_muito_pouco.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Almost nothing in the palm — far too little.",
+   "root": "Latin est + multum + paucum ‘few, little’",
+   "source_language": "Latin",
+   "root_image": "est = it is; multum here is \"very,\" turning the smallness up; paucum = little, a pinch. The amount is not just small — it is very small.",
+   "definition_pt": "É uma quantidade muito pequena.",
+   "literal": "\"it is very little\"",
+   "parts": "é (is) + muito (very) + pouco (little)",
+   "parts_meaning": "é < est; muito here is the adverb \"very\"; pouco < Latin paucum \"few, little\" (already in um pouco)",
+   "origin": "pouco < paucum (au → ou). muito before an adjective or adverb means \"very\" (muito pouco, muito bem, muito gentil). So é muito pouco is stronger than é pouco: it's very little.",
+   "history": [
+    "English link: little and few are Germanic. Latin paucus survived in English as paucity and in the music term poco. The same muito that means \"much\" also does the job of English very."
+   ],
+   "cognates": [
+    "English paucity, poco a poco",
+    "Spanish es muy poco",
+    "Italian è molto poco",
+    "French c'est très peu"
+   ],
+   "pt_family": [
+    "pouco (little)",
+    "um pouco (a little)",
+    "não é muito (it's not much)",
+    "muito (very / much)"
+   ],
+   "synonyms": [
+    "é pouco"
+   ],
+   "antonyms": [
+    "é muito"
+   ],
+   "culture": [],
+   "notes": [
+    "muito here means \"very,\" not \"a lot of\": muito pouco = very little."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "eu_quero",
+   "lesson": 6,
+   "portuguese": "eu quero",
+   "english": "I want",
+   "part_of_speech": "verb phrase (querer)",
+   "is_object": false,
+   "audio": "eu_quero.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Your own hands stretch toward something and pull it closer.",
+   "root": "Latin quaerere ‘to seek, ask, inquire’ + -o ‘I’",
+   "source_language": "Latin",
+   "root_image": "Latin quaerere = to seek, to go looking, to ask after something. Wanting is the search already aimed at a thing: you are after it.",
+   "definition_pt": "O que eu digo para ter uma coisa: “Eu quero a mala.”",
+   "literal": "\"I seek\" → \"I want\"",
+   "parts": "eu (I) + quer- (seek / want) + -o (I, present tense)",
+   "parts_meaning": "querer < Latin quaerere \"to seek, ask, inquire\"; -o = 1st person singular",
+   "origin": "Latin quaerere \"to seek, to ask\" became Portuguese querer, and the meaning settled on \"to want\" (the thing you are seeking). The 1st-person present is eu quero. Related English borrowings kept the older \"ask / seek\" sense: query, question, quest, inquire, require, acquire.",
+   "history": [
+    "Why English split: English want is Germanic (originally \"to be lacking\"). The Latin quaerere survived in English as query, question, quest, inquire, require, acquire, exquisite. Portuguese kept the verb as the everyday word for \"to want.\""
+   ],
+   "cognates": [
+    "English query, question, quest, inquire, require, acquire",
+    "Spanish quiero / querer",
+    "Italian chiedere (to ask) / volere (to want)",
+    "French quérir (literary, \"to seek\") / vouloir (to want)"
+   ],
+   "pt_family": [
+    "querer (to want)",
+    "você quer (you want)",
+    "queremos (we want)",
+    "querido (dear, beloved)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Eu quero um hotel = I want a hotel. Followed by a noun, or by an infinitive in later lessons (eu quero ir)."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "voce_quer",
+   "lesson": 6,
+   "portuguese": "você quer",
+   "english": "you want",
+   "part_of_speech": "verb phrase (querer)",
+   "is_object": false,
+   "audio": "voce_quer.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "The other person's hands stretch toward it, reaching.",
+   "root": "Vossa Mercê + Latin quaerere ‘to seek’",
+   "source_language": "Latin",
+   "root_image": "The same seeking root as eu quero, now on the other side: their hands going after the thing.",
+   "definition_pt": "Pergunta, ou diz, se a outra pessoa quer uma coisa.",
+   "literal": "\"Your Grace seeks\" → \"you want\"",
+   "parts": "você (you) + quer (wants / you want)",
+   "parts_meaning": "quer is the 3rd-person present of querer; você takes 3rd-person verbs because it comes from Vossa Mercê, \"Your Grace.\"",
+   "origin": "The same Latin quaerere → querer as in eu quero. The 3rd-person present quer is used with você: você quer?",
+   "history": [
+    "English link: Same split as eu quero: English want is Germanic; query, question, quest keep the Latin seeking root."
+   ],
+   "cognates": [
+    "Spanish usted quiere / tú quieres",
+    "French vous voulez",
+    "English query, question, quest"
+   ],
+   "pt_family": [
+    "eu quero (I want)",
+    "querer (to want)",
+    "quer (he/she wants)",
+    "querido (dear)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Você quer? is the everyday question. O senhor quer? / A senhora quer? in formal address."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "esta_bem",
+   "lesson": 6,
+   "portuguese": "está bem",
+   "english": "okay; all right",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "esta_bem.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A nod, shoulders settling — everything stands all right where it is.",
+   "root": "Latin stāre ‘to stand’ + bene ‘well’",
+   "source_language": "Latin",
+   "root_image": "stāre = to stand, to be in a place or state right now; bene = well. The situation stands well — it is all right.",
+   "definition_pt": "Tudo está certo, sem problema. Também: “ok.”",
+   "literal": "\"it stands well\" → \"it's all right\"",
+   "parts": "está (is / stands, right now) + bem (well)",
+   "parts_meaning": "está < Latin stat, from stāre \"to stand\"; bem < Latin bene \"well\"",
+   "origin": "The same estar < stāre already in onde está?, plus bem < bene (already in bem, muito bem, tudo bem). Together they mean the state is good: está bem = \"it's okay / all right.\" In speech está often shortens to tá: tá bem.",
+   "history": [
+    "English link: English stand is the Germanic cousin of stāre; well is Germanic too. English okay / all right covers the same job. Portuguese describes the state as standing well."
+   ],
+   "cognates": [
+    "Spanish está bien",
+    "Italian sta bene",
+    "French ça va / c'est bien",
+    "English stand, stable; bene- (benefit, benediction)"
+   ],
+   "pt_family": [
+    "estar (to be, for now)",
+    "está (is, right now)",
+    "bem (well)",
+    "tudo bem (all good)",
+    "muito bem (very well)",
+    "tá bem (casual)"
+   ],
+   "synonyms": [
+    "tudo bem",
+    "ok",
+    "tá bem"
+   ],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "In speech, está is often tá: Tá bem. Close in meaning to tudo bem, but está bem can also answer a request: \"Is that all right?\" — Está bem."
+   ],
+   "accept_also": [
+    "tá bem",
+    "ta bem"
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "no_hotel",
+   "lesson": 6,
+   "portuguese": "no hotel",
+   "english": "at/in the hotel",
+   "part_of_speech": "phrase",
+   "is_object": false,
+   "audio": "no_hotel.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Inside the guest-house, within its walls.",
+   "root": "Latin in + illum + French hôtel ← Latin hospitāle",
+   "source_language": "Latin; French ← Latin",
+   "root_image": "in + o = in the; the hotel is the guest-house (hospitāle). The picture is being inside that house, not just looking at it from the street.",
+   "definition_pt": "Dentro do hotel, ou no hotel.",
+   "literal": "\"in the hotel\"",
+   "parts": "no (in/at the, masc.) + hotel",
+   "parts_meaning": "no = em + o (in + the, masculine); hotel from French hôtel ← Latin hospitāle (guesthouse)",
+   "origin": "no is the regular contraction of em + o, the masculine partner of na (em + a). Portuguese almost always contracts em with the article: no hotel, na carteira, nos Estados Unidos. The noun hotel is the same word as in Lesson 4 (silent h, stress on the end).",
+   "history": [
+    "English link: English in is the Germanic cousin of Latin in / Portuguese em. English says in the hotel or at the hotel, with a separate the; Portuguese fuses in + the into no."
+   ],
+   "cognates": [
+    "Spanish en el hotel (no contraction)",
+    "Italian in albergo / nell'hotel",
+    "French à l'hôtel",
+    "English in the hotel, at the hotel"
+   ],
+   "pt_family": [
+    "na (em + a)",
+    "nos (em + os)",
+    "nas (em + as)",
+    "o hotel (the hotel)",
+    "no restaurante (at/in the restaurant)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "no = em + o. Use na before a feminine noun (na carteira, na mala). The h of hotel is silent: no-o-TÉL."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "muito_obrigado",
+   "lesson": 6,
+   "portuguese": "muito obrigado",
+   "english": "thank you very much",
+   "part_of_speech": "phrase (said by a man)",
+   "is_object": false,
+   "audio": "muito_obrigado.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "The binding cord of thanks pulled tighter, a deeper bow.",
+   "root": "Latin multum + ob- + ligāre ‘to bind’ (obligātus)",
+   "source_language": "Latin",
+   "root_image": "The same binding as obrigado: a cord looping around the wrist, tying you to the person who helped you — pulled tighter this time, with more of you in the knot.",
+   "definition_pt": "Obrigado, com mais força: o que um homem diz quando alguém é muito gentil.",
+   "literal": "\"much obliged\"",
+   "parts": "muito (very, much) + obrigado (obliged, thank you — said by a man)",
+   "parts_meaning": "muito < multum \"much, very\"; obrigado < Latin obligātus \"bound, obliged\" (ob- + ligāre \"to bind\")",
+   "origin": "The everyday obrigado / obrigada of Lesson 2, intensified with muito. A man says muito obrigado; a woman says muito obrigada. The phrase is the Portuguese equivalent of English much obliged, and it is built of the same Latin pieces (multum + obligātus), even though everyday English now prefers thank you very much.",
+   "history": [
+    "English link: much obliged is the exact English cousin, now a bit old-fashioned; thank you very much uses Germanic thank. The Latin pieces are still visible in obliged / obligation. Portuguese just says the everyday words: muito obrigado."
+   ],
+   "cognates": [
+    "English much obliged, obliged, obligation",
+    "Spanish muy obligado (rare; usually muchas gracias)",
+    "Italian molto obbligato",
+    "French très obligé"
+   ],
+   "pt_family": [
+    "obrigado (thank you, said by a man)",
+    "obrigada (thank you, said by a woman)",
+    "muito (very)",
+    "obrigar (to oblige, to force)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Said by a man. A woman says muito obrigada. Replies: de nada, por nada, imagina, não há de quê."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson06"
+   ]
   }
  ],
  "sentences": [
@@ -3534,6 +4244,252 @@
    "sentence_pt": "Você tem vinte ___?",
    "answer": "dólares",
    "sentence_en": "Do you have twenty dollars?",
+   "accept_also": []
+  },
+  {
+   "id": "nao_muito__1",
+   "word_id": "nao_muito",
+   "sentence_pt": "Eu entendo ___ português.",
+   "answer": "não muito",
+   "sentence_en": "I don't understand much Portuguese.",
+   "accept_also": []
+  },
+  {
+   "id": "nao_muito__2",
+   "word_id": "nao_muito",
+   "sentence_pt": "Você sabe ___ inglês?",
+   "answer": "não muito",
+   "sentence_en": "Do you know much English? — (answer:) not much.",
+   "accept_also": []
+  },
+  {
+   "id": "quantos__1",
+   "word_id": "quantos",
+   "sentence_pt": "___ dólares você tem?",
+   "answer": "quantos",
+   "sentence_en": "How many dollars do you have?",
+   "accept_also": []
+  },
+  {
+   "id": "quantos__2",
+   "word_id": "quantos",
+   "sentence_pt": "___ reais você tem?",
+   "answer": "quantos",
+   "sentence_en": "How many reais do you have?",
+   "accept_also": []
+  },
+  {
+   "id": "sua__1",
+   "word_id": "sua",
+   "sentence_pt": "Onde está a ___ carteira?",
+   "answer": "sua",
+   "sentence_en": "Where is your wallet?",
+   "accept_also": []
+  },
+  {
+   "id": "sua__2",
+   "word_id": "sua",
+   "sentence_pt": "A ___ mala está no hotel.",
+   "answer": "sua",
+   "sentence_en": "Your suitcase is at the hotel.",
+   "accept_also": []
+  },
+  {
+   "id": "muitos_dolares__1",
+   "word_id": "muitos_dolares",
+   "sentence_pt": "Eu tenho ___.",
+   "answer": "muitos dólares",
+   "sentence_en": "I have many dollars.",
+   "accept_also": []
+  },
+  {
+   "id": "muitos_dolares__2",
+   "word_id": "muitos_dolares",
+   "sentence_pt": "Você tem ___ na sua carteira?",
+   "answer": "muitos dólares",
+   "sentence_en": "Do you have many dollars in your wallet?",
+   "accept_also": []
+  },
+  {
+   "id": "carteira__1",
+   "word_id": "carteira",
+   "sentence_pt": "Onde está a sua ___?",
+   "answer": "carteira",
+   "sentence_en": "Where is your wallet?",
+   "accept_also": []
+  },
+  {
+   "id": "carteira__2",
+   "word_id": "carteira",
+   "sentence_pt": "Eu tenho uma ___.",
+   "answer": "carteira",
+   "sentence_en": "I have a wallet.",
+   "accept_also": []
+  },
+  {
+   "id": "na_sua_carteira__1",
+   "word_id": "na_sua_carteira",
+   "sentence_pt": "Você tem dólares ___?",
+   "answer": "na sua carteira",
+   "sentence_en": "Do you have dollars in your wallet?",
+   "accept_also": []
+  },
+  {
+   "id": "na_sua_carteira__2",
+   "word_id": "na_sua_carteira",
+   "sentence_pt": "Você tem dois reais ___?",
+   "answer": "na sua carteira",
+   "sentence_en": "Do you have two reais in your wallet?",
+   "accept_also": []
+  },
+  {
+   "id": "dois__1",
+   "word_id": "dois",
+   "sentence_pt": "Eu tenho ___ dólares.",
+   "answer": "dois",
+   "sentence_en": "I have two dollars.",
+   "accept_also": []
+  },
+  {
+   "id": "dois__2",
+   "word_id": "dois",
+   "sentence_pt": "Você tem ___ reais?",
+   "answer": "dois",
+   "sentence_en": "Do you have two reais?",
+   "accept_also": []
+  },
+  {
+   "id": "mas__1",
+   "word_id": "mas",
+   "sentence_pt": "Eu tenho dólares, ___ não é muito.",
+   "answer": "mas",
+   "sentence_en": "I have dollars, but it's not much.",
+   "accept_also": []
+  },
+  {
+   "id": "mas__2",
+   "word_id": "mas",
+   "sentence_pt": "Eu quero, ___ eu não tenho.",
+   "answer": "mas",
+   "sentence_en": "I want it, but I don't have it.",
+   "accept_also": []
+  },
+  {
+   "id": "nao_e_muito__1",
+   "word_id": "nao_e_muito",
+   "sentence_pt": "Eu tenho dois dólares, ___.",
+   "answer": "não é muito",
+   "sentence_en": "I have two dollars; it's not much.",
+   "accept_also": []
+  },
+  {
+   "id": "nao_e_muito__2",
+   "word_id": "nao_e_muito",
+   "sentence_pt": "É um pouco, ___.",
+   "answer": "não é muito",
+   "sentence_en": "It's a little; it's not much.",
+   "accept_also": []
+  },
+  {
+   "id": "e_muito_pouco__1",
+   "word_id": "e_muito_pouco",
+   "sentence_pt": "Dois dólares ___.",
+   "answer": "é muito pouco",
+   "sentence_en": "Two dollars is very little.",
+   "accept_also": []
+  },
+  {
+   "id": "e_muito_pouco__2",
+   "word_id": "e_muito_pouco",
+   "sentence_pt": "Um real ___.",
+   "answer": "é muito pouco",
+   "sentence_en": "One real is very little.",
+   "accept_also": []
+  },
+  {
+   "id": "eu_quero__1",
+   "word_id": "eu_quero",
+   "sentence_pt": "___ a minha mala.",
+   "answer": "eu quero",
+   "sentence_en": "I want my suitcase.",
+   "accept_also": []
+  },
+  {
+   "id": "eu_quero__2",
+   "word_id": "eu_quero",
+   "sentence_pt": "___ um hotel.",
+   "answer": "eu quero",
+   "sentence_en": "I want a hotel.",
+   "accept_also": []
+  },
+  {
+   "id": "voce_quer__1",
+   "word_id": "voce_quer",
+   "sentence_pt": "___ um hotel?",
+   "answer": "você quer",
+   "sentence_en": "Do you want a hotel?",
+   "accept_also": []
+  },
+  {
+   "id": "voce_quer__2",
+   "word_id": "voce_quer",
+   "sentence_pt": "___ a mala?",
+   "answer": "você quer",
+   "sentence_en": "Do you want the suitcase?",
+   "accept_also": []
+  },
+  {
+   "id": "esta_bem__1",
+   "word_id": "esta_bem",
+   "sentence_pt": "___, obrigado.",
+   "answer": "está bem",
+   "sentence_en": "That's all right, thank you. (a man speaking)",
+   "accept_also": [
+    "tá bem",
+    "ta bem"
+   ]
+  },
+  {
+   "id": "esta_bem__2",
+   "word_id": "esta_bem",
+   "sentence_pt": "O hotel ___.",
+   "answer": "está bem",
+   "sentence_en": "The hotel is all right.",
+   "accept_also": [
+    "tá bem",
+    "ta bem"
+   ]
+  },
+  {
+   "id": "no_hotel__1",
+   "word_id": "no_hotel",
+   "sentence_pt": "A mala está ___.",
+   "answer": "no hotel",
+   "sentence_en": "The suitcase is at the hotel.",
+   "accept_also": []
+  },
+  {
+   "id": "no_hotel__2",
+   "word_id": "no_hotel",
+   "sentence_pt": "O restaurante fica ___.",
+   "answer": "no hotel",
+   "sentence_en": "The restaurant is in the hotel.",
+   "accept_also": []
+  },
+  {
+   "id": "muito_obrigado__1",
+   "word_id": "muito_obrigado",
+   "sentence_pt": "___, o senhor é muito gentil.",
+   "answer": "muito obrigado",
+   "sentence_en": "Thank you very much, you are very kind, sir. (a man speaking)",
+   "accept_also": []
+  },
+  {
+   "id": "muito_obrigado__2",
+   "word_id": "muito_obrigado",
+   "sentence_pt": "___, até logo.",
+   "answer": "muito obrigado",
+   "sentence_en": "Thank you very much, goodbye. (a man speaking)",
    "accept_also": []
   }
  ]
