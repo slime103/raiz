@@ -138,6 +138,7 @@ def validate(d):
         if not (APP / "media/audio" / p["audio"]).exists(): errs.append(f"phrase {p['id']}: missing media/audio/{p['audio']}")
         for c in p["components"]:
             s, lem, form = parse_component(c)
+            if not lem: errs.append(f"phrase {p['id']}: component {s!r} has no word page (every word in a phrase needs a words.csv lemma; link it as {s}=lemma_id#form_id)")
             if lem and lem not in L: errs.append(f"phrase {p['id']}: component {c!r} -> unknown lemma {lem}")
             if form and (form not in FM or FM[form]["lemma_id"] != lem): errs.append(f"phrase {p['id']}: component {c!r} -> form {form} is not a form of {lem}")
         _cells(p["id"], p, PHRASE_FIELDS, errs)

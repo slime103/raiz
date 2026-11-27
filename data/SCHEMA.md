@@ -118,7 +118,7 @@ Fill them only where the form differs (uma's own definition, reais's own photo).
 | id | text | stable item id = audio name (`na_sua_carteira`) |
 | phrase | text | the phrase with accents (`na sua carteira`) |
 | english, part_of_speech, lesson | | as above |
-| components | list | the words in order, ` | ` separated. Each is `surface=lemma_id#form_id` (`sua=seu#sua`), `surface=lemma_id`, or just `surface` when that word has no page yet (`na`) |
+| components | list | the words in order, ` | ` separated. Each is `surface=lemma_id#form_id` (`sua=seu#sua`), `surface=lemma_id`, or `surface=lemma_id`. **Every component must link to a word page**: `build_data.py` fails otherwise (add the word to words.csv/forms.csv first, as a reference form with `taught = no` if it isn't drilled on its own) |
 | audio, photo, photo_credit, scene | | as above |
 | root … notes | | phrase-level etymology and notes (how the phrase is built); word-level etymology lives on the word pages |
 | accept_also | list | other accepted spellings (`tá bem`) |
