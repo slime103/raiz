@@ -1,4 +1,4 @@
-id,word_id,sentence_pt,answer,sentence_en,accept_also
+id,item_id,sentence_pt,answer,sentence_en,accept_also
 o_senhor__1,o_senhor,"Com licença, ___ entende português?",o senhor,"Excuse me, do you (sir) understand Portuguese?",
 o_senhor__2,o_senhor,___ é americano?,o senhor,Are you (sir) American?,
 a_senhora__1,a_senhora,Bom dia! Como vai ___?,a senhora,"Good morning! How are you, ma'am?",

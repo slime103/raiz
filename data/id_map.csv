@@ -1,0 +1,75 @@
+old_id,new_id,note
+o_senhor,o_senhor,form of senhor
+a_senhora,a_senhora,form of senhor
+americano,americano,form of americano
+entende,entende,form of entender
+entendo,entendo,form of entender
+portugues,portugues,form of portugues
+com_licenca,com_licenca,phrase
+ingles,ingles,form of ingles
+eu,eu,form of eu
+eu_sou,eu_sou,form of ser
+e,e,form of ser
+por_favor,por_favor,phrase
+de,de,form of de
+um_pouco,um_pouco,phrase
+bom_dia,bom_dia,phrase
+ate_logo,ate_logo,phrase
+obrigado,obrigado,form of obrigado
+obrigada,obrigada,form of obrigado
+muito,muito,form of muito
+muito_bem,muito_bem,phrase
+bem,bem,form of bem
+tudo_bem,tudo_bem,phrase
+como,como,form of como
+vai,vai,form of ir
+como_vai,como_vai,phrase
+como_vai_o_senhor,como_vai_o_senhor,phrase
+como_vai_a_senhora,como_vai_a_senhora,phrase
+de_onde,de_onde,phrase
+boa_tarde,boa_tarde,phrase
+brasileiro,brasileiro,form of brasileiro
+brasileira,brasileira,form of brasileiro
+voce,voce,form of voce
+voce_e,voce_e,form of ser
+como_vai_voce,como_vai_voce,phrase
+dos,dos,form of de
+estados_unidos,estados_unidos,form of estados_unidos
+brasil,brasil,form of brasil
+boa_noite,boa_noite,phrase
+de_nova_york,de_nova_york,phrase
+onde_esta,onde_esta,phrase
+onde_fica,onde_fica,phrase
+o_hotel,o_hotel,form of hotel
+o_restaurante,o_restaurante,form of restaurante
+minha,minha,form of meu
+mala,mala,form of mala
+aqui,aqui,form of aqui
+fica_la,fica_la,phrase
+muito_prazer,muito_prazer,phrase
+gentil,gentil,form of gentil
+eu_nao_sei,eu_nao_sei,phrase
+voce_sabe,voce_sabe,form of saber
+o_real,o_real,form of real
+reais,reais,form of real
+voce_tem,voce_tem,form of ter
+eu_tenho,eu_tenho,form of ter
+um,um,form of um
+uma,uma,form of um
+dolar,dolar,form of dolar
+dolares,dolares,form of dolar
+nao_muito,nao_muito,phrase
+quantos,quantos,form of quanto
+sua,sua,form of seu
+muitos_dolares,muitos_dolares,phrase
+carteira,carteira,form of carteira
+na_sua_carteira,na_sua_carteira,phrase
+dois,dois,form of dois
+mas,mas,form of mas
+nao_e_muito,nao_e_muito,phrase
+e_muito_pouco,e_muito_pouco,phrase
+eu_quero,eu_quero,form of querer
+voce_quer,voce_quer,form of querer
+esta_bem,esta_bem,phrase
+no_hotel,no_hotel,phrase
+muito_obrigado,muito_obrigado,phrase

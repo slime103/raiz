@@ -1,13 +1,15 @@
 import { grade, norm, deaccent } from "./grade.js";
 import * as srs from "./srs.js";
+import { buildIndex, search, resolve, hrefFor, migrateProgress, key } from "./dict.js";
 
 const SESSION_MS = 5 * 60 * 1000;
 const PATTERN = ["type", "blank", "type", "blank", "listen", "blank", "match"];
 const ACCENTS = ["ã", "á", "â", "à", "é", "ê", "í", "ó", "ô", "õ", "ú", "ç"];
 const LANGS = ["English", "Spanish", "French", "Italian", "German", "Dutch", "Swedish", "Latin", "Spanish/Italian", "Spanish/French", "old English"];
 
-let DATA, W = {}, IDS = [], SENT = {}, VOCAB = [];
-let state = srs.load();
+let DATA, IDX, W = {}, IDS = [], SENT = {}, VOCAB = [];
+let state = { version: 2, words: {}, log: [] };
+const href = (id) => hrefFor(IDX, id);
 let session = null;
 const app = document.getElementById("app");
 
@@ -31,6 +33,10 @@ function mask(text, forms) {
   }
   return out;
 }
+
+const maskForms = (it) => [it.text, ...(it.kind === "form" ? [IDX.L[it.lemma_id].headword, ...IDX.formsOf[it.lemma_id].map((f) => IDX.F[f].form)] : [])];
+const clue = (it) => (it.clue ? `<p class="clue-tag">${esc(it.clue)}</p>` : "");
+const confusedItem = (t) => Object.values(W).find((i) => norm(i.text) === t || i.accept_also.some((a) => norm(a) === t));
 
 // ---------- audio (blob URLs so playback works from the offline cache on iOS) ----------
 const blobs = {};
@@ -60,12 +66,18 @@ function meters(id, big = false) {
 // ---------- routing ----------
 function route() {
   const h = location.hash.replace(/^#\/?/, "");
-  const [view, arg] = h.split("/");
-  $$("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === (view || "home")));
+  const [view, a1, a2] = h.split("/").map((x) => decodeURIComponent(x || ""));
+  $$("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === (view === "word" || view === "phrase" ? "words" : view || "home")));
   window.scrollTo(0, 0);
   if (view === "play") return renderPlay();
-  if (view === "words") return renderIndex();
-  if (view === "word" && W[decodeURIComponent(arg)]) return renderWord(decodeURIComponent(arg));
+  if (view === "words") return renderIndex(a1);
+  if (view === "word" && IDX.L[a1]) return renderWord(a1, IDX.F[a2]?.lemma_id === a1 ? a2 : null);
+  if (view === "phrase" && IDX.P[a1]) return renderPhrase(a1);
+  // old links (#/word/<old id>) and phrase ids under /word/ -> their new home
+  if ((view === "word" || view === "phrase") && (IDX.F[a1] || IDX.P[a1] || IDX.idMap[a1])) {
+    const id = IDX.F[a1] || IDX.P[a1] ? a1 : IDX.idMap[a1];
+    return location.replace(href(id));
+  }
   if (view === "about") return renderAbout();
   return renderHome();
 }
@@ -87,11 +99,12 @@ function renderHome() {
     <p class="sub">Type the word · fill the blank · timed matching</p>
   </section>
   <section class="stats">
-    <div><b>${IDS.length}</b><span>words</span></div>
+    <div><b>${IDX.lemmaOrder.length}</b><span>words</span></div>
+    <div><b>${IDX.phraseOrder.length}</b><span>phrases</span></div>
     <div><b>${seen.length}</b><span>practiced</span></div>
     <div><b>${solid.length}</b><span>solid</span></div>
   </section>
-  ${spellWeak.length ? `<section class="card"><h3>Spelling to lock in</h3><div class="chips">${spellWeak.map((id) => `<a class="chip" href="#/word/${id}">${esc(W[id].portuguese)}</a>`).join("")}</div></section>` : ""}
+  ${spellWeak.length ? `<section class="card"><h3>Spelling to lock in</h3><div class="chips">${spellWeak.map((id) => `<a class="chip" href="${href(id)}">${esc(W[id].text)}</a>`).join("")}</div></section>` : ""}
   <section class="card legend">
     <h3>How grading works</h3>
     <p><span class="tag exact">Exact</span> right word, right spelling.</p>
@@ -99,7 +112,7 @@ function renderHome() {
     <p><span class="tag wrong">Wrong</span> you see the picture, root, and answer, and it comes back soon.</p>
     <p class="muted">Each word has two bars: <span class="meter inline"><i style="width:70%"></i></span> memory and <span class="meter sp inline"><i style="width:40%"></i></span> spelling. A word is solid when both are full.</p>
   </section>
-  <p class="center"><a href="#/words">Browse all ${IDS.length} words →</a></p>`;
+  <p class="center"><a href="#/words">Browse the dictionary: ${IDX.lemmaOrder.length} words, ${IDX.phraseOrder.length} phrases →</a></p>`;
   $("#start").onclick = () => { if (!session || session.done) session = null; location.hash = "#/play"; };
 }
 
@@ -153,17 +166,17 @@ function startClock() {
 function answersFor(cur) {
   const w = W[cur.id];
   if (cur.mode === "blank") return [cur.sentence.answer, ...cur.sentence.accept_also];
-  return [w.portuguese, ...w.accept_also];
+  return [w.text, ...w.accept_also];
 }
 
 function promptHTML(cur) {
   const w = W[cur.id];
-  const forms = answersFor(cur).concat([w.portuguese]);
+  const forms = answersFor(cur).concat(maskForms(w));
   const photo = w.photo ? `<img class="photo" src="media/img/${esc(w.photo)}" alt="">` : "";
   if (cur.mode === "blank") {
     const [a, b] = cur.sentence.sentence_pt.split("___");
     return `<div class="prompt blank">
-      <p class="kicker">Fill in the blank</p>
+      <p class="kicker">Fill in the blank</p>${clue(w)}
       <p class="sentence">${esc(a)}<span class="gap">_____</span>${esc(b)}</p>
       <div class="clue">${photo}<p class="scene">${esc(w.scene)}</p></div>
     </div>`;
@@ -176,7 +189,7 @@ function promptHTML(cur) {
     </div>`;
   }
   return `<div class="prompt">
-    <p class="kicker">Type the word</p>
+    <p class="kicker">Type the ${w.kind === "phrase" ? "phrase" : "word"}</p>${clue(w)}
     ${photo}
     <p class="scene big">${esc(w.scene)}</p>
     <p class="def">${esc(mask(w.definition_pt, forms))}</p>
@@ -186,7 +199,7 @@ function promptHTML(cur) {
 function hintHTML(cur) {
   const w = W[cur.id];
   const ans = pretty(answersFor(cur)[0]);
-  const forms = answersFor(cur).concat([w.portuguese]);
+  const forms = answersFor(cur).concat(maskForms(w));
   const out = [];
   if (cur.hints >= 1) out.push(`<p><b>Root</b> ${esc(mask(w.root, forms))}${w.root_image ? `<br><span class="muted">${esc(mask(w.root_image, forms))}</span>` : ""}</p>`);
   if (cur.hints >= 2) out.push(`<p><b>Starts with</b> <span class="mono">${esc(ans[0])}…</span></p>`);
@@ -226,7 +239,7 @@ function renderItem(cur) {
     ${accentBar()}
     <div class="tools">
       <button type="button" class="ghost" id="hint">${cur.hints >= 4 ? "No more hints" : "Hint"}</button>
-      <a class="ghost" href="#/word/${cur.id}" id="look">Word page</a>
+      <a class="ghost" href="${href(cur.id)}" id="look">${W[cur.id].kind === "phrase" ? "Phrase page" : "Word page"}</a>
       <button type="button" class="ghost" id="skip">I don't know</button>
     </div>
     <div id="fb"></div>
@@ -274,24 +287,24 @@ function showFeedback(cur) {
     close: `<p class="verdict close">≈ Quase — ${g.kind === "accent" ? "check the accent" : "check the spelling"}</p>`,
     wrong: `<p class="verdict wrong">${g.kind === "blank" ? "Here it is" : "✗ Not quite"}</p>`,
   };
-  const confused = g.kind === "other-word" ? `<p class="note">You typed <b>${esc(g.confusedWith)}</b>, which is a different word. ${W[IDS.find((i) => norm(W[i].portuguese) === g.confusedWith)]?.english ? `It means “${esc(W[IDS.find((i) => norm(W[i].portuguese) === g.confusedWith)].english)}”.` : ""}</p>` : "";
+  const confused = g.kind === "other-word" ? `<p class="note">You typed <b>${esc(g.confusedWith)}</b>, which is a different word. ${confusedItem(g.confusedWith)?.english ? `It means “${esc(confusedItem(g.confusedWith).english)}”.` : ""}</p>` : "";
   const needRetype = g.result !== "exact";
   $("#fb").innerHTML = `<div class="feedback ${g.result}">
     ${heads[g.result]}
-    <p class="word"><button class="play" id="replay" aria-label="Play">▶︎</button> ${esc(w.portuguese)} <span class="muted">· ${esc(w.english)}</span></p>
+    <p class="word"><button class="play" id="replay" aria-label="Play">▶︎</button> ${esc(w.text)} <span class="muted">· ${esc(w.english)}</span></p>
     ${full ? `<p class="sentence small">${full}</p><p class="muted small">${esc(cur.sentence.sentence_en)}</p>` : ""}
     ${g.result !== "exact" && g.kind !== "blank" ? diffHTML(g) : ""}
     ${confused}
     ${g.result === "wrong" && cur.mode !== "type" ? `<p class="scene">${esc(w.scene)}</p>` : ""}${g.result === "wrong" ? `<p class="root"><b>Root</b> ${esc(w.root)}</p>` : ""}
     ${needRetype ? `<form id="rf" class="answer retype"><input id="rinp" ${INPUT_ATTRS} placeholder="type it once, exactly" aria-label="Retype the answer"><button class="primary">OK</button></form>${accentBar()}` : ""}
-    <div class="row"><a href="#/word/${cur.id}">Word page →</a><button class="${needRetype ? "ghost" : "primary"}" id="next">${needRetype ? "Skip" : "Continue"}</button></div>
+    <div class="row"><a href="${href(cur.id)}">${w.kind === "phrase" ? "Phrase page" : "Word page"} →</a><button class="${needRetype ? "ghost" : "primary"}" id="next">${needRetype ? "Skip" : "Continue"}</button></div>
   </div>`;
   $("#replay").onclick = () => play(cur.id);
   const next = () => { cur.finished = true; nextItem(); };
   $("#next").onclick = next;
   if (needRetype) {
     const r = $("#rinp"); wireAccents(r);
-    const target = cur.mode === "blank" ? cur.sentence.answer : w.portuguese;
+    const target = cur.mode === "blank" ? cur.sentence.answer : w.text;
     $("#rf").onsubmit = (e) => {
       e.preventDefault();
       if (norm(r.value) === norm(target)) { cur.retyped = true; next(); }
@@ -316,7 +329,7 @@ function pickMatchSet(n) {
   while (chosen.length < n && guard++ < 200) {
     const id = srs.pick(state, IDS, {}, excl);
     excl.add(id);
-    if (chosen.some((c) => similar(W[c].scene, W[id].scene) || deaccent(norm(W[c].portuguese)) === deaccent(norm(W[id].portuguese)))) continue;
+    if (chosen.some((c) => similar(W[c].scene, W[id].scene) || deaccent(norm(W[c].text)) === deaccent(norm(W[id].text)))) continue;
     chosen.push(id);
   }
   return chosen;
@@ -328,7 +341,7 @@ function renderMatch(cur) {
     <div class="mhead"><p class="kicker">Match the picture to the word</p><span class="mclock" id="mclock">0:00</span></div>
     <div class="mgrid">
       <div class="col">${cur.left.map((id) => `<button class="tile scene-tile" data-side="L" data-id="${id}">${W[id].photo ? `<img src="media/img/${esc(W[id].photo)}" alt="">` : ""}<span>${esc(W[id].scene)}</span></button>`).join("")}</div>
-      <div class="col">${cur.right.map((id) => `<button class="tile word-tile" data-side="R" data-id="${id}">${esc(pretty(W[id].portuguese))}</button>`).join("")}</div>
+      <div class="col">${cur.right.map((id) => `<button class="tile word-tile" data-side="R" data-id="${id}">${esc(pretty(W[id].text))}</button>`).join("")}</div>
     </div>
     <div id="mfb"></div>
   </section>`;
@@ -390,91 +403,185 @@ function renderSummary() {
     <h2>Session done</h2>
     <p class="muted">${fmt(Date.now() - session.start)} · ${typed.length} typed · ${matched.length} matched</p>
     <div class="stats"><div><b class="g">${c("exact")}</b><span>exact</span></div><div><b class="a">${c("close")}</b><span>close</span></div><div><b class="r">${c("wrong")}</b><span>wrong</span></div></div>
-    ${spell.length ? `<h3>Spelling to lock in</h3><div class="chips">${spell.map((id) => `<a class="chip close" href="#/word/${id}">${esc(W[id].portuguese)}</a>`).join("")}</div>` : ""}
-    ${missed.length ? `<h3>Coming back soon</h3><div class="chips">${missed.map((id) => `<a class="chip wrong" href="#/word/${id}">${esc(W[id].portuguese)}</a>`).join("")}</div>` : ""}
+    ${spell.length ? `<h3>Spelling to lock in</h3><div class="chips">${spell.map((id) => `<a class="chip close" href="${href(id)}">${esc(W[id].text)}</a>`).join("")}</div>` : ""}
+    ${missed.length ? `<h3>Coming back soon</h3><div class="chips">${missed.map((id) => `<a class="chip wrong" href="${href(id)}">${esc(W[id].text)}</a>`).join("")}</div>` : ""}
     <div class="row"><a class="ghost" href="#/">Home</a><button class="primary" id="again">Another 5 minutes</button></div>
   </section>`;
   $("#again").onclick = () => { session = newSession(); location.hash = "#/play"; renderPlay(); };
 }
 
-// ---------- word index ----------
-function renderIndex() {
-  const lessons = [...new Set(IDS.map((id) => W[id].lesson))].sort((a, b) => a - b);
+// ---------- dictionary index ----------
+let filter = "all";
+function lemmaMeters(id) {
+  // aggregate of the taught forms (memory, spelling averaged)
+  const ids = IDX.formsOf[id].filter((f) => IDX.F[f].taught);
+  if (!ids.length) return "";
+  const ps = ids.map((f) => state.words[f]).filter(Boolean);
+  if (!ps.length) return meters("__none__");
+  const avg = (k) => ps.reduce((a, p) => a + p[k], 0) / ids.length;
+  const p = { mem: avg("mem"), spell: avg("spell") };
+  return `<span class="meters ${srs.isSolid(p) ? "solid" : ""}" title="memory ${Math.round(p.mem * 100)}% · spelling ${Math.round(p.spell * 100)}%"><span class="meter"><i style="width:${Math.round(p.mem * 100)}%"></i></span><span class="meter sp"><i style="width:${Math.round(p.spell * 100)}%"></i></span></span>`;
+}
+function typeLabel(t) { return IDX.types[t] || t; }
+function renderIndex(initial = "") {
+  const present = [...new Set(IDX.lemmaOrder.map((id) => IDX.L[id].word_type))];
+  const order = Object.keys(IDX.types).filter((t) => present.includes(t));
+  const chip = (f, label, n) => `<button type="button" class="fchip${filter === f ? " on" : ""}" data-f="${f}">${esc(label)} <small>${n}</small></button>`;
   app.innerHTML = `<section class="index">
-    <input id="q" class="search" type="search" placeholder="Search Portuguese or English" ${INPUT_ATTRS.replace('enterkeyhint="go"', "")}>
+    <form id="sf"><input id="q" class="search" type="search" placeholder="Search a word, any form (uma, tenho), a phrase, or English" ${INPUT_ATTRS.replace('enterkeyhint="go"', 'enterkeyhint="search"')}></form>
+    <div class="filters" role="group" aria-label="Show">
+      ${chip("all", "All", IDX.lemmaOrder.length + IDX.phraseOrder.length)}${chip("words", "Words", IDX.lemmaOrder.length)}${chip("phrases", "Phrases", IDX.phraseOrder.length)}
+      ${order.map((t) => chip("t:" + t, typeLabel(t), IDX.lemmaOrder.filter((id) => IDX.L[id].word_type === t).length)).join("")}
+    </div>
     <div id="list"></div></section>`;
-  const draw = (q) => {
-    const nq = deaccent(norm(q));
-    const match = (id) => !nq || deaccent(norm(W[id].portuguese)).includes(nq) || norm(W[id].english).includes(nq);
-    $("#list").innerHTML = lessons.map((L) => {
-      const ids = IDS.filter((id) => W[id].lesson === L && match(id));
-      if (!ids.length) return "";
-      return `<h3 class="lesson">Lesson ${L}</h3><ul class="words">${ids.map((id) => `<li><a href="#/word/${id}"><span class="pt">${esc(W[id].portuguese)}</span><span class="en">${esc(W[id].english)}</span>${meters(id)}</a></li>`).join("")}</ul>`;
-    }).join("") || `<p class="muted center">No match.</p>`;
+  const q = $("#q");
+  q.value = initial;
+  const draw = () => {
+    const r = search(IDX, q.value);
+    const showWords = filter !== "phrases", showPhrases = filter === "all" || filter === "phrases";
+    const lem = r.lemmas.filter((x) => !filter.startsWith("t:") || IDX.L[x.id].word_type === filter.slice(2));
+    const wordsHTML = showWords && lem.length ? `<h3 class="lesson">Words <small>${lem.length}</small></h3><ul class="words">${lem.map(({ id, viaForm }) => {
+      const w = IDX.L[id];
+      const forms = IDX.formsOf[id].map((f) => IDX.F[f].form).filter((t) => t !== w.headword);
+      const via = viaForm ? `<span class="via">${esc(IDX.F[viaForm].form)} → </span>` : "";
+      return `<li data-kind="word" data-id="${id}" data-type="${w.word_type}"><a href="#/word/${id}${viaForm ? "/" + viaForm : ""}"><span class="pt">${via}${esc(w.headword)}${forms.length ? `<span class="forms"> · ${esc(forms.join(", "))}</span>` : ""}</span><span class="en"><span class="wt">${esc(typeLabel(w.word_type))}</span> ${esc(w.english)}</span>${lemmaMeters(id)}</a></li>`;
+    }).join("")}</ul>` : "";
+    const ph = showPhrases ? r.phrases : [];
+    const phrasesHTML = ph.length ? `<h3 class="lesson">Phrases <small>${ph.length}</small></h3><ul class="words">${ph.map((id) => `<li data-kind="phrase" data-id="${id}"><a href="#/phrase/${id}"><span class="pt">${esc(IDX.P[id].phrase)}</span><span class="en">${esc(IDX.P[id].english)}</span>${meters(id)}</a></li>`).join("")}</ul>` : "";
+    $("#list").innerHTML = wordsHTML + phrasesHTML || `<p class="muted center">No match.</p>`;
   };
-  $("#q").oninput = (e) => draw(e.target.value);
-  draw("");
+  q.oninput = draw;
+  $("#sf").onsubmit = (e) => { e.preventDefault(); const to = resolve(IDX, q.value); if (to) location.hash = to; };
+  $$(".fchip").forEach((b) => (b.onclick = () => { filter = b.dataset.f; $$(".fchip").forEach((x) => x.classList.toggle("on", x === b)); draw(); }));
+  draw();
 }
 
-// ---------- word page ----------
+// ---------- word (lemma) page ----------
 function linkify(item) {
-  // Link family/synonym items whose Portuguese head is one of the known words.
+  // Link family/synonym items whose Portuguese head is a known word, form, or phrase.
   const head = item.split(" (")[0].trim();
-  const id = IDS.find((i) => norm(W[i].portuguese) === norm(head) || norm(pretty(W[i].portuguese)) === norm(head));
+  const k = key(pretty(head));
+  const e = IDX.entries.find((x) => x.k.replace(/\s*\?$/, "") === k);
   const rest = item.slice(head.length);
-  return id ? `<a href="#/word/${id}">${esc(head)}</a>${esc(rest)}` : `<b class="pt-inline">${esc(head)}</b>${esc(rest)}`;
+  if (!e) return `<b class="pt-inline">${esc(head)}</b>${esc(rest)}`;
+  const to = e.type === "phrase" ? `#/phrase/${e.phrase}` : e.type === "form" ? `#/word/${e.lemma}/${e.form}` : `#/word/${e.lemma}`;
+  return `<a href="${to}">${esc(head)}</a>${esc(rest)}`;
 }
 function cognate(item) {
   const lang = LANGS.find((l) => item.startsWith(l + " "));
   return lang ? `<b>${esc(lang)}</b> ${esc(item.slice(lang.length + 1))}` : esc(item);
 }
 const sec = (title, body, cls = "") => (body ? `<section class="sec ${cls}"><h3>${title}</h3>${body}</section>` : "");
-const ul = (items, f = esc) => (items.length ? `<ul>${items.map((x) => `<li>${f(x)}</li>`).join("")}</ul>` : "");
+const ul = (items, f = esc) => (items && items.length ? `<ul>${items.map((x) => `<li>${f(x)}</li>`).join("")}</ul>` : "");
+const sentList = (id) => (SENT[id] || []).map((s) => `<li>${filled(s)}<br><span class="muted">${esc(s.sentence_en)}</span></li>`).join("");
+const fromPlay = () => session && session.current && !session.current.finished && !session.done;
+const backLink = () => (fromPlay() ? `<a class="back" href="#/play">← Back to practice</a>` : `<a class="back" href="#/words">← Dictionary</a>`);
+const photoFig = (photo, credit, alt) => (photo ? `<figure><img class="photo" src="media/img/${esc(photo)}" alt="${esc(alt)}"><figcaption>${esc((credit || "").split(" / Wikimedia")[0])}</figcaption></figure>` : "");
+const phraseLinks = (ids) => (ids.length ? `<ul class="plinks">${ids.map((p) => `<li><a href="#/phrase/${p}">${esc(IDX.P[p].phrase)}</a> <span class="muted">${esc(IDX.P[p].english)}</span></li>`).join("")}</ul>` : "");
 
-function renderWord(id) {
-  const w = W[id];
-  const i = IDS.indexOf(id), prev = IDS[i - 1], next = IDS[i + 1];
-  const fromPlay = session && session.current && !session.current.finished && !session.done;
-  const sents = (SENT[id] || []).map((s) => `<li>${filled(s)}<br><span class="muted">${esc(s.sentence_en)}</span></li>`).join("");
-  app.innerHTML = `<article class="wordpage">
-    ${fromPlay ? `<a class="back" href="#/play">← Back to practice</a>` : `<a class="back" href="#/words">← All words</a>`}
+function formCard(fid, hl) {
+  const f = IDX.F[fid], it = W[fid];
+  const ety = [["Root", f.root], ["Root image", f.root_image], ["Literally", f.literal], ["Parts", f.parts], ["What the parts mean", f.parts_meaning], ["History", f.origin]].filter((x) => x[1]);
+  const used = IDX.formUsedIn[fid];
+  const sents = sentList(fid);
+  return `<section class="form-card${hl ? " hl" : ""}" id="f-${fid}" data-form="${fid}">
+    <header><button class="play sm" data-say="${fid}" aria-label="Play ${esc(f.form)}">▶︎</button><h4>${esc(f.form)}</h4>${f.label ? `<span class="flabel">${esc(f.label)}</span>` : ""}${f.taught ? meters(fid) : `<span class="tag ref" title="Shown for reference; not drilled yet">reference</span>`}</header>
+    <p class="fen">${esc(f.english)}${f.tense ? ` <span class="muted">· ${esc(f.tense)}</span>` : ""}</p>
+    ${it.own.photo ? photoFig(f.photo, f.photo_credit, f.english) : ""}
+    ${it.own.scene ? `<p class="scene">${esc(f.scene)}</p>` : ""}
+    ${it.own.definition_pt ? `<p><span class="lang">PT</span> ${esc(f.definition_pt)}</p>` : ""}
+    ${ety.length ? `<details><summary>About this form</summary><dl>${ety.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl></details>` : ""}
+    ${f.notes.length ? ul(f.notes) : ""}
+    ${sents ? `<ul class="sents">${sents}</ul>` : ""}
+    ${used.length ? `<p class="small">In phrases: ${used.map((p) => `<a href="#/phrase/${p}">${esc(IDX.P[p].phrase)}</a>`).join(" · ")}</p>` : ""}
+  </section>`;
+}
+
+function renderWord(id, formId = null) {
+  const w = IDX.L[id];
+  const i = IDX.lemmaOrder.indexOf(id), prev = IDX.lemmaOrder[i - 1], next = IDX.lemmaOrder[i + 1];
+  const fids = IDX.formsOf[id];
+  const first = fids.find((f) => IDX.F[f].taught) || fids[0];
+  const lessons = [...new Set(fids.map((f) => IDX.F[f].lesson).filter((x) => x != null))].sort((a, b) => a - b);
+  const single = fids.length === 1 && IDX.F[fids[0]].form === w.headword;
+  app.innerHTML = `<article class="wordpage" data-lemma="${id}">
+    ${backLink()}
     <header class="whead">
-      <h1>${esc(w.portuguese)}</h1>
+      <h1>${esc(w.headword)}</h1>
       <button class="play" id="say" aria-label="Play audio">▶︎</button>
     </header>
-    <p class="meta">${esc(w.part_of_speech)} · Lesson ${w.lesson}</p>
-    ${meters(id, true)}
+    <p class="meta"><span class="wt">${esc(typeLabel(w.word_type))}</span> ${esc(w.part_of_speech)} · Lesson ${lessons.join(", ") || w.lesson}</p>
+    <p class="en-head">${esc(w.english)}</p>
     <section class="sec scene-sec">
-      ${w.photo ? `<figure><img class="photo" src="media/img/${esc(w.photo)}" alt="${esc(w.english)}"><figcaption>${esc(w.photo_credit.split(" / Wikimedia")[0])}</figcaption></figure>` : ""}
+      ${photoFig(w.photo, w.photo_credit, w.english)}
       <p class="scene big">${esc(w.scene)}</p>
     </section>
+    ${sec(single ? "Practice" : `Forms <small>${fids.length}</small>`, fids.map((f) => formCard(f, f === formId)).join(""), "forms-sec")}
     ${sec("Root", `<p class="rootline">${esc(w.root)} <span class="chip src">${esc(w.source_language)}</span></p>${w.root_image ? `<p>${esc(w.root_image)}</p>` : ""}`)}
     ${sec("Definition", `<p><span class="lang">PT</span> ${esc(w.definition_pt)}</p><p><span class="lang">EN</span> ${esc(w.english)}</p>${w.literal ? `<p class="muted">Literally: ${esc(w.literal)}</p>` : ""}`)}
-    ${sec("Etymology", `<dl>${w.parts ? `<dt>Parts</dt><dd>${esc(w.parts)}</dd>` : ""}${w.parts_meaning ? `<dt>What the parts mean</dt><dd>${esc(w.parts_meaning)}</dd>` : ""}${w.origin ? `<dt>History</dt><dd>${esc(w.origin)}</dd>` : ""}</dl>${ul(w.history)}`)}
+    ${sec("Etymology", `${w.parts || w.parts_meaning || w.origin ? `<dl>${w.parts ? `<dt>Parts</dt><dd>${esc(w.parts)}</dd>` : ""}${w.parts_meaning ? `<dt>What the parts mean</dt><dd>${esc(w.parts_meaning)}</dd>` : ""}${w.origin ? `<dt>History</dt><dd>${esc(w.origin)}</dd>` : ""}</dl>` : ""}${ul(w.history)}`)}
+    ${sec("Used in phrases", phraseLinks(IDX.usedIn[id]), "used-sec")}
     ${sec("In other languages", ul(w.cognates, cognate))}
     ${sec("Portuguese family", ul(w.pt_family, linkify))}
     ${sec("Synonyms", ul(w.synonyms, linkify))}
     ${sec("Antonyms", ul(w.antonyms, linkify))}
-    ${sec("In use", sents ? `<ul class="sents">${sents}</ul>` : "")}
     ${sec("Culture", ul(w.culture))}
     ${sec("Notes", ul(w.notes))}
-    <nav class="pager">${prev ? `<a href="#/word/${prev}">← ${esc(W[prev].portuguese)}</a>` : "<span></span>"}${next ? `<a href="#/word/${next}">${esc(W[next].portuguese)} →</a>` : "<span></span>"}</nav>
+    <nav class="pager">${prev ? `<a href="#/word/${prev}">← ${esc(IDX.L[prev].headword)}</a>` : "<span></span>"}${next ? `<a href="#/word/${next}">${esc(IDX.L[next].headword)} →</a>` : "<span></span>"}</nav>
+  </article>`;
+  $("#say").onclick = () => play(formId || first);
+  $$("[data-say]").forEach((b) => (b.onclick = () => play(b.dataset.say)));
+  if (formId) requestAnimationFrame(() => $(`#f-${formId}`)?.scrollIntoView({ block: "center" }));
+}
+
+// ---------- phrase page ----------
+function renderPhrase(id) {
+  const p = IDX.P[id];
+  const i = IDX.phraseOrder.indexOf(id), prev = IDX.phraseOrder[i - 1], next = IDX.phraseOrder[i + 1];
+  const parts = p.parts_list;
+  const allLinked = parts.every((c) => c.lemma);
+  const words = parts.map((c) => {
+    if (!c.lemma) return `<li class="nolink"><b class="pt-inline">${esc(c.surface)}</b> <span class="muted">· no word page yet</span></li>`;
+    const w = IDX.L[c.lemma], f = c.form ? IDX.F[c.form] : null;
+    const to = f ? `#/word/${c.lemma}/${c.form}` : `#/word/${c.lemma}`;
+    return `<li><a href="${to}" data-lemma="${c.lemma}">${esc(c.surface)}</a> → <b>${esc(w.headword)}</b> <span class="muted">${esc(f && f.label ? f.label : typeLabel(w.word_type))}</span><br><span class="small">${esc(w.english)} · <span class="muted">${esc(w.root)}</span></span></li>`;
+  }).join("");
+  const sents = sentList(id);
+  app.innerHTML = `<article class="wordpage phrasepage" data-phrase="${id}">
+    ${backLink()}
+    <header class="whead"><h1>${esc(p.phrase)}</h1><button class="play" id="say" aria-label="Play audio">▶︎</button></header>
+    <p class="meta"><span class="wt">Phrase</span> ${esc(p.part_of_speech)} · Lesson ${p.lesson}</p>
+    ${meters(id, true)}
+    <section class="sec scene-sec">${photoFig(p.photo, p.photo_credit, p.english)}<p class="scene big">${esc(p.scene)}</p></section>
+    ${sec("Meaning", `<p><span class="lang">PT</span> ${esc(p.definition_pt)}</p><p><span class="lang">EN</span> ${esc(p.english)}</p>${p.literal ? `<p class="muted">Literally: ${esc(p.literal)}</p>` : ""}`)}
+    ${sec("Words in this phrase", `<ul class="components">${words}</ul>`, "components-sec")}
+    ${sec("How it's built", `<dl>${!allLinked && p.root ? `<dt>Roots</dt><dd>${esc(p.root)}${p.source_language ? ` <span class="chip src">${esc(p.source_language)}</span>` : ""}</dd>` : ""}${p.root_image ? `<dt>Root image</dt><dd>${esc(p.root_image)}</dd>` : ""}${p.parts ? `<dt>Parts</dt><dd>${esc(p.parts)}</dd>` : ""}${p.parts_meaning ? `<dt>What the parts mean</dt><dd>${esc(p.parts_meaning)}</dd>` : ""}${p.origin ? `<dt>History</dt><dd>${esc(p.origin)}</dd>` : ""}</dl>${ul(p.history)}`)}
+    ${sec("In use", sents ? `<ul class="sents">${sents}</ul>` : "")}
+    ${sec("In other languages", ul(p.cognates, cognate))}
+    ${sec("Related", ul(p.pt_family, linkify))}
+    ${sec("Synonyms", ul(p.synonyms, linkify))}
+    ${sec("Antonyms", ul(p.antonyms, linkify))}
+    ${sec("Culture", ul(p.culture))}
+    ${sec("Notes", ul(p.notes))}
+    <nav class="pager">${prev ? `<a href="#/phrase/${prev}">← ${esc(IDX.P[prev].phrase)}</a>` : "<span></span>"}${next ? `<a href="#/phrase/${next}">${esc(IDX.P[next].phrase)} →</a>` : "<span></span>"}</nav>
   </article>`;
   $("#say").onclick = () => play(id);
 }
 
 // ---------- about ----------
 function renderAbout() {
-  const photos = IDS.filter((id) => W[id].photo);
+  const photos = [...Object.values(IDX.L).filter((w) => w.photo).map((w) => [w.headword, w.photo_credit]),
+    ...Object.values(IDX.F).filter((f) => f.photo).map((f) => [f.form, f.photo_credit])];
+  const lessons = IDS.map((i) => W[i].lesson);
   app.innerHTML = `<section class="card about">
     <h2>About</h2>
-    <p>${IDS.length} words from Pimsleur Brazilian Portuguese, lessons ${Math.min(...IDS.map((i) => W[i].lesson))}–${Math.max(...IDS.map((i) => W[i].lesson))}. Audio: Microsoft Edge neural voice pt-BR-AntonioNeural. Works offline once loaded.</p>
+    <p>${IDX.lemmaOrder.length} words (${Object.keys(IDX.F).length} forms) and ${IDX.phraseOrder.length} phrases from Pimsleur Brazilian Portuguese, lessons ${Math.min(...lessons)}–${Math.max(...lessons)}. Audio: Microsoft Edge neural voice pt-BR-AntonioNeural. Works offline once loaded.</p>
     <p id="offline" class="muted">Checking offline status…</p>
     <h3>Your progress</h3>
     <p class="muted">Saved on this device only. Export it to move it to another phone or browser.</p>
     <div class="row wrap"><button class="ghost" id="exp">Export progress</button><label class="ghost file">Import<input type="file" id="imp" accept="application/json" hidden></label><button class="ghost danger" id="reset">Reset</button></div>
     <h3>Photo credits</h3>
-    <ul class="small">${photos.map((id) => `<li><b>${esc(W[id].portuguese)}</b>: ${esc(W[id].photo_credit)}</li>`).join("")}</ul>
+    <ul class="small">${photos.map(([t, c]) => `<li><b>${esc(t)}</b>: ${esc(c)}</li>`).join("")}</ul>
     <p class="muted small">Data version ${esc(DATA.data_hash)}</p>
   </section>`;
   navigator.serviceWorker?.getRegistration().then((r) => { $("#offline") && ($("#offline").textContent = r?.active ? "✓ Ready for offline use." : "Not cached for offline yet: open once with a connection."); });
@@ -483,27 +590,32 @@ function renderAbout() {
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `raiz-progress-${new Date().toISOString().slice(0, 10)}.json`; a.click();
   };
   $("#imp").onchange = async (e) => {
-    try { const s = JSON.parse(await e.target.files[0].text()); if (!s.words) throw 0; state = s; srs.save(state); toast("Progress imported"); }
-    catch { toast("That file isn't a progress export"); }
+    try {
+      const s = JSON.parse(await e.target.files[0].text()); if (!s.words) throw 0;
+      state = s.version === 2 ? s : migrateProgress(s, IDX); // older exports are migrated to the new ids
+      srs.save(state); toast("Progress imported");
+    } catch { toast("That file isn't a progress export"); }
   };
-  $("#reset").onclick = () => { if (confirm("Erase all progress on this device?")) { state = { words: {}, log: [] }; srs.save(state); toast("Progress reset"); } };
+  $("#reset").onclick = () => { if (confirm("Erase all progress on this device?")) { state = { version: 2, words: {}, log: [] }; srs.save(state); toast("Progress reset"); } };
 }
 
 // ---------- boot ----------
 async function init() {
   DATA = await (await fetch("data/words.json")).json();
-  for (const w of DATA.words) { W[w.id] = w; IDS.push(w.id); }
-  for (const s of DATA.sentences) (SENT[s.word_id] ||= []).push(s);
-  VOCAB = DATA.words.flatMap((w) => [w.portuguese, ...w.accept_also]);
+  IDX = buildIndex(DATA);
+  W = IDX.I; IDS = IDX.items;
+  for (const s of DATA.sentences) (SENT[s.item_id] ||= []).push(s);
+  VOCAB = IDX.vocab;
+  state = srs.load((old) => migrateProgress(old, IDX));
   window.addEventListener("hashchange", route);
   route();
   // warm the audio blobs in the background
-  (async () => { for (const w of DATA.words) { try { await warm(w.audio); } catch {} } })();
+  (async () => { for (const id of Object.keys(W)) { try { await warm(W[id].audio); } catch {} } })();
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch((e) => console.warn("sw", e));
     let had = !!navigator.serviceWorker.controller;
     navigator.serviceWorker.addEventListener("controllerchange", () => { if (had) toast("Updated: new words load next time you open the app.", 4000); had = true; });
   }
 }
-window.__raiz = { grade, srs, get state() { return state; }, get session() { return session; }, W };
+window.__raiz = { grade, srs, dict: { buildIndex, search, resolve, hrefFor, migrateProgress }, get state() { return state; }, get session() { return session; }, get W() { return W; }, get IDX() { return IDX; } };
 init();

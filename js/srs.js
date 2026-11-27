@@ -3,13 +3,20 @@
 // spelling 0..1  can you produce it letter-perfect (accents included)?
 // A word is "solid" only when both are >= SOLID.
 
-export const KEY = "pt-practice-progress-v1";
+export const KEY = "raiz-progress-v2";
+export const OLD_KEY = "pt-practice-progress-v1"; // v1 (one id per taught word/phrase); kept untouched as a backup
 export const SOLID = 0.8;
 const MIN = 60 * 1000, HOUR = 60 * MIN, DAY = 24 * HOUR;
 
-export function load() {
-  try { return JSON.parse(localStorage.getItem(KEY)) || { words: {}, log: [] }; }
-  catch { return { words: {}, log: [] }; }
+const fresh = () => ({ version: 2, words: {}, log: [] });
+const read = (k) => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
+/** migrate(oldState) -> v2 state (see dict.js migrateProgress). Called once when only v1 progress exists. */
+export function load(migrate) {
+  const cur = read(KEY);
+  if (cur && cur.words) return cur;
+  const old = read(OLD_KEY);
+  if (old && old.words && migrate) { const s = migrate(old); save(s); return s; }
+  return fresh();
 }
 export function save(state) { localStorage.setItem(KEY, JSON.stringify(state)); }
 
