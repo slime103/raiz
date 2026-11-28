@@ -46,3 +46,25 @@ WORD_TYPES = {
     "conjunction": "Conjunction", "interjection": "Interjection", "possessive": "Possessive",
     "question_word": "Question word",
 }
+
+# Spelling & sounds: look-alike spellings that are pronounced differently.
+CONTRAST_FIELDS = [
+    ("id", "str"), ("title", "str"), ("explanation", "str"),
+    ("item_ids", "list"), ("tags", "list"),
+]
+CONTRAST_ITEM_FIELDS = [
+    ("id", "str"), ("contrast_id", "str"), ("item_id", "str"), ("form", "str"),
+    ("syllables", "str"), ("respelling", "str"), ("ipa", "str"),
+    ("spelling_highlight", "list"), ("sound_highlight", "list"),
+    ("note", "str"), ("audio", "str"), ("sort", "int"),
+]
+
+# Closely related words that are not synonyms (ficar vs estar, ser vs estar, …).
+COMPARISON_FIELDS = [
+    ("id", "str"), ("title", "str"), ("explanation", "str"),
+    ("lemma_ids", "list"), ("tags", "list"),
+]
+COMPARISON_ITEM_FIELDS = [
+    ("id", "str"), ("comparison_id", "str"), ("lemma_id", "str"), ("form_id", "str"),
+    ("example_pt", "str"), ("example_en", "str"), ("sort", "int"),
+]

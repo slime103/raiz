@@ -120,3 +120,24 @@ no_hotel__1,no_hotel,A mala está ___.,no hotel,The suitcase is at the hotel.,
 no_hotel__2,no_hotel,O restaurante fica ___.,no hotel,The restaurant is in the hotel.,
 muito_obrigado__1,muito_obrigado,"___, o senhor é muito gentil.",muito obrigado,"Thank you very much, you are very kind, sir. (a man speaking)",
 muito_obrigado__2,muito_obrigado,"___, até logo.",muito obrigado,"Thank you very much, goodbye. (a man speaking)",
+tres__1,tres,Tenho ___ malas.,três,I have three suitcases.,
+quatro__1,quatro,O hotel tem ___ restaurantes.,quatro,The hotel has four restaurants.,
+cinco__1,cinco,São ___ reais.,cinco,It's five reais.,
+dez__1,dez,Tenho ___ dólares.,dez,I have ten dollars.,
+onze__1,onze,O quarto é o número ___.,onze,The room is number eleven.,
+quinze__1,quinze,São ___ reais.,quinze,It's fifteen reais.,
+dezesseis__1,dezesseis,São ___ dólares.,dezesseis,It's sixteen dollars.,
+vinte__1,vinte,O restaurante abre às ___.,vinte,The restaurant opens at twenty (8 p.m. on a 24-hour clock).,
+cem__1,cem,A mala custa ___ reais.,cem,The suitcase costs a hundred reais.,
+cento__1,cento,São ___ e um dólares.,cento,It's a hundred and one dollars.,
+mil__1,mil,O hotel custa ___ reais.,mil,The hotel costs a thousand reais.,
+ele__1,ele,___ é brasileiro.,Ele,He is Brazilian.,ele
+ela__1,ela,___ é americana.,Ela,She is American.,ela
+eles__1,eles,___ são brasileiros.,Eles,They are Brazilian.,eles
+elas__1,elas,___ são americanas.,Elas,They are American.,elas
+quem__1,quem,___ é?,Quem,Who is it?,quem
+que__1,que,O ___ é isso?,que,What is that?,
+isso__1,isso,O que é ___?,isso,What is that?,
+isto__1,isto,O que é ___?,isto,What is this?,
+quem_e__1,quem_e,___ O senhor.,Quem é?,Who is it? The gentleman.,Quem é | quem é | quem é?
+o_que_e_isso__1,o_que_e_isso,___ É a sua mala.,O que é isso?,What is that? It's your suitcase.,O que é isso | o que é isso | o que é isso?

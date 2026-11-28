@@ -1,0 +1,29 @@
+id,contrast_id,item_id,form,syllables,respelling,ipa,spelling_highlight,sound_highlight,note,audio,sort
+tem,tem_tenho_entende,voce_tem,tem,tem,teyn,[tẽj̃],em,"[ẽj̃]  nasal “ayn,” not a consonant m",3rd person of ter (você / ele / ela tem). The ending -em is a nasal diphthong.,tem.mp3,1
+tenho,tem_tenho_entende,eu_tenho,tenho,te-nho,TEH-nyoo,[ˈtẽɲu],nh,[ɲ]  palatal “ny”; the n is not a separate [n],1st person of ter (eu tenho). The vowel before nh is nasal. Final -o is [u].,tenho.mp3,2
+entende_cx,tem_tenho_entende,entende,entende,en-ten-de,en-TEN-jee,[ẽˈtẽdʒi],en | de,"[ẽ]  nasal vowel, no n consonant | [dʒi]  “jee” (d palatalizes before this [i])","3rd person of entender. Unstressed final e sounds like [i], so de becomes [dʒi] in Rio and São Paulo.",entende.mp3,3
+e_is,e_vs_e,e,é,é,eh,[ɛ],é,"[ɛ]  open “eh,” and the accent marks it",Form of ser: “is / you are.”,e.mp3,1
+e_and_cx,e_vs_e,e_and,e,e,ee,[i],e,"[i]  “ee,” no accent",The conjunction “and”: você e eu.,e_and.mp3,2
+sei,sei_sabe,eu_sei,sei,sei,say,[sej],ei,"[ej]  diphthong, like English “say”",1st person of saber (eu sei). Irregular: not *sabo.,sei.mp3,1
+sabe,sei_sabe,voce_sabe,sabe,sa-be,SAH-bee,[ˈsabi],e,[i]  unstressed final e is “ee”,3rd person of saber (você / ele / ela sabe). The b stays [b].,sabe.mp3,2
+muito_cx,muito_nasal_ui,muito,muito,mui-to,MOOYN-too,[ˈmũjtu],ui,"[ũj]  nasal diphthong, even with no tilde",Adverb / adjective “very; a lot.” A well-known spelling quirk.,muito.mp3,1
+nao_cx,nao_vs_no,nao,não,não,nown,[nɐ̃w̃],ão,[ɐ̃w̃]  nasal “own”; the tilde marks it,“No / not.”,nao.mp3,1
+no_cx,nao_vs_no,no,no,no,noo,[nu],o,"[u]  plain “oo,” no tilde — this is em + o","Contraction of em + o (“in the, at the”). Not a nasal.",no.mp3,2
+o_art,o_vs_o,o,o,o,oo,[u],o,"[u]  unstressed article, sounds like “oo”",The masculine singular article “the.”,o.mp3,1
+o_dolar,o_vs_o,dolar,dólar,dó-lar,DAW-lar,[ˈdɔlaʁ],ó,"[ɔ]  open “aw,” marked by the accent",The noun “dollar.” The accent marks both stress and the open vowel.,dolar.mp3,2
+n_onze,numbers_pattern,onze,onze,on-ze,ON-zee,[ˈõzi],ze,"[zi]  the irregular -ze, from Latin -decim","11. First of the -ze teens (Latin ūndecim, one + ten).",onze.mp3,1
+n_doze,numbers_pattern,doze,doze,do-ze,DO-zee,[ˈdozi],ze,[zi]  same -ze as onze–quinze,"12. Latin duodecim, two + ten. Also the root of dúzia (dozen).",doze.mp3,2
+n_treze,numbers_pattern,treze,treze,tre-ze,TREH-zee,[ˈtɾɛzi],ze,[zi]  same -ze family,"13. Latin tredecim, three + ten.",treze.mp3,3
+n_catorze,numbers_pattern,catorze,catorze,ca-tor-ze,ka-TOR-zee,[kaˈtoʁzi],ze,"[zi]  last consonant of the -ze teens, with catorze / quatorze",14. Also spelled quatorze. Latin quattuordecim.,catorze.mp3,4
+n_quinze,numbers_pattern,quinze,quinze,quin-ze,KEEN-zee,[ˈkĩzi],ze,[zi]  last of the irregular -ze forms,"15. After this, 16–19 switch to dez + e + the unit.",quinze.mp3,5
+n_dezesseis,numbers_pattern,dezesseis,dezesseis,de-zes-seis,jee-ze-SAYS,[dʒizeˈsejs],dez | seis,dez  ‘ten’ | seis  ‘six’ — the whole word is dez e seis,16. The transparent pattern begins: dezesseis = dez e seis.,dezesseis.mp3,6
+n_dezessete,numbers_pattern,dezessete,dezessete,de-zes-se-te,jee-ze-SEH-chee,[dʒizeˈsɛtʃi],dez | sete,dez  ‘ten’ | sete  ‘seven’,"17. dez e sete, written as one word.",dezessete.mp3,7
+n_dezoito,numbers_pattern,dezoito,dezoito,de-zoi-to,jee-ZOY-too,[dʒiˈzojtu],dez | oito,dez  ‘ten’ | oito  ‘eight’ — the e is swallowed in the spelling,18. dez e oito → dezoito.,dezoito.mp3,8
+n_dezenove,numbers_pattern,dezenove,dezenove,de-ze-no-ve,jee-ze-NAW-vee,[dʒizeˈnɔvi],dez | nove,dez  ‘ten’ | nove  ‘nine’,19. Last of the ‘ten-and-’ teens.,dezenove.mp3,9
+n_vinte,numbers_pattern,vinte,vinte,vin-te,VEEN-chee,[ˈvĩtʃi],vinte,"[ˈvĩtʃi]  a new root, from Latin vīgintī — not *dez e dez","20. After this, 21 is vinte e um, on the same model as cento e um.",vinte.mp3,10
+n_cem,numbers_pattern,cem,cem,cem,seyn,[sẽj̃],em,"[ẽj̃]  nasal diphthong, the same ending as in tem — used standing alone","100 on its own: cem reais. Before another number, use cento.",cem.mp3,11
+n_cento,numbers_pattern,cento,cento,cen-to,SEN-too,[ˈsẽtu],en,"[ẽ]  nasal vowel (no n consonant), then [tu] — the combining form","Used in 101+: cento e um, cento e vinte.",cento.mp3,12
+cx_isso,isso_isto,isso,isso,is-so,EE-soo,[ˈisu],ss,[s]  no t — ‘that’ (near the listener); also the casual all-purpose form,"Demonstrative. In everyday Brazilian speech, isso often covers ‘this’ and ‘that.’",isso.mp3,1
+cx_isto,isso_isto,isto,isto,is-to,EE-stoo,[ˈistu],st,[st]  the t is the whole difference — ‘this’ near the speaker,"Demonstrative. More precise when the thing is right here, in the speaker’s hands.",isto.mp3,2
+cx_que,que_quem,que,que,que,kee,[ki],que,"[ki]  a plain “kee,” no nasal","‘What.’ In questions about a thing, it usually comes as o que.",que.mp3,1
+cx_quem,que_quem,quem,quem,quem,keyn,[kẽj̃],em,"[ẽj̃]  nasal diphthong, the same ending as in tem — not a consonant m",‘Who.’ Quem é? is the usual ‘Who is it?’,quem.mp3,2

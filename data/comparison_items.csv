@@ -1,0 +1,22 @@
+id,comparison_id,lemma_id,form_id,example_pt,example_en,sort
+fe_ficar_lugar,ficar_estar,ficar,fica,Onde fica o hotel? O hotel fica na praia.,Where is the hotel (located)? The hotel is on the beach. (a fixed place),1
+fe_ficar_ficar,ficar_estar,ficar,fica,Eu fico no hotel. Fico feliz.,I’m staying at the hotel. I become / end up happy.,2
+fe_estar_lugar,ficar_estar,estar,esta,Onde está a mala? Ela está no hotel.,Where is the suitcase? She is at the hotel (right now).,3
+fe_estar_estado,ficar_estar,estar,,Estou bem.,I’m well (right now).,4
+se_ser_id,ser_estar,ser,e,Ela é brasileira. Você é americano?,She is Brazilian. Are you American? (identity),1
+se_ser_tempo,ser_estar,ser,,São três horas.,It’s three o’clock. (time uses ser),2
+se_estar_lugar,ser_estar,estar,esta,Ela está no Brasil.,"She is in Brazil (right now, not “she is Brazilian”).",3
+se_estar_estado,ser_estar,estar,,Estou bem.,I’m well (a state right now).,4
+ii_isto,isto_isso_aquilo,isso,isto,O que é isto?,"What is this (here, by me)?",1
+ii_isso,isto_isso_aquilo,isso,isso,O que é isso?,"What is that (by you)? — and, casually, this/that in general.",2
+ii_aquilo,isto_isso_aquilo,isso,aquilo,O que é aquilo?,What is that over there (away from both of us)?,3
+qq_quem,quem_que,quem,quem,Quem é?,Who is it? (a person),1
+qq_que,quem_que,que,que,O que é isso?,What is that? (a thing),2
+ed_de_origem,em_de,de,de,Sou de Nova York. De onde você é?,I’m from New York. Where are you from?,1
+ed_em_lugar,em_de,em,em,Estou em Nova York. Estou no hotel.,I’m in New York. I’m at the hotel.,2
+bb_bom,bom_bem,bom,bom,É um bom hotel. Boa tarde!,It’s a good hotel. Good afternoon! (adjective; agrees),1
+bb_bem,bom_bem,bem,bem,Estou bem. Tudo bem?,I’m well. Everything all right? (adverb; does not agree),2
+tn_tarde,tarde_noite,tarde,tarde,Boa tarde! É tarde.,"Good afternoon! It’s late. (afternoon, or the word “late”)",1
+tn_noite,tarde_noite,noite,noite,Boa noite!,"Good evening / good night. (once it’s dark, or as a goodbye at night)",2
+sv_voce,senhor_voce,voce,voce,Você é americano?,Are you American? (everyday “you”),1
+sv_senhor,senhor_voce,senhor,o_senhor,O senhor é americano?,"Are you American? (formal, respectful “you”)",2

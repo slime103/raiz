@@ -57,26 +57,63 @@ export function record(state, id, result, opts = {}) {
 }
 
 export const isSolid = (w) => w && w.mem >= SOLID && w.spell >= SOLID;
+export const isUnseen = (state, id) => !state.words[id]?.seen;
+
+/**
+ * How many brand-new (unseen) items a session may introduce.
+ * Starts a little higher when the user knows almost nothing, then tightens so
+ * new forms of already-known lemmas trickle in beside review, never all at once.
+ */
+export function introBudget(state, ids) {
+  const seen = ids.filter((id) => state.words[id]?.seen).length;
+  if (seen < 8) return 5;
+  if (seen < 25) return 3;
+  return 2;
+}
 
 /** Higher = more urgent. Weak memory weighs most, weak spelling next, overdue items rise. */
 export function priority(state, id, now = Date.now()) {
   const w = state.words[id];
-  if (!w || !w.seen) return 2.2 + Math.random() * 0.3; // unseen: early, but not before very weak ones
+  if (!w || !w.seen) return 0; // unseen is handled in pick() so it can be budgeted
   const weak = (1 - w.mem) * 2 + (1 - w.spell) * 1.2;
   const overdue = w.due <= now ? 0.6 + Math.min(1.5, (now - w.due) / Math.max(w.ivl, MIN) * 0.2) : -0.8;
   const recent = now - w.last < 45 * 1000 ? -3 : 0; // never repeat back-to-back
   return weak + overdue + recent + Math.random() * 0.35;
 }
 
-/** Pick the next word id, honoring in-session re-queues ({id: itemsUntilDue}). */
-export function pick(state, ids, requeue = {}, exclude = new Set()) {
+/**
+ * Pick the next item id.
+ * ctx.introduced: Set of unseen ids already shown this session
+ * ctx.lemmaOf(id): lemma id (or the item id for a phrase) — at most one new form per lemma per session
+ * ctx.lessonOf(id): lesson number, used to introduce earlier material first
+ * ctx.knownLemma(id): true if some other form of this lemma has already been practiced
+ * ctx.introBudget: override; default from introBudget()
+ */
+export function pick(state, ids, requeue = {}, exclude = new Set(), ctx = {}) {
   for (const [id, n] of Object.entries(requeue)) if (n <= 0 && !exclude.has(id)) { delete requeue[id]; return id; }
+  const introduced = ctx.introduced || new Set();
+  const lemmaOf = ctx.lemmaOf || ((id) => id);
+  const lessonOf = ctx.lessonOf || (() => 99);
+  const knownLemma = ctx.knownLemma || (() => false);
+  const budget = ctx.introBudget ?? introBudget(state, ids);
+  const lemmasIntroduced = new Set([...introduced].map(lemmaOf));
+
   let best = null, bestP = -Infinity;
   for (const id of ids) {
     if (exclude.has(id) || id in requeue) continue;
-    const p = priority(state, id);
+    let p;
+    if (!isUnseen(state, id)) {
+      p = priority(state, id);
+    } else {
+      if (introduced.size >= budget) continue;
+      if (lemmasIntroduced.has(lemmaOf(id))) continue;
+      // Sibling of a known word comes in sooner than a brand-new lemma; earlier lessons first.
+      const sibling = knownLemma(id) ? 1.15 : 0.7;
+      const early = 0.25 / (1 + (lessonOf(id) || 9));
+      p = sibling + early + Math.random() * 0.2;
+    }
     if (p > bestP) { bestP = p; best = id; }
   }
-  return best ?? ids[Math.floor(Math.random() * ids.length)];
+  return best ?? ids.find((id) => !exclude.has(id)) ?? ids[Math.floor(Math.random() * ids.length)];
 }
 export function tick(requeue) { for (const k in requeue) requeue[k]--; }

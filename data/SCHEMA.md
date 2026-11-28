@@ -1,30 +1,49 @@
 # Data schema v2 (Raiz)
 
-Five flat, UTF-8 CSV tables are the **source of truth**. They import cleanly into Google Sheets
+Flat, UTF-8 CSV tables are the **source of truth**. They import cleanly into Google Sheets
 (File → Import → Upload, separator: comma, one tab per file) and are easy for other tools/LLMs to read.
 The app never reads the CSVs directly: `tools/build_data.py` turns them into `data/words.json`.
 
 ```
-data/words.csv     ─┐  lemmas: one dictionary page per word (um covers um + uma)
-data/forms.csv     ─┤  forms of each lemma (gender, number, conjugated person)
-data/phrases.csv   ─┼─ tools/build_data.py ──> data/words.json  (the app reads this)
-data/sentences.csv ─┤                      └─> sw-assets.js     (offline precache list + version)
-data/id_map.csv    ─┘  old progress ids -> new item ids
+data/words.csv          ─┐  lemmas: one dictionary page per word (um covers um + uma)
+data/forms.csv          ─┤  forms of each lemma (gender, number, conjugated person)
+data/phrases.csv        ─┤  phrases, with links to their words
+data/sentences.csv      ─┼─ tools/build_data.py ──> data/words.json  (the app reads this)
+data/id_map.csv         ─┤                      └─> sw-assets.js     (offline precache list + version)
+data/contrasts.csv      ─┤  spelling & sounds sets (look-alike spellings, different sounds)
+data/contrast_items.csv ─┤  one row per word in a contrast, with the pronunciation breakdown
+data/comparisons.csv    ─┤  closely related words that are not synonyms (ficar vs estar)
+data/comparison_items.csv ─┘  one example sentence per lemma (or form) in a comparison
 
 data/words.json ── tools/export_data.py ──> data/export/*.csv  (reverse)
-tools/export_data.py --roundtrip            verifies CSV -> JSON -> CSV is byte-identical for all five
+tools/export_data.py --roundtrip            verifies CSV -> JSON -> CSV is byte-identical for all tables
 ```
+
+Spelling breakdowns are split across two files so each Sheets tab stays one-row-per-record
+(`contrasts.csv` for the set, `contrast_items.csv` for each word’s syllables, respelling, IPA, and highlights;
+`comparisons.csv` for the related-words set, `comparison_items.csv` for each lemma’s example sentences).
 
 ## The model
 
 - A **word** (lemma) is one dictionary page, headed by its root/base form: `um` (um, uma), `ser` (eu sou, é, você é),
   `ter` (eu tenho, você tem), `seu` (seu, sua), `real` (o real, reais). Etymology, scene, cognates, family live here once.
 - A **form** is one subsection of a word page: a gender, number, or conjugated person, with its own audio.
-  Taught forms are what you practice (you type `uma`, not `um`). Forms with `taught = no` are reference only
-  (shown on the page, never drilled), e.g. `duas`, `eu sei`.
+  Every form is practiced (you type `uma` and `duas`; `eu sei` as well as `você sabe`). The first hint on a
+  multi-form word shows the form table, with the target blanked, plus a link to the word page.
 - A **phrase** (`muito obrigado`, `na sua carteira`) has its own page. Its `components` link each word to a
   word page (and form), and each word page lists the phrases that use it. Etymology is not copied between them.
-- **Practice items** = taught forms + phrases. Progress, sentences, and audio are keyed by the item id.
+- **Practice items** = all forms + phrases. Progress, sentences, and audio are keyed by the item id.
+- A **contrast** is a Spelling & sounds page that puts look-alike spellings side by side (tem / tenho / entende)
+  with a syllable breakdown, a simple respelling, IPA for Rio / São Paulo, audio, and links to the word pages.
+- A **comparison** is a “Related, not the same” block on every involved word page (ficar vs estar, ser vs estar).
+  These are close, easily mixed-up words, not synonyms or antonyms. Each side has example sentences in Portuguese
+  and English, and links to the other word pages.
+- **Numbers** (três–vinte, cem / cento, mil) use a stylized numeral as the practice prompt. `um` stays an article
+  but still shows the numeral 1. 11–15 are irregular (-ze); 16–19 are dez + e + the unit; cem stands alone,
+  cento is used in 101+ (cento e um).
+- In practice, each word of the answer has its own blank. There is no WORD/PHRASE badge; a form-clue chip still
+  names the exact form when a lemma has more than one. Photos of concrete nouns and place maps (with a blank
+  per word) appear as prompts; word pages show the named map and may also show a photo hero.
 
 ## Conventions
 - Header names are stable `snake_case`; column order is fixed (see `tools/schema.py`).
@@ -118,7 +137,7 @@ Fill them only where the form differs (uma's own definition, reais's own photo).
 | id | text | stable item id = audio name (`na_sua_carteira`) |
 | phrase | text | the phrase with accents (`na sua carteira`) |
 | english, part_of_speech, lesson | | as above |
-| components | list | the words in order, ` | ` separated. Each is `surface=lemma_id#form_id` (`sua=seu#sua`), `surface=lemma_id`, or just `surface` when that word has no page yet (`na`) |
+| components | list | the words in order, ` | ` separated. Each is `surface=lemma_id#form_id` (`sua=seu#sua`), `surface=lemma_id`, or `surface=lemma_id`. **Every component must link to a word page**: `build_data.py` fails otherwise (add the word to words.csv/forms.csv first, as a reference form with `taught = no` if it isn't drilled on its own) |
 | audio, photo, photo_credit, scene | | as above |
 | root … notes | | phrase-level etymology and notes (how the phrase is built); word-level etymology lives on the word pages |
 | accept_also | list | other accepted spellings (`tá bem`) |
@@ -148,15 +167,78 @@ On first load after the v2 update the app copies `localStorage["pt-practice-prog
 Anything it can't map goes to `orphans` in the saved state, never discarded; the v1 key is left as a backup.
 Imported progress files from older versions are migrated the same way.
 
+## contrasts.csv
+
+One row per Spelling & sounds set.
+
+| column | type | meaning |
+|---|---|---|
+| id | text | stable id (`tem_tenho_entende`) |
+| title | text | heading, usually the forms being compared |
+| explanation | text | why the look-alike spellings sound different (Rio / São Paulo Brazilian Portuguese) |
+| item_ids | list | ids of rows in `contrast_items.csv`, in display order |
+| tags | list | optional labels (`nasal`, `nh`, `accent`) |
+
+## contrast_items.csv
+
+One row per word in a contrast. Keep this as a second table so each breakdown stays a single Sheets row.
+
+| column | type | meaning |
+|---|---|---|
+| id | text | stable id (`tem`, `entende_cx`) |
+| contrast_id | text | parent row in `contrasts.csv` |
+| item_id | text | the form, phrase, or lemma id to link to (`voce_tem`, `e_and`) |
+| form | text | the written word shown and spoken (`tem`, not `você tem`) |
+| syllables | text | hyphenated syllable breakdown (`te-nho`, `en-ten-de`) |
+| respelling | text | a simple English-friendly respelling (`teyn`, `TEH-nyoo`) |
+| ipa | text | IPA in square brackets, Brazilian (Rio / São Paulo, neutral) |
+| spelling_highlight | list | graphemes to mark in the spelling (`em`, or `en \| de`) |
+| sound_highlight | list | the matching sounds, same length as `spelling_highlight` |
+| note | text | a short comment under the breakdown |
+| audio | text | mp3 filename in `media/audio/` (often an isolated recording of just this form) |
+| sort | int | display order within the contrast (1, 2, 3, …) |
+
+`tools/suggest_contrasts.py` can propose further look-alike sets from the dictionary; only confidently accurate ones are added to these tables.
+
+## comparisons.csv
+
+One row per “Related, not the same” set. Keep this as a second pair of tables so each Sheets tab stays one-row-per-record. Only include words that are genuinely confusable in Brazilian Portuguese, not synonyms or antonyms.
+
+| column | type | meaning |
+|---|---|---|
+| id | text | stable id (`ficar_estar`) |
+| title | text | short heading (`ficar and estar`) |
+| explanation | text | the distinction, in English, with Brazilian usage |
+| lemma_ids | list | the lemmas involved, in a stable order (`ficar \| estar`) |
+| tags | list | optional labels (`location`, `formality`) |
+
+## comparison_items.csv
+
+One row per example sentence (usually one or two per lemma).
+
+| column | type | meaning |
+|---|---|---|
+| id | text | stable id (`fe_ficar_lugar`) |
+| comparison_id | text | parent row in `comparisons.csv` |
+| lemma_id | text | the lemma this example belongs to |
+| form_id | text | optional form to link to (`esta`, `isto`); empty if the form isn’t a practiced item |
+| example_pt | text | Portuguese example sentence(s) |
+| example_en | text | English gloss, with a brief usage note when it helps |
+| sort | int | display order within the comparison (1, 2, 3, …) |
+
+The same comparison appears on every involved word page, with links to the others and the current lemma’s examples highlighted.
+
 ## words.json
-`{ "schema_version": 2, "data_hash": "…", "word_types": {value: label}, "words": [...], "forms": [...], "phrases": [...], "sentences": [...], "id_map": [...] }`
+`{ "schema_version": 2, "data_hash": "…", "word_types": {value: label}, "words": [...], "forms": [...], "phrases": [...], "sentences": [...], "id_map": [...], "contrasts": [...], "contrast_items": [...], "comparisons": [...], "comparison_items": [...] }`
 Lists become JSON arrays, yes/no booleans, integers numbers (`lesson` empty → null). Key names equal the CSV headers.
 
 ## Adding a lesson
 1. New word → a row in `words.csv` (pick a `word_type`) plus its form rows in `forms.csv` (`taught = yes`).
-   New form of a known word (e.g. `duas` taught later) → just a `forms.csv` row, or flip `taught` to `yes`.
+   New form of a known word (e.g. a later conjugation) → just a `forms.csv` row.
    New phrase → a row in `phrases.csv` with `components` linking to the word pages.
    Sentences → `sentences.csv` keyed by the form or phrase id.
+   A new sound contrast → a row in `contrasts.csv` plus a row per word in `contrast_items.csv`.
+   A new related-words comparison → a row in `comparisons.csv` plus a row per example in `comparison_items.csv`.
 2. Put any object photos in `media/img/` and credit them.
 3. `python3 tools/build_data.py --make-audio` (creates missing mp3s with edge-tts, validates, rebuilds JSON + offline list).
 4. `python3 tools/export_data.py --roundtrip` must say LOSSLESS.

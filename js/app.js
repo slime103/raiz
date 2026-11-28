@@ -1,8 +1,9 @@
-import { grade, norm, deaccent } from "./grade.js";
+import { grade, norm, deaccent, align } from "./grade.js";
 import * as srs from "./srs.js";
-import { buildIndex, search, resolve, hrefFor, migrateProgress, key } from "./dict.js";
+import { buildIndex, search, resolve, hrefFor, migrateProgress, key, formClue } from "./dict.js";
+import { hasPlaceMap, placeMapHTML } from "./maps.js";
+import { numeralFor, numeralHTML } from "./numerals.js";
 
-const SESSION_MS = 5 * 60 * 1000;
 const PATTERN = ["type", "blank", "type", "blank", "listen", "blank", "match"];
 const ACCENTS = ["ã", "á", "â", "à", "é", "ê", "í", "ó", "ô", "õ", "ú", "ç"];
 const LANGS = ["English", "Spanish", "French", "Italian", "German", "Dutch", "Swedish", "Latin", "Spanish/Italian", "Spanish/French", "old English"];
@@ -10,6 +11,15 @@ const LANGS = ["English", "Spanish", "French", "Italian", "German", "Dutch", "Sw
 let DATA, IDX, W = {}, IDS = [], SENT = {}, VOCAB = [];
 let state = { version: 2, words: {}, log: [] };
 const href = (id) => hrefFor(IDX, id);
+const lemmaOf = (id) => W[id]?.lemma_id || id;
+const lessonOf = (id) => W[id]?.lesson || 99;
+const knownLemma = (id) => {
+  const lid = lemmaOf(id);
+  return (IDX.formsOf[lid] || []).some((f) => f !== id && state.words[f]?.seen);
+};
+const pickCtx = () => ({ introduced: session?.introduced || new Set(), lemmaOf, lessonOf, knownLemma });
+const mapFor = (it) => (it && it.kind === "form" && hasPlaceMap(it.lemma_id) ? it.lemma_id : null);
+
 let session = null;
 const app = document.getElementById("app");
 
@@ -20,7 +30,6 @@ const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const filled = (s) => { const a = s.sentence_pt.startsWith("___") ? s.answer[0].toUpperCase() + s.answer.slice(1) : s.answer; return s.sentence_pt.split("___").map(esc).join(`<b>${esc(a)}</b>`); };
 const pretty = (s) => s.replace(/\?$/, "");
-const fmt = (ms) => { const s = Math.max(0, Math.round(ms / 1000)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; };
 function toast(msg, ms = 2500) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(t._h); t._h = setTimeout(() => (t.hidden = true), ms); }
 
 function mask(text, forms) {
@@ -35,7 +44,13 @@ function mask(text, forms) {
 }
 
 const maskForms = (it) => [it.text, ...(it.kind === "form" ? [IDX.L[it.lemma_id].headword, ...IDX.formsOf[it.lemma_id].map((f) => IDX.F[f].form)] : [])];
-const clue = (it) => (it.clue ? `<p class="clue-tag">${esc(it.clue)}</p>` : "");
+const wordsIn = (t) => pretty(t || "").trim().split(/\s+/).filter(Boolean).length;
+/** Form clue chip only (feminine, eu form, contraction). Word vs phrase is shown by the number of blank slots. */
+function clueLine(it) {
+  if (!it?.clue) return "";
+  return `<div class="kindline"><span class="kdetail cluechip">${esc(it.clue)}</span></div>`;
+}
+
 const confusedItem = (t) => Object.values(W).find((i) => norm(i.text) === t || i.accept_also.some((a) => norm(a) === t));
 
 // ---------- audio (blob URLs so playback works from the offline cache on iOS) ----------
@@ -47,10 +62,14 @@ async function warm(file) {
   return (blobs[file] = URL.createObjectURL(await r.blob()));
 }
 let player = null;
+function playFile(audio) {
+  if (!audio) return;
+  const go = (u) => { try { player?.pause(); player = new Audio(u); player.play().catch(() => {}); } catch {} };
+  if (blobs[audio]) go(blobs[audio]); else warm(audio).then(go).catch(() => toast("Audio not available"));
+}
 function play(id) {
   const w = W[id]; if (!w) return;
-  const go = (u) => { try { player?.pause(); player = new Audio(u); player.play().catch(() => {}); } catch {} };
-  if (blobs[w.audio]) go(blobs[w.audio]); else warm(w.audio).then(go).catch(() => toast("Audio not available"));
+  playFile(w.audio);
 }
 
 // ---------- strength meters ----------
@@ -63,14 +82,126 @@ function meters(id, big = false) {
     <span class="meter sp"><i style="width:${Math.round(s * 100)}%"></i></span>${big ? '<small>spelling</small>' : ""}</span>`;
 }
 
+
+// ---------- spelling & sounds ----------
+function contrastsForLemma(lemmaId) {
+  const ids = [];
+  const seen = new Set();
+  const add = (cid) => { if (cid && !seen.has(cid) && IDX.C[cid]) { seen.add(cid); ids.push(cid); } };
+  for (const fid of IDX.formsOf[lemmaId] || []) for (const c of IDX.contrastsByItem[fid] || []) add(c);
+  for (const c of IDX.contrastsByItem[lemmaId] || []) add(c);
+  return ids;
+}
+function contrastLinks(lemmaId) {
+  const ids = contrastsForLemma(lemmaId);
+  if (!ids.length) return "";
+  const lis = ids.map((id) => {
+    const c = IDX.C[id];
+    const forms = (c.item_ids || []).map((i) => IDX.CI[i]?.form).filter(Boolean).join(", ");
+    return `<li><a href="#/sound/${id}"><b>${esc(c.title)}</b>${forms ? `<span class="muted"> · ${esc(forms)}</span>` : ""}</a></li>`;
+  }).join("");
+  return sec("Spelling &amp; sounds", `<ul class="cx-links">${lis}</ul>`);
+}
+function compareSection(lemmaId) {
+  const ids = IDX.comparisonsByLemma[lemmaId] || [];
+  if (!ids.length) return "";
+  const blocks = ids.map((cid) => {
+    const c = IDX.CMP[cid];
+    const others = (c.lemma_ids || []).filter((id) => id !== lemmaId && IDX.L[id]);
+    const heading = others.length
+      ? "Compare with " + others.map((id) => `<a href="#/word/${id}">${esc(IDX.L[id].headword)}</a>`).join(", ")
+      : esc(c.title);
+    const rows = (IDX.cmpItemsOf[cid] || []).map((it) => {
+      const form = it.form_id && IDX.F[it.form_id];
+      const label = form ? form.form : (IDX.L[it.lemma_id]?.headword || it.lemma_id);
+      const href = form ? `#/word/${it.lemma_id}/${it.form_id}` : `#/word/${it.lemma_id}`;
+      const cur = it.lemma_id === lemmaId ? ' class="current"' : "";
+      return `<tr${cur}><th><a href="${href}">${esc(label)}</a></th><td><span class="pt">${esc(it.example_pt)}</span><span class="en">${esc(it.example_en)}</span></td></tr>`;
+    }).join("");
+    return `<div class="compare-card" data-compare="${esc(cid)}"><h4>${heading}</h4><p>${esc(c.explanation)}</p><table class="compare-ex">${rows}</table></div>`;
+  }).join("");
+  return sec("Related, not the same", blocks, "compare-sec");
+}
+function markForm(form, highs) {
+  const ranges = [];
+  for (const h of highs || []) {
+    if (!h) continue;
+    let i = 0;
+    while ((i = form.indexOf(h, i)) !== -1) { ranges.push([i, i + h.length]); i += h.length; }
+  }
+  ranges.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
+  const kept = [];
+  let end = -1;
+  for (const r of ranges) { if (r[0] >= end) { kept.push(r); end = r[1]; } }
+  let html = "", at = 0;
+  for (const [a, b] of kept) {
+    html += esc(form.slice(at, a)) + "<mark>" + esc(form.slice(a, b)) + "</mark>";
+    at = b;
+  }
+  return html + esc(form.slice(at));
+}
+function itemHref(itemId) {
+  if (!itemId) return "";
+  if (IDX.F[itemId]) return `#/word/${IDX.F[itemId].lemma_id}/${itemId}`;
+  if (IDX.L[itemId]) return `#/word/${itemId}`;
+  if (IDX.P[itemId]) return `#/phrase/${itemId}`;
+  return "";
+}
+function renderSounds() {
+  const cards = (IDX.contrastOrder || []).map((id) => {
+    const c = IDX.C[id];
+    const forms = (c.item_ids || []).map((i) => IDX.CI[i]?.form).filter(Boolean).join(" · ");
+    return `<li><a href="#/sound/${id}"><span class="pt">${esc(c.title)}</span><span class="en">${esc(forms)}</span><p class="muted small">${esc((c.explanation || "").split(". ")[0])}.</p></a></li>`;
+  }).join("");
+  app.innerHTML = `<article class="cx-index">
+    <a class="back" href="#/words">← Dictionary</a>
+    <h1>Spelling &amp; sounds</h1>
+    <p class="lead">Look-alike spellings that are pronounced differently. Each set puts the words side by side, with syllables, a simple respelling, IPA for Rio / São Paulo, and audio.</p>
+    <ul class="words cx-list">${cards}</ul>
+  </article>`;
+}
+function renderContrast(id) {
+  const c = IDX.C[id];
+  const items = (c.item_ids || []).map((i) => IDX.CI[i]).filter(Boolean);
+  const cards = items.map((it) => {
+    const highs = it.spelling_highlight || [];
+    const sounds = it.sound_highlight || [];
+    const pairs = highs.map((h, i) => `<li><span class="sp">${esc(h)}</span> <span class="arrow">→</span> <span class="sd">${esc(sounds[i] || "")}</span></li>`).join("");
+    const href = itemHref(it.item_id);
+    const lemma = it.item_id && IDX.F[it.item_id] ? IDX.L[IDX.F[it.item_id].lemma_id] : (IDX.L[it.item_id] || null);
+    const link = href ? `<a href="${href}">${esc(it.form)}${lemma ? ` · ${esc(lemma.headword)}` : ""}</a>` : "";
+    return `<article class="cx-item" data-cx-item="${esc(it.id)}">
+      <header>
+        <h2><span class="cx-form">${markForm(it.form, highs)}</span><button type="button" class="play" data-audio="${esc(it.audio)}" aria-label="Play ${esc(it.form)}">▶︎</button></h2>
+        <p class="cx-phon"><span class="syl">${esc(it.syllables)}</span><span class="respell">${esc(it.respelling)}</span><span class="ipa">${esc(it.ipa)}</span></p>
+      </header>
+      ${pairs ? `<ul class="cx-hl">${pairs}</ul>` : ""}
+      ${it.note ? `<p class="cx-note">${esc(it.note)}</p>` : ""}
+      ${link ? `<p class="cx-wordlink">${link}</p>` : ""}
+    </article>`;
+  }).join("");
+  app.innerHTML = `<article class="cx-page" data-contrast="${esc(id)}">
+    ${backLink()}
+    <h1>${esc(c.title)}</h1>
+    <p class="cx-expl">${esc(c.explanation)}</p>
+    <p class="muted small">Pronunciation: Brazilian Portuguese, Rio / São Paulo (neutral).</p>
+    <div class="cx-grid${(c.tags || []).includes("pattern") ? " pattern" : ""}" data-n="${items.length}">${cards}</div>
+  </article>`;
+  $$("[data-audio]").forEach((b) => (b.onclick = () => playFile(b.dataset.audio)));
+}
+
 // ---------- routing ----------
 function route() {
   const h = location.hash.replace(/^#\/?/, "");
   const [view, a1, a2] = h.split("/").map((x) => decodeURIComponent(x || ""));
-  $$("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === (view === "word" || view === "phrase" ? "words" : view || "home")));
+  const tab = (view === "sounds" || view === "sound") ? "sounds"
+    : (view === "word" || view === "phrase" ? "words" : (view || "home"));
+  $$("[data-nav]").forEach((a) => a.classList.toggle("on", a.dataset.nav === tab));
   window.scrollTo(0, 0);
   if (view === "play") return renderPlay();
   if (view === "words") return renderIndex(a1);
+  if (view === "sounds") return renderSounds();
+  if (view === "sound" && IDX.C[a1]) return renderContrast(a1);
   if (view === "word" && IDX.L[a1]) return renderWord(a1, IDX.F[a2]?.lemma_id === a1 ? a2 : null);
   if (view === "phrase" && IDX.P[a1]) return renderPhrase(a1);
   // old links (#/word/<old id>) and phrase ids under /word/ -> their new home
@@ -95,8 +226,8 @@ function renderHome() {
   <section class="hero">
     <p class="motto">Not translating — relating.</p>
     <h1>Think the picture.<br>Say it in Portuguese.</h1>
-    <button class="primary big" id="start">${session && !session.done ? "Resume session" : "Start a 5-minute session"}</button>
-    <p class="sub">Type the word · fill the blank · timed matching</p>
+    <button class="primary big" id="start">${session && !session.done ? "Resume session" : "Begin session"}</button>
+    <p class="sub">Type · fill the blank · matching</p>
   </section>
   <section class="stats">
     <div><b>${IDX.lemmaOrder.length}</b><span>words</span></div>
@@ -112,13 +243,14 @@ function renderHome() {
     <p><span class="tag wrong">Wrong</span> you see the picture, root, and answer, and it comes back soon.</p>
     <p class="muted">Each word has two bars: <span class="meter inline"><i style="width:70%"></i></span> memory and <span class="meter sp inline"><i style="width:40%"></i></span> spelling. A word is solid when both are full.</p>
   </section>
-  <p class="center"><a href="#/words">Browse the dictionary: ${IDX.lemmaOrder.length} words, ${IDX.phraseOrder.length} phrases →</a></p>`;
+  <p class="center"><a href="#/words">Browse the dictionary: ${IDX.lemmaOrder.length} words, ${IDX.phraseOrder.length} phrases →</a></p>
+  <p class="center"><a href="#/sounds">Spelling &amp; sounds</a> — how tem, tenho, and entende differ, and more</p>`;
   $("#start").onclick = () => { if (!session || session.done) session = null; location.hash = "#/play"; };
 }
 
 // ---------- play ----------
 function newSession() {
-  return { start: Date.now(), end: Date.now() + SESSION_MS, step: 0, results: [], requeue: {}, current: null, done: false };
+  return { start: Date.now(), step: 0, results: [], requeue: {}, current: null, done: false, introduced: new Set() };
 }
 function renderPlay() {
   if (!session || session.done) session = newSession();
@@ -126,16 +258,16 @@ function renderPlay() {
   nextItem();
 }
 function nextItem() {
-  if (Date.now() >= session.end && session.results.length) return renderSummary();
   const mode = PATTERN[session.step % PATTERN.length];
   session.step++;
   srs.tick(session.requeue);
   if (mode === "match") {
-    session.current = { mode: "match", ids: pickMatchSet(5), found: [], mistakes: {}, t0: Date.now() };
+    session.current = { mode: "match", ids: pickMatchSet(5), found: [], mistakes: {} };
     return renderItem(session.current);
   }
   const recent = new Set(session.results.slice(-2).map((r) => r.id));
-  let id = srs.pick(state, IDS, session.requeue, recent);
+  let id = srs.pick(state, IDS, session.requeue, recent, pickCtx());
+  if (id && srs.isUnseen(state, id)) session.introduced.add(id);
   let m = mode;
   let sentence = null;
   if (m === "blank") {
@@ -148,19 +280,8 @@ function nextItem() {
 }
 
 function sessionBar() {
-  const left = session.end - Date.now();
-  const pct = Math.min(100, ((Date.now() - session.start) / SESSION_MS) * 100);
-  return `<div class="sbar"><div class="track"><i style="width:${pct}%"></i></div><span id="clock">${left > 0 ? fmt(left) : "last one"}</span><button class="link" id="endnow">End</button></div>`;
-}
-let clockTimer;
-function startClock() {
-  clearInterval(clockTimer);
-  clockTimer = setInterval(() => {
-    const c = $("#clock"); if (!c || !session) return clearInterval(clockTimer);
-    const left = session.end - Date.now();
-    c.textContent = left > 0 ? fmt(left) : "last one";
-    const bar = $(".sbar .track i"); if (bar) bar.style.width = Math.min(100, ((Date.now() - session.start) / SESSION_MS) * 100) + "%";
-  }, 1000);
+  const n = session.results.length;
+  return `<div class="sbar"><span class="scount">${n ? `${n} done` : "Session"}</span><button class="link" id="endsession">End session</button></div>`;
 }
 
 function answersFor(cur) {
@@ -169,39 +290,133 @@ function answersFor(cur) {
   return [w.text, ...w.accept_also];
 }
 
+function promptVisual(w, { blank = true } = {}) {
+  const place = mapFor(w);
+  if (place) return placeMapHTML(place, { named: !blank });
+  const num = numeralFor(w);
+  if (num) return numeralHTML(num, { named: !blank, word: !blank ? pretty(w.text) : "" });
+  return w.photo ? `<img class="photo" src="media/img/${esc(w.photo)}" alt="">` : "";
+}
+
+function slotWidthCh(word) {
+  const n = [...(word || "")].length;
+  if (n <= 3) return 5;
+  if (n <= 6) return 8;
+  if (n <= 9) return 11;
+  return 14;
+}
+function answerWords(answer) {
+  return pretty(answer || "").trim().split(/\s+/).filter(Boolean);
+}
+function slotsHTML(answer, { prefix = "inp", label = "Answer" } = {}) {
+  const words = answerWords(answer);
+  const n = Math.max(1, words.length);
+  return `<span class="slots" data-n="${n}">${(words.length ? words : [""]).map((w, i) => {
+    const id = i === 0 ? ` id="${prefix}"` : "";
+    const hint = i === n - 1 ? "go" : "next";
+    return `<input class="slot" type="text" lang="pt-BR" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="text"${id} data-i="${i}" style="width:${slotWidthCh(w)}ch" enterkeyhint="${hint}" aria-label="${label}, box ${i + 1} of ${n}">`;
+  }).join("")}</span>`;
+}
+function readSlots(root) {
+  return [...(root || document).querySelectorAll("input.slot")].map((el) => el.value.trim()).join(" ").replace(/\s+/g, " ").trim();
+}
+function fillSlots(root, text) {
+  const slots = [...root.querySelectorAll("input.slot")];
+  const words = pretty(text || "").trim().split(/\s+/);
+  slots.forEach((el, i) => { el.value = words[i] || ""; });
+}
+function distributeSlots(from, slots, i) {
+  const raw = from.value;
+  if (!raw.includes(" ")) return;
+  const parts = raw.trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return;
+  from.value = parts[0];
+  for (let k = 1; k < parts.length; k++) {
+    const dest = slots[i + k];
+    if (!dest) break;
+    dest.value = parts[k];
+  }
+  const last = slots[Math.min(i + parts.length - 1, slots.length - 1)];
+  last?.focus();
+  if (last) last.setSelectionRange(last.value.length, last.value.length);
+}
+let lastSlot = null;
+function wireSlots(root) {
+  const slots = [...root.querySelectorAll("input.slot")];
+  slots.forEach((el, i) => {
+    el.addEventListener("focus", () => { lastSlot = el; });
+    el.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Spacebar") {
+        e.preventDefault();
+        if (i < slots.length - 1) {
+          slots[i + 1].focus();
+          slots[i + 1].setSelectionRange(slots[i + 1].value.length, slots[i + 1].value.length);
+        }
+        return;
+      }
+      if ((e.key === "Backspace" || e.key === "Delete") && !el.value && i > 0 && (el.selectionStart === 0 || e.key === "Backspace")) {
+        e.preventDefault();
+        const prev = slots[i - 1];
+        prev.focus();
+        prev.setSelectionRange(prev.value.length, prev.value.length);
+      }
+    });
+    el.addEventListener("input", () => distributeSlots(el, slots, i));
+  });
+  if (slots[0]) lastSlot = slots[0];
+}
 function promptHTML(cur) {
   const w = W[cur.id];
   const forms = answersFor(cur).concat(maskForms(w));
-  const photo = w.photo ? `<img class="photo" src="media/img/${esc(w.photo)}" alt="">` : "";
+  const visual = promptVisual(w, { blank: true });
+  const ans = answersFor(cur)[0];
   if (cur.mode === "blank") {
     const [a, b] = cur.sentence.sentence_pt.split("___");
     return `<div class="prompt blank">
-      <p class="kicker">Fill in the blank</p>${clue(w)}
-      <p class="sentence">${esc(a)}<span class="gap">_____</span>${esc(b)}</p>
-      <div class="clue">${photo}<p class="scene">${esc(w.scene)}</p></div>
+      ${clueLine(w)}
+      <div class="sentence" id="blank-sentence">${esc(a)}<span class="gap-slots">${slotsHTML(ans)}</span>${esc(b)}</div>
+      <div class="clue">${visual}<p class="scene">${esc(w.scene)}</p></div>
     </div>`;
   }
   if (cur.mode === "listen") {
     return `<div class="prompt listen">
-      <p class="kicker">Listen and type</p>
+      ${clueLine(w)}
       <button class="play huge" id="say" aria-label="Play audio">▶︎</button>
-      <div class="clue">${photo}<p class="scene">${esc(w.scene)}</p></div>
+      <div class="clue">${visual}<p class="scene">${esc(w.scene)}</p></div>
     </div>`;
   }
   return `<div class="prompt">
-    <p class="kicker">Type the ${w.kind === "phrase" ? "phrase" : "word"}</p>${clue(w)}
-    ${photo}
+    ${clueLine(w)}
+    ${visual}
     <p class="scene big">${esc(w.scene)}</p>
     <p class="def">${esc(mask(w.definition_pt, forms))}</p>
+    <p class="form-en">${esc(w.english)}</p>
   </div>`;
 }
 
+function formTableHint(it) {
+  if (it.kind !== "form") return "";
+  const fids = IDX.formsOf[it.lemma_id] || [];
+  if (fids.length < 2) return "";
+  const head = IDX.L[it.lemma_id].headword;
+  const rows = fids.map((id) => {
+    const f = IDX.F[id], row = W[id];
+    const clue = row.clue || f.label || "";
+    const text = id === it.id ? "___" : f.form;
+    return `<tr class="${id === it.id ? "target" : ""}"><td class="mono">${esc(text)}</td><td>${esc(clue)}</td></tr>`;
+  }).join("");
+  return `<div class="form-hint"><p><b>Forms of ${esc(head)}</b></p><table>${rows}</table><a href="${href(it.id)}">Word page →</a></div>`;
+}
 function hintHTML(cur) {
   const w = W[cur.id];
   const ans = pretty(answersFor(cur)[0]);
   const forms = answersFor(cur).concat(maskForms(w));
+  const table = formTableHint(w);
   const out = [];
-  if (cur.hints >= 1) out.push(`<p><b>Root</b> ${esc(mask(w.root, forms))}${w.root_image ? `<br><span class="muted">${esc(mask(w.root_image, forms))}</span>` : ""}</p>`);
+  if (cur.hints >= 1) {
+    if (table) out.push(table);
+    out.push(`<p><b>Root</b> ${esc(mask(w.root, forms))}${w.root_image ? `<br><span class="muted">${esc(mask(w.root_image, forms))}</span>` : ""}</p>`);
+  }
   if (cur.hints >= 2) out.push(`<p><b>Starts with</b> <span class="mono">${esc(ans[0])}…</span></p>`);
   if (cur.hints >= 3) out.push(`<p><b>Shape</b> <span class="mono">${esc([...ans].map((c, i) => (c === " " ? "  " : i === 0 ? c : "_")).join(" "))}</span></p>`);
   if (cur.hints >= 4) out.push(`<p><b>English</b> ${esc(cur.mode === "blank" ? cur.sentence.sentence_en : w.english)}</p>`);
@@ -211,14 +426,20 @@ function hintHTML(cur) {
 function accentBar() {
   return `<div class="accents" role="group" aria-label="Accented letters">${ACCENTS.map((c) => `<button type="button" data-ch="${c}">${c}</button>`).join("")}</div>`;
 }
-function wireAccents(input) {
-  $$(".accents button").forEach((b) => {
-    b.addEventListener("pointerdown", (e) => e.preventDefault()); // keep keyboard open
-    b.addEventListener("click", () => {
-      const s = input.selectionStart ?? input.value.length, e = input.selectionEnd ?? s;
-      input.value = input.value.slice(0, s) + b.dataset.ch + input.value.slice(e);
-      input.focus(); input.setSelectionRange(s + 1, s + 1);
-      input.dispatchEvent(new Event("input"));
+function insertAtCursor(input, ch) {
+  if (!input || input.readOnly) return;
+  const a = input.selectionStart ?? input.value.length, b = input.selectionEnd ?? a;
+  input.value = input.value.slice(0, a) + ch + input.value.slice(b);
+  input.focus(); input.setSelectionRange(a + ch.length, a + ch.length);
+  input.dispatchEvent(new Event("input"));
+}
+function wireAccents(scope = document) {
+  $$(".accents button", scope).forEach((btn) => {
+    btn.addEventListener("pointerdown", (e) => e.preventDefault()); // keep keyboard open
+    btn.addEventListener("click", () => {
+      const el = (document.activeElement?.classList.contains("slot") ? document.activeElement : lastSlot)
+        || scope.querySelector?.(".slot") || $("#inp") || $("#rinp");
+      insertAtCursor(el, btn.dataset.ch);
     });
   });
 }
@@ -228,13 +449,17 @@ const INPUT_ATTRS = `type="text" lang="pt-BR" autocomplete="off" autocorrect="of
 function renderItem(cur) {
   if (cur.mode === "match") return renderMatch(cur);
   const w = W[cur.id];
+  const ans = answersFor(cur)[0];
+  const inlineSlots = cur.mode === "blank";
   app.innerHTML = `${sessionBar()}
   <section class="playview">
-    ${promptHTML(cur)}
-    <div class="hints" id="hints">${hintHTML(cur)}</div>
-    <form id="f" class="answer" autocomplete="off">
-      <input id="inp" ${INPUT_ATTRS} placeholder="${cur.mode === "blank" ? "missing word(s)" : "em português"}" aria-label="Your answer">
-      <button class="primary" id="check">Check</button>
+    <form id="f" class="play-form" autocomplete="off">
+      ${promptHTML(cur)}
+      <div class="hints" id="hints">${hintHTML(cur)}</div>
+      <div class="answer">
+        ${inlineSlots ? "" : slotsHTML(ans)}
+        <button class="primary" id="check">Check</button>
+      </div>
     </form>
     ${accentBar()}
     <div class="tools">
@@ -244,17 +469,19 @@ function renderItem(cur) {
     </div>
     <div id="fb"></div>
   </section>`;
-  startClock();
-  const inp = $("#inp");
-  wireAccents(inp);
-  $("#endnow").onclick = renderSummary;
-  $("#hint").onclick = () => { if (cur.hints < 4) cur.hints++; $("#hints").innerHTML = hintHTML(cur); if (cur.hints >= 4) $("#hint").textContent = "No more hints"; inp.focus(); };
+  const form = $("#f");
+  const slotRoot = form;
+  wireSlots(slotRoot);
+  wireAccents();
+  const focusFirst = () => $("#inp")?.focus();
+  $("#endsession").onclick = renderSummary;
+  $("#hint").onclick = () => { if (cur.hints < 4) cur.hints++; $("#hints").innerHTML = hintHTML(cur); if (cur.hints >= 4) $("#hint").textContent = "No more hints"; focusFirst(); };
   $("#look").onclick = () => { cur.lookedUp = true; };
   $("#skip").onclick = () => submit(cur, "");
   $("#say")?.addEventListener("click", () => play(cur.id));
-  $("#f").onsubmit = (e) => { e.preventDefault(); submit(cur, inp.value); };
+  form.onsubmit = (e) => { e.preventDefault(); submit(cur, readSlots(slotRoot)); };
   if (cur.mode === "listen") play(cur.id);
-  if (cur.answered) showFeedback(cur); else setTimeout(() => inp.focus(), 50);
+  if (cur.answered) showFeedback(cur); else setTimeout(focusFirst, 50);
 }
 
 function submit(cur, typed) {
@@ -271,15 +498,40 @@ function submit(cur, typed) {
   showFeedback(cur);
 }
 
+function opsHTML(ops, side) {
+  if (side === "ans") {
+    return ops.map((o) => o.op === "eq" ? esc(o.a) : o.op === "sub" ? `<mark class="${o.accent ? "acc" : "fix"}">${esc(o.a)}</mark>` : o.op === "del" ? `<mark class="miss">${esc(o.a)}</mark>` : "").join("");
+  }
+  return ops.map((o) => o.op === "eq" ? esc(o.t) : o.op === "sub" ? `<mark class="bad">${esc(o.t)}</mark>` : o.op === "ins" ? `<mark class="extra">${esc(o.t)}</mark>` : `<span class="hole">·</span>`).join("");
+}
 function diffHTML(g) {
-  const ans = g.ops.map((o) => o.op === "eq" ? esc(o.a) : o.op === "sub" ? `<mark class="${o.accent ? "acc" : "fix"}">${esc(o.a)}</mark>` : o.op === "del" ? `<mark class="miss">${esc(o.a)}</mark>` : "").join("");
-  const typed = g.ops.map((o) => o.op === "eq" ? esc(o.t) : o.op === "sub" ? `<mark class="bad">${esc(o.t)}</mark>` : o.op === "ins" ? `<mark class="extra">${esc(o.t)}</mark>` : `<span class="hole">·</span>`).join("");
-  return `<div class="diff"><div><small>you typed</small><span class="mono">${typed || "—"}</span></div><div><small>correct</small><span class="mono">${ans}</span></div></div>`;
+  return `<div class="diff"><div><small>you typed</small><span class="mono">${opsHTML(g.ops, "typed") || "—"}</span></div><div><small>correct</small><span class="mono">${opsHTML(g.ops, "ans")}</span></div></div>`;
+}
+function wordCells(g) {
+  const ansW = (g.answer || "").split(" ").filter(Boolean);
+  const typW = (g.typed || "").split(" ").filter(Boolean);
+  const n = Math.max(ansW.length, typW.length, 1);
+  const cells = [];
+  for (let i = 0; i < n; i++) {
+    const a = ansW[i] || "", t = typW[i] || "";
+    cells.push({ a, t, ops: align(t, a) });
+  }
+  return cells;
+}
+function slotDiffHTML(g) {
+  const cells = wordCells(g);
+  return `<div class="slots diffs">${cells.map((c) => {
+    const typed = opsHTML(c.ops, "typed") || "<span class=\"hole\">·</span>";
+    const ans = opsHTML(c.ops, "ans") || "—";
+    return `<div class="slot-diff"><div class="you"><small>you typed</small><span class="mono">${typed}</span></div><div class="ok"><small>correct</small><span class="mono">${ans}</span></div></div>`;
+  }).join("")}</div>`;
 }
 
 function showFeedback(cur) {
   const w = W[cur.id], g = cur.g;
-  const inp = $("#inp"); inp.value = cur.typed; inp.readOnly = true;
+  const slotRoot = $("#blank-sentence") || $("#f");
+  fillSlots(slotRoot, cur.typed);
+  $$("input.slot", slotRoot).forEach((el) => { el.readOnly = true; });
   $("#check").hidden = true; $(".tools").hidden = true; $(".playview > .accents").hidden = true;
   const full = cur.mode === "blank" ? filled(cur.sentence) : "";
   const heads = {
@@ -293,24 +545,26 @@ function showFeedback(cur) {
     ${heads[g.result]}
     <p class="word"><button class="play" id="replay" aria-label="Play">▶︎</button> ${esc(w.text)} <span class="muted">· ${esc(w.english)}</span></p>
     ${full ? `<p class="sentence small">${full}</p><p class="muted small">${esc(cur.sentence.sentence_en)}</p>` : ""}
-    ${g.result !== "exact" && g.kind !== "blank" ? diffHTML(g) : ""}
+    ${g.result !== "exact" && g.kind !== "blank" ? slotDiffHTML(g) : ""}
     ${confused}
     ${g.result === "wrong" && cur.mode !== "type" ? `<p class="scene">${esc(w.scene)}</p>` : ""}${g.result === "wrong" ? `<p class="root"><b>Root</b> ${esc(w.root)}</p>` : ""}
-    ${needRetype ? `<form id="rf" class="answer retype"><input id="rinp" ${INPUT_ATTRS} placeholder="type it once, exactly" aria-label="Retype the answer"><button class="primary">OK</button></form>${accentBar()}` : ""}
+    ${needRetype ? `<form id="rf" class="answer retype">${slotsHTML(cur.mode === "blank" ? cur.sentence.answer : w.text, { prefix: "rinp", label: "Retype" })}<button class="primary">OK</button></form>${accentBar()}` : ""}
     <div class="row"><a href="${href(cur.id)}">${w.kind === "phrase" ? "Phrase page" : "Word page"} →</a><button class="${needRetype ? "ghost" : "primary"}" id="next">${needRetype ? "Skip" : "Continue"}</button></div>
   </div>`;
   $("#replay").onclick = () => play(cur.id);
   const next = () => { cur.finished = true; nextItem(); };
   $("#next").onclick = next;
   if (needRetype) {
-    const r = $("#rinp"); wireAccents(r);
+    const rf = $("#rf");
+    wireSlots(rf);
+    wireAccents(rf);
     const target = cur.mode === "blank" ? cur.sentence.answer : w.text;
-    $("#rf").onsubmit = (e) => {
+    rf.onsubmit = (e) => {
       e.preventDefault();
-      if (norm(r.value) === norm(target)) { cur.retyped = true; next(); }
-      else { r.classList.remove("shake"); void r.offsetWidth; r.classList.add("shake"); }
+      if (norm(readSlots(rf)) === norm(target)) { cur.retyped = true; next(); }
+      else { rf.classList.remove("shake"); void rf.offsetWidth; rf.classList.add("shake"); }
     };
-    setTimeout(() => r.focus(), 50);
+    setTimeout(() => $("#rinp")?.focus(), 50);
   } else {
     $("#next").focus();
   }
@@ -323,33 +577,45 @@ function similar(a, b) {
   return inter / Math.min(A.size, B.size) > 0.5;
 }
 function pickMatchSet(n) {
+  const seen = IDS.filter((id) => state.words[id]?.seen);
+  const pool = seen.length >= n ? seen : IDS;
   const chosen = [];
   const excl = new Set();
   let guard = 0;
+  const ctx = { ...pickCtx(), introBudget: seen.length >= n ? 0 : srs.introBudget(state, IDS) };
   while (chosen.length < n && guard++ < 200) {
-    const id = srs.pick(state, IDS, {}, excl);
+    const id = srs.pick(state, pool, {}, excl, ctx);
+    if (!id) break;
     excl.add(id);
     if (chosen.some((c) => similar(W[c].scene, W[id].scene) || deaccent(norm(W[c].text)) === deaccent(norm(W[id].text)))) continue;
     chosen.push(id);
+    if (srs.isUnseen(state, id)) session.introduced.add(id);
   }
   return chosen;
+}
+function matchTileMeta(id) {
+  const it = W[id];
+  return it.clue ? `<span class="kdetail cluechip">${esc(it.clue)}</span>` : "";
+}
+function tileVisual(it) {
+  if (mapFor(it)) return placeMapHTML(mapFor(it), { named: false });
+  if (numeralFor(it)) return numeralHTML(it, { named: false });
+  return it.photo ? `<img src="media/img/${esc(it.photo)}" alt="">` : "";
 }
 function renderMatch(cur) {
   if (!cur.left) { cur.left = shuffle(cur.ids); cur.right = shuffle(cur.ids); }
   app.innerHTML = `${sessionBar()}
   <section class="playview match">
-    <div class="mhead"><p class="kicker">Match the picture to the word</p><span class="mclock" id="mclock">0:00</span></div>
+    <div class="mhead"><p class="kicker">Match each picture to a word or phrase</p></div>
     <div class="mgrid">
-      <div class="col">${cur.left.map((id) => `<button class="tile scene-tile" data-side="L" data-id="${id}">${W[id].photo ? `<img src="media/img/${esc(W[id].photo)}" alt="">` : ""}<span>${esc(W[id].scene)}</span></button>`).join("")}</div>
-      <div class="col">${cur.right.map((id) => `<button class="tile word-tile" data-side="R" data-id="${id}">${esc(pretty(W[id].text))}</button>`).join("")}</div>
+      <div class="col">${cur.left.map((id) => `<button class="tile scene-tile" data-side="L" data-id="${id}" data-kind="${W[id].kind}">${tileVisual(W[id])}<span class="tile-body"><span class="tile-meta">${matchTileMeta(id)}</span><span>${esc(W[id].scene)}</span></span></button>`).join("")}</div>
+      <div class="col">${cur.right.map((id) => `<button class="tile word-tile" data-side="R" data-id="${id}" data-kind="${W[id].kind}"><span class="tile-meta">${matchTileMeta(id)}</span><span class="tile-pt">${esc(pretty(W[id].text))}</span></button>`).join("")}</div>
     </div>
     <div id="mfb"></div>
   </section>`;
-  startClock();
-  $("#endnow").onclick = renderSummary;
+  $("#endsession").onclick = renderSummary;
   for (const id of cur.found) $$(`.tile[data-id="${id}"]`).forEach((t) => t.classList.add("done"));
   let sel = null;
-  const mclock = setInterval(() => { const c = $("#mclock"); if (!c || cur.finishedAt) return clearInterval(mclock); c.textContent = fmt(Date.now() - cur.t0); }, 250);
   $$(".tile").forEach((t) => t.addEventListener("click", () => {
     if (t.classList.contains("done")) return;
     if (!sel || sel.dataset.side === t.dataset.side) { $$(".tile.sel").forEach((x) => x.classList.remove("sel")); sel = t; t.classList.add("sel"); if (t.dataset.side === "R") play(t.dataset.id); return; }
@@ -369,21 +635,16 @@ function renderMatch(cur) {
 }
 function finishMatch(cur, again = false) {
   if (!again) {
-    cur.finishedAt = Date.now();
-    const time = cur.finishedAt - cur.t0;
+    cur.finishedAt = true;
     for (const id of cur.ids) {
       const res = cur.mistakes[id] ? "wrong" : "exact";
       srs.record(state, id, res, { mode: "match" });
       session.results.push({ id, mode: "match", result: res, kind: res });
     }
-    const best = state.bestMatch || Infinity;
-    cur.best = time < best;
-    if (cur.best) state.bestMatch = time;
     srs.save(state);
   }
-  const time = cur.finishedAt - cur.t0;
   const miss = Object.values(cur.mistakes).reduce((a, b) => a + b, 0);
-  $("#mfb").innerHTML = `<div class="feedback ${miss ? "close" : "exact"}"><p class="verdict ${miss ? "close" : "exact"}">${fmt(time)} · ${miss ? miss + " miss" + (miss > 1 ? "es" : "") : "clean"}${cur.best ? " · personal best" : ""}</p>
+  $("#mfb").innerHTML = `<div class="feedback ${miss ? "close" : "exact"}"><p class="verdict ${miss ? "close" : "exact"}">${miss ? miss + " miss" + (miss > 1 ? "es" : "") : "clean"}</p>
     <div class="row"><span></span><button class="primary" id="next">Continue</button></div></div>`;
   $("#next").onclick = () => { cur.finished = true; nextItem(); };
   $("#next").focus();
@@ -391,7 +652,6 @@ function finishMatch(cur, again = false) {
 
 // ---------- summary ----------
 function renderSummary() {
-  clearInterval(clockTimer);
   if (!session) return renderHome();
   session.done = true;
   const typed = session.results.filter((r) => r.mode !== "match");
@@ -400,12 +660,12 @@ function renderSummary() {
   const missed = [...new Set(typed.filter((r) => r.result === "wrong").map((r) => r.id))];
   const matched = session.results.filter((r) => r.mode === "match");
   app.innerHTML = `<section class="card summary">
-    <h2>Session done</h2>
-    <p class="muted">${fmt(Date.now() - session.start)} · ${typed.length} typed · ${matched.length} matched</p>
+    <h2>Session ended</h2>
+    <p class="muted">${typed.length} typed · ${matched.length} matched</p>
     <div class="stats"><div><b class="g">${c("exact")}</b><span>exact</span></div><div><b class="a">${c("close")}</b><span>close</span></div><div><b class="r">${c("wrong")}</b><span>wrong</span></div></div>
     ${spell.length ? `<h3>Spelling to lock in</h3><div class="chips">${spell.map((id) => `<a class="chip close" href="${href(id)}">${esc(W[id].text)}</a>`).join("")}</div>` : ""}
     ${missed.length ? `<h3>Coming back soon</h3><div class="chips">${missed.map((id) => `<a class="chip wrong" href="${href(id)}">${esc(W[id].text)}</a>`).join("")}</div>` : ""}
-    <div class="row"><a class="ghost" href="#/">Home</a><button class="primary" id="again">Another 5 minutes</button></div>
+    <div class="row"><a class="ghost" href="#/">Home</a><button class="primary" id="again">Begin session</button></div>
   </section>`;
   $("#again").onclick = () => { session = newSession(); location.hash = "#/play"; renderPlay(); };
 }
@@ -429,6 +689,7 @@ function renderIndex(initial = "") {
   const chip = (f, label, n) => `<button type="button" class="fchip${filter === f ? " on" : ""}" data-f="${f}">${esc(label)} <small>${n}</small></button>`;
   app.innerHTML = `<section class="index">
     <form id="sf"><input id="q" class="search" type="search" placeholder="Search a word, any form (uma, tenho), a phrase, or English" ${INPUT_ATTRS.replace('enterkeyhint="go"', 'enterkeyhint="search"')}></form>
+    <p class="sounds-banner"><a href="#/sounds">Spelling &amp; sounds</a> — look-alike spellings that sound different</p>
     <div class="filters" role="group" aria-label="Show">
       ${chip("all", "All", IDX.lemmaOrder.length + IDX.phraseOrder.length)}${chip("words", "Words", IDX.lemmaOrder.length)}${chip("phrases", "Phrases", IDX.phraseOrder.length)}
       ${order.map((t) => chip("t:" + t, typeLabel(t), IDX.lemmaOrder.filter((id) => IDX.L[id].word_type === t).length)).join("")}
@@ -475,7 +736,11 @@ const sec = (title, body, cls = "") => (body ? `<section class="sec ${cls}"><h3>
 const ul = (items, f = esc) => (items && items.length ? `<ul>${items.map((x) => `<li>${f(x)}</li>`).join("")}</ul>` : "");
 const sentList = (id) => (SENT[id] || []).map((s) => `<li>${filled(s)}<br><span class="muted">${esc(s.sentence_en)}</span></li>`).join("");
 const fromPlay = () => session && session.current && !session.current.finished && !session.done;
-const backLink = () => (fromPlay() ? `<a class="back" href="#/play">← Back to practice</a>` : `<a class="back" href="#/words">← Dictionary</a>`);
+const backLink = () => {
+  if (fromPlay()) return `<a class="back" href="#/play">← Back to practice</a>`;
+  if (location.hash.startsWith("#/sound/")) return `<a class="back" href="#/sounds">← Spelling &amp; sounds</a>`;
+  return `<a class="back" href="#/words">← Dictionary</a>`;
+};
 const photoFig = (photo, credit, alt) => (photo ? `<figure><img class="photo" src="media/img/${esc(photo)}" alt="${esc(alt)}"><figcaption>${esc((credit || "").split(" / Wikimedia")[0])}</figcaption></figure>` : "");
 const phraseLinks = (ids) => (ids.length ? `<ul class="plinks">${ids.map((p) => `<li><a href="#/phrase/${p}">${esc(IDX.P[p].phrase)}</a> <span class="muted">${esc(IDX.P[p].english)}</span></li>`).join("")}</ul>` : "");
 
@@ -485,7 +750,7 @@ function formCard(fid, hl) {
   const used = IDX.formUsedIn[fid];
   const sents = sentList(fid);
   return `<section class="form-card${hl ? " hl" : ""}" id="f-${fid}" data-form="${fid}">
-    <header><button class="play sm" data-say="${fid}" aria-label="Play ${esc(f.form)}">▶︎</button><h4>${esc(f.form)}</h4>${f.label ? `<span class="flabel">${esc(f.label)}</span>` : ""}${f.taught ? meters(fid) : `<span class="tag ref" title="Shown for reference; not drilled yet">reference</span>`}</header>
+    <header><button class="play sm" data-say="${fid}" aria-label="Play ${esc(f.form)}">▶︎</button><h4>${esc(f.form)}</h4>${f.label ? `<span class="flabel">${esc(f.label)}</span>` : ""}${meters(fid)}</header>
     <p class="fen">${esc(f.english)}${f.tense ? ` <span class="muted">· ${esc(f.tense)}</span>` : ""}</p>
     ${it.own.photo ? photoFig(f.photo, f.photo_credit, f.english) : ""}
     ${it.own.scene ? `<p class="scene">${esc(f.scene)}</p>` : ""}
@@ -497,11 +762,19 @@ function formCard(fid, hl) {
   </section>`;
 }
 
+
+function wordHero(id, w) {
+  const photo = w.photo ? photoFig(w.photo, w.photo_credit, w.english) : "";
+  const map = hasPlaceMap(id) ? placeMapHTML(id, { named: true }) : "";
+  const num = numeralFor({ id, lemma_id: id }) && !map ? numeralHTML(numeralFor({ id, lemma_id: id }), { named: true, word: w.headword }) : "";
+  return (photo || num || "") + map;
+}
+
 function renderWord(id, formId = null) {
   const w = IDX.L[id];
   const i = IDX.lemmaOrder.indexOf(id), prev = IDX.lemmaOrder[i - 1], next = IDX.lemmaOrder[i + 1];
   const fids = IDX.formsOf[id];
-  const first = fids.find((f) => IDX.F[f].taught) || fids[0];
+  const first = fids[0];
   const lessons = [...new Set(fids.map((f) => IDX.F[f].lesson).filter((x) => x != null))].sort((a, b) => a - b);
   const single = fids.length === 1 && IDX.F[fids[0]].form === w.headword;
   app.innerHTML = `<article class="wordpage" data-lemma="${id}">
@@ -513,12 +786,13 @@ function renderWord(id, formId = null) {
     <p class="meta"><span class="wt">${esc(typeLabel(w.word_type))}</span> ${esc(w.part_of_speech)} · Lesson ${lessons.join(", ") || w.lesson}</p>
     <p class="en-head">${esc(w.english)}</p>
     <section class="sec scene-sec">
-      ${photoFig(w.photo, w.photo_credit, w.english)}
+      ${wordHero(id, w)}
       <p class="scene big">${esc(w.scene)}</p>
     </section>
     ${sec(single ? "Practice" : `Forms <small>${fids.length}</small>`, fids.map((f) => formCard(f, f === formId)).join(""), "forms-sec")}
     ${sec("Root", `<p class="rootline">${esc(w.root)} <span class="chip src">${esc(w.source_language)}</span></p>${w.root_image ? `<p>${esc(w.root_image)}</p>` : ""}`)}
     ${sec("Definition", `<p><span class="lang">PT</span> ${esc(w.definition_pt)}</p><p><span class="lang">EN</span> ${esc(w.english)}</p>${w.literal ? `<p class="muted">Literally: ${esc(w.literal)}</p>` : ""}`)}
+    ${compareSection(id)}
     ${sec("Etymology", `${w.parts || w.parts_meaning || w.origin ? `<dl>${w.parts ? `<dt>Parts</dt><dd>${esc(w.parts)}</dd>` : ""}${w.parts_meaning ? `<dt>What the parts mean</dt><dd>${esc(w.parts_meaning)}</dd>` : ""}${w.origin ? `<dt>History</dt><dd>${esc(w.origin)}</dd>` : ""}</dl>` : ""}${ul(w.history)}`)}
     ${sec("Used in phrases", phraseLinks(IDX.usedIn[id]), "used-sec")}
     ${sec("In other languages", ul(w.cognates, cognate))}
@@ -527,6 +801,7 @@ function renderWord(id, formId = null) {
     ${sec("Antonyms", ul(w.antonyms, linkify))}
     ${sec("Culture", ul(w.culture))}
     ${sec("Notes", ul(w.notes))}
+    ${contrastLinks(id)}
     <nav class="pager">${prev ? `<a href="#/word/${prev}">← ${esc(IDX.L[prev].headword)}</a>` : "<span></span>"}${next ? `<a href="#/word/${next}">${esc(IDX.L[next].headword)} →</a>` : "<span></span>"}</nav>
   </article>`;
   $("#say").onclick = () => play(formId || first);
@@ -617,5 +892,5 @@ async function init() {
     navigator.serviceWorker.addEventListener("controllerchange", () => { if (had) toast("Updated: new words load next time you open the app.", 4000); had = true; });
   }
 }
-window.__raiz = { grade, srs, dict: { buildIndex, search, resolve, hrefFor, migrateProgress }, get state() { return state; }, get session() { return session; }, get W() { return W; }, get IDX() { return IDX; } };
+window.__raiz = { grade, srs, dict: { buildIndex, search, resolve, hrefFor, migrateProgress, formClue }, maps: { hasPlaceMap, placeMapHTML }, numerals: { numeralFor, numeralHTML }, get state() { return state; }, get session() { return session; }, get W() { return W; }, get IDX() { return IDX; } };
 init();
