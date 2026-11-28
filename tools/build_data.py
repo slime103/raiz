@@ -18,7 +18,7 @@ Stdlib only (edge-tts needed only for --make-audio).
 import csv, hashlib, json, re, subprocess, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from schema import WORD_FIELDS, FORM_FIELDS, PHRASE_FIELDS, SENTENCE_FIELDS, ID_MAP_FIELDS, WORD_TYPES, SEP
+from schema import WORD_FIELDS, FORM_FIELDS, PHRASE_FIELDS, SENTENCE_FIELDS, ID_MAP_FIELDS, CONTRAST_FIELDS, CONTRAST_ITEM_FIELDS, COMPARISON_FIELDS, COMPARISON_ITEM_FIELDS, WORD_TYPES, SEP
 
 APP = Path(__file__).resolve().parent.parent
 DATA = APP / "data"
@@ -31,6 +31,10 @@ TABLES = {  # file -> (json key, fields)
     "phrases.csv": ("phrases", PHRASE_FIELDS),
     "sentences.csv": ("sentences", SENTENCE_FIELDS),
     "id_map.csv": ("id_map", ID_MAP_FIELDS),
+    "contrasts.csv": ("contrasts", CONTRAST_FIELDS),
+    "contrast_items.csv": ("contrast_items", CONTRAST_ITEM_FIELDS),
+    "comparisons.csv": ("comparisons", COMPARISON_FIELDS),
+    "comparison_items.csv": ("comparison_items", COMPARISON_ITEM_FIELDS),
 }
 
 # ---------- CSV <-> python ----------
@@ -138,6 +142,7 @@ def validate(d):
         if not (APP / "media/audio" / p["audio"]).exists(): errs.append(f"phrase {p['id']}: missing media/audio/{p['audio']}")
         for c in p["components"]:
             s, lem, form = parse_component(c)
+            if not lem: errs.append(f"phrase {p['id']}: component {s!r} has no word page (every word in a phrase needs a words.csv lemma; link it as {s}=lemma_id#form_id)")
             if lem and lem not in L: errs.append(f"phrase {p['id']}: component {c!r} -> unknown lemma {lem}")
             if form and (form not in FM or FM[form]["lemma_id"] != lem): errs.append(f"phrase {p['id']}: component {c!r} -> form {form} is not a form of {lem}")
         _cells(p["id"], p, PHRASE_FIELDS, errs)
@@ -150,11 +155,61 @@ def validate(d):
         if s["sentence_pt"].count("___") != 1: errs.append(f"sentence {s['id']}: needs exactly one ___")
     for m in d["id_map"]:
         if m["new_id"] not in fids | pids: errs.append(f"id_map {m['old_id']}: new_id {m['new_id']} is not a form or phrase")
+    cids=set(); known = fids | pids | set(L)
+    for c in d.get("contrasts") or []:
+        if c["id"] in cids: errs.append(f"duplicate contrast id {c['id']}")
+        cids.add(c["id"])
+        if not c["title"] or not c["explanation"] or not c["item_ids"]:
+            errs.append(f"contrast {c['id']}: need title, explanation, and item_ids")
+    ci_ids=set()
+    for it in d.get("contrast_items") or []:
+        if it["id"] in ci_ids: errs.append(f"duplicate contrast item {it['id']}")
+        ci_ids.add(it["id"])
+        if it["contrast_id"] not in cids: errs.append(f"contrast item {it['id']}: unknown contrast_id {it['contrast_id']}")
+        if it["item_id"] and it["item_id"] not in known:
+            errs.append(f"contrast item {it['id']}: unknown item_id {it['item_id']}")
+        for k in ("form", "syllables", "respelling", "ipa", "audio"):
+            if not it[k]: errs.append(f"contrast item {it['id']}: empty {k}")
+        if it["spelling_highlight"] and len(it["spelling_highlight"]) != len(it["sound_highlight"]):
+            errs.append(f"contrast item {it['id']}: spelling_highlight and sound_highlight must be the same length")
+        if it["audio"] and not (APP / "media/audio" / it["audio"]).exists():
+            errs.append(f"contrast item {it['id']}: missing media/audio/{it['audio']}")
+    for c in d.get("contrasts") or []:
+        for iid in c["item_ids"]:
+            if iid not in ci_ids: errs.append(f"contrast {c['id']}: item_ids refers to missing contrast item {iid}")
+    cmp_ids=set(); lemmas=set(L)
+    for c in d.get("comparisons") or []:
+        if c["id"] in cmp_ids: errs.append(f"duplicate comparison id {c['id']}")
+        cmp_ids.add(c["id"])
+        if not c["title"] or not c["explanation"] or len(c["lemma_ids"]) < 1:
+            errs.append(f"comparison {c['id']}: need title, explanation, and lemma_ids")
+        for lid in c["lemma_ids"]:
+            if lid not in lemmas: errs.append(f"comparison {c['id']}: unknown lemma {lid}")
+    ci_ids=set(); by_cmp={}
+    for it in d.get("comparison_items") or []:
+        if it["id"] in ci_ids: errs.append(f"duplicate comparison item {it['id']}")
+        ci_ids.add(it["id"])
+        if it["comparison_id"] not in cmp_ids:
+            errs.append(f"comparison item {it['id']}: unknown comparison_id {it['comparison_id']}")
+        if it["lemma_id"] not in lemmas:
+            errs.append(f"comparison item {it['id']}: unknown lemma_id {it['lemma_id']}")
+        if it["form_id"]:
+            f = next((x for x in d["forms"] if x["id"]==it["form_id"]), None)
+            if not f or f["lemma_id"] != it["lemma_id"]:
+                errs.append(f"comparison item {it['id']}: form_id {it['form_id']} is not a form of {it['lemma_id']}")
+        if not it["example_pt"] or not it["example_en"]:
+            errs.append(f"comparison item {it['id']}: need example_pt and example_en")
+        by_cmp.setdefault(it["comparison_id"], set()).add(it["lemma_id"])
+    for c in d.get("comparisons") or []:
+        have = by_cmp.get(c["id"], set())
+        if not have: errs.append(f"comparison {c['id']}: no example sentences")
     return errs
 
 def audio_jobs(d):
     for f in d["forms"]: yield f["form"], f["audio"]
     for p in d["phrases"]: yield p["phrase"], p["audio"]
+    for it in d.get("contrast_items") or []:
+        if it.get("audio"): yield it["form"], it["audio"]
 
 def make_audio(d):
     for text, fn in audio_jobs(d):
@@ -176,16 +231,18 @@ def build():
     write_sw_assets(d)
     taught = sum(f["taught"] for f in d["forms"])
     print(f"words.json: {len(d['words'])} lemmas, {len(d['forms'])} forms ({taught} taught), {len(d['phrases'])} phrases, "
-          f"{len(d['sentences'])} sentences, hash {out['data_hash']}")
+          f"{len(d['sentences'])} sentences, {len(d.get('contrasts') or [])} contrasts, {len(d.get('comparisons') or [])} comparisons, hash {out['data_hash']}")
 
 STATIC = ["./", "index.html", "manifest.webmanifest", "css/app.css", "js/app.js", "js/grade.js",
-          "js/srs.js", "js/dict.js", "data/words.json", "icons/icon-192.png", "icons/icon-512.png",
+          "js/srs.js", "js/dict.js", "js/maps.js", "js/maps-data.js", "js/numerals.js", "data/words.json", "icons/icon-192.png", "icons/icon-512.png",
           "icons/apple-touch-icon.png", "icons/icon.svg"]
 def write_sw_assets(d):
     files = list(STATIC)
     seen = set()
     for _, fn in audio_jobs(d):
         if fn and fn not in seen: seen.add(fn); files.append(f"media/audio/{fn}")
+    for p in sorted((APP / "media/maps").glob("*.svg")):
+        files.append(f"media/maps/{p.name}")
     for row in d["words"] + d["forms"] + d["phrases"]:
         if row.get("photo") and f"media/img/{row['photo']}" not in files: files.append(f"media/img/{row['photo']}")
     h = hashlib.sha1()

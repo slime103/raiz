@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reverse export: data/words.json --> words.csv, forms.csv, phrases.csv, sentences.csv, id_map.csv.
+"""Reverse export: data/words.json --> words.csv, forms.csv, phrases.csv, sentences.csv, id_map.csv, contrasts.csv, contrast_items.csv.
 
   python3 tools/export_data.py              # writes data/export/*.csv
   python3 tools/export_data.py --in-place   # overwrite data/*.csv

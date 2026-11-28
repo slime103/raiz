@@ -1,6 +1,6 @@
 {
  "schema_version": 2,
- "data_hash": "598971e682",
+ "data_hash": "c3828f3200",
  "word_types": {
   "animate_noun": "Person",
   "inanimate_noun": "Thing",
@@ -112,6 +112,48 @@
    ]
   },
   {
+   "id": "ate",
+   "headword": "até",
+   "word_type": "preposition",
+   "english": "until, up to; even",
+   "part_of_speech": "preposition",
+   "lesson": 2,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A finger running along a road on a map and stopping at a line: up to here.",
+   "root": "possibly Arabic ḥattā ‘until’ (disputed)",
+   "source_language": "Arabic? (disputed)",
+   "root_image": "No confirmed concrete image: the leading theory is Arabic ḥattā “until.”",
+   "definition_pt": "Mostra o fim de um tempo ou de um caminho: “até amanhã”, “até logo”.",
+   "literal": "",
+   "parts": "single preposition",
+   "parts_meaning": "until, up to; even",
+   "origin": "até: disputed. It's often traced to Arabic ḥattā \"until\" (also proposed for Spanish hasta), a legacy of centuries of Arabic presence in Iberia. Latin sources have also been proposed.",
+   "history": [],
+   "cognates": [
+    "Spanish hasta (same proposed Arabic source)"
+   ],
+   "pt_family": [
+    "até amanhã (see you tomorrow)",
+    "até já (see you in a moment)",
+    "até mais (see you later)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [
+    "Family: até amanhã (until tomorrow), até mais (until later), até já (see you in a moment, more common in Portugal)."
+   ],
+   "notes": [
+    "até has no confirmed Latin image. Arabic ḥattā \"until\" is the leading theory, but it's disputed.",
+    "It also means “even”: até eu sei = even I know."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson02"
+   ]
+  },
+  {
    "id": "bem",
    "headword": "bem",
    "word_type": "adverb",
@@ -160,6 +202,52 @@
    ]
   },
   {
+   "id": "bom",
+   "headword": "bom",
+   "word_type": "adjective",
+   "english": "good",
+   "part_of_speech": "adjective",
+   "lesson": 2,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A thumb up; a warm loaf handed across the counter, just right.",
+   "root": "Latin bonus ‘good’",
+   "source_language": "Latin",
+   "root_image": "Latin bonus = good, well-made, as it should be.",
+   "definition_pt": "Que é como deve ser; o contrário de mau: “bom dia”, “boa tarde”.",
+   "literal": "",
+   "parts": "single adjective: bom (masc.), boa (fem.)",
+   "parts_meaning": "bonum / bona = good",
+   "origin": "bonum → bom (final -n became a nasal vowel); feminine boa < bona (intervocalic n dropped).",
+   "history": [],
+   "cognates": [
+    "English bonus, bona fide, bounty",
+    "Spanish bueno / buena",
+    "French bon / bonne",
+    "Italian buono / buona"
+   ],
+   "pt_family": [
+    "bem (well, the adverb)",
+    "bondade (kindness)",
+    "ótimo (great, very good)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "mau / má (bad)",
+    "ruim (bad, everyday)"
+   ],
+   "culture": [],
+   "notes": [
+    "bom goes with masculine nouns (bom dia), boa with feminine ones (boa tarde, boa noite).",
+    "bom is the adjective (good); bem is the adverb (well): um bom hotel / tudo bem."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson02"
+   ]
+  },
+  {
    "id": "brasil",
    "headword": "Brasil",
    "word_type": "proper_noun",
@@ -167,8 +255,8 @@
    "part_of_speech": "proper noun",
    "lesson": 3,
    "is_object": false,
-   "photo": "",
-   "photo_credit": "",
+   "photo": "brasil.jpg",
+   "photo_credit": "Witneyx / CC BY 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Cristo_Redentor_ao_entardecer_visto_do_Corcovado_-_Rio_de_Janeiro.png",
    "scene": "A stick of wood glowing like a coal, red dye seeping from it.",
    "root": "probably Portuguese brasa ‘ember’ (for the red dyewood); not certain",
    "source_language": "Portuguese",
@@ -252,7 +340,7 @@
    "lesson": 6,
    "is_object": true,
    "photo": "carteira.jpg",
-   "photo_credit": "Eugene Pik (Eugenepik) / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Leather_bi-fold_wallet_by_Eugene_Pik_(2021)_04.jpg",
+   "photo_credit": "michael pollak / CC BY 2.0 / Flickr: https://www.flickr.com/photos/22294215@N06/8547342013",
    "scene": "A leather fold resting on the table, bills and a card tucked inside.",
    "root": "Portuguese carta ‘paper, letter’ + -eira (container / place for)",
    "source_language": "Latin (via carta)",
@@ -289,6 +377,178 @@
    "tags": [
     "pimsleur",
     "lesson06"
+   ]
+  },
+  {
+   "id": "catorze",
+   "headword": "catorze",
+   "word_type": "number",
+   "english": "fourteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and four together.",
+   "root": "Latin quattuordecim ‘fourteen’",
+   "source_language": "Latin",
+   "root_image": "Latin quattuordecim = four + ten.",
+   "definition_pt": "O número 14.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quattuordecim → Portuguese catorze (also spelled quatorze). Both spellings are accepted; catorze is more common in Brazil.",
+   "history": [
+    "English fourteen is Germanic. Latin quattuordecim gives French quatorze, Spanish catorce."
+   ],
+   "cognates": [
+    "English fourteen",
+    "Spanish catorce",
+    "French quatorze",
+    "Italian quattordici"
+   ],
+   "pt_family": [
+    "onze",
+    "treze",
+    "quinze",
+    "quatro"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "quatorze is also correct. See Spelling & sounds: 11–15 as irregular -ze forms."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "cem",
+   "headword": "cem",
+   "word_type": "number",
+   "english": "hundred",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A packed hall; a hundred faces.",
+   "root": "Latin centum ‘hundred’",
+   "source_language": "Latin",
+   "root_image": "Latin centum = a hundred.",
+   "definition_pt": "O número 100. Sozinho: cem reais. Antes de outro número, a forma é cento: cento e um, cento e vinte.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin centum → Portuguese cem (alone) and cento (before another number). The n of Latin stayed in cento; cem is the stand-alone form, and its -em is a nasal diphthong.",
+   "history": [
+    "English hundred is Germanic; Latin centum gives cent, percent, century, centurion."
+   ],
+   "cognates": [
+    "English cent, percent, century",
+    "Spanish cien / ciento",
+    "French cent",
+    "Italian cento"
+   ],
+   "pt_family": [
+    "cento (the form used in 101+)",
+    "mil",
+    "por cento (percent)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Use cem standing alone (cem reais, cem dólares). Before another number the form is cento: cento e um. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "cinco",
+   "headword": "cinco",
+   "word_type": "number",
+   "english": "five",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "An open hand, all five fingers.",
+   "root": "Latin quīnque ‘five’",
+   "source_language": "Latin",
+   "root_image": "Latin quīnque = five: a full hand.",
+   "definition_pt": "O número 5.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quīnque → Portuguese cinco (qu- before e became c- in some forms; here the qu stayed as /k/ plus the letter c).",
+   "history": [
+    "English five is Germanic; Latin quīnque gives quintet, quintuple."
+   ],
+   "cognates": [
+    "English quintet, quintuple",
+    "Spanish cinco",
+    "French cinq",
+    "Italian cinque"
+   ],
+   "pt_family": [
+    "quinze (fifteen)",
+    "quinto (fifth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "com",
+   "headword": "com",
+   "word_type": "preposition",
+   "english": "with",
+   "part_of_speech": "preposition",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two hands clasped, walking side by side.",
+   "root": "Latin cum ‘with’",
+   "source_language": "Latin",
+   "root_image": "Latin cum = with, together: two things in one place.",
+   "definition_pt": "Junto: “café com leite”, “com licença”.",
+   "literal": "",
+   "parts": "single preposition",
+   "parts_meaning": "cum = with",
+   "origin": "Latin cum → com.",
+   "history": [],
+   "cognates": [
+    "English prefix com-/con- (combine, connect)",
+    "Spanish con",
+    "Italian con",
+    "French avec (different word)"
+   ],
+   "pt_family": [
+    "comigo (with me)",
+    "contigo (with you)",
+    "companhia (company)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "sem (without)"
+   ],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "pimsleur",
+    "lesson01"
    ]
   },
   {
@@ -365,11 +625,7 @@
     "Spanish de los (written separately)"
    ],
    "pt_family": [
-    "do (de + o)",
-    "da (de + a)",
-    "das (de + as)",
-    "de onde (from where)",
-    "nos (em + os)"
+    "de onde (from where)"
    ],
    "synonyms": [],
    "antonyms": [
@@ -383,6 +639,277 @@
     "pimsleur",
     "lesson01",
     "lesson03"
+   ]
+  },
+  {
+   "id": "dez",
+   "headword": "dez",
+   "word_type": "number",
+   "english": "ten",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two open hands, ten fingers.",
+   "root": "Latin decem ‘ten’",
+   "source_language": "Latin",
+   "root_image": "Latin decem = ten: two hands.",
+   "definition_pt": "O número 10.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin decem → Portuguese dez.",
+   "history": [
+    "English ten is Germanic; Latin decem gives decimal, decade, December (once the tenth month)."
+   ],
+   "cognates": [
+    "English ten, decimal, decade, December",
+    "Spanish diez",
+    "French dix",
+    "Italian dieci"
+   ],
+   "pt_family": [
+    "onze–quinze (the -ze teens)",
+    "dezesseis–dezenove (dez e…)",
+    "décimo (tenth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dez is the building block of 16–19: dezesseis is literally dez e seis. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "dezenove",
+   "headword": "dezenove",
+   "word_type": "number",
+   "english": "nineteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and nine, written as one word.",
+   "root": "dez + e + nove",
+   "source_language": "Latin",
+   "root_image": "dez e nove, fused.",
+   "definition_pt": "O número 19.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "dez e nove → dezenove. The last of the ‘ten-and-’ teens, then vinte.",
+   "history": [
+    "English nineteen is Germanic. Spanish diecinueve, French dix-neuf, Italian diciannove."
+   ],
+   "cognates": [
+    "English nineteen",
+    "Spanish diecinueve",
+    "French dix-neuf",
+    "Italian diciannove"
+   ],
+   "pt_family": [
+    "dez",
+    "nove",
+    "dezoito",
+    "vinte"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dezenove = dez e nove. (European Portuguese writes dezanove.) See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "dezesseis",
+   "headword": "dezesseis",
+   "word_type": "number",
+   "english": "sixteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and six, written as one word.",
+   "root": "dez + e + seis (Portuguese, replacing Latin sēdecim)",
+   "source_language": "Latin",
+   "root_image": "dez e seis = ten and six, fused into one word.",
+   "definition_pt": "O número 16.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Portuguese rebuilt 16–19 as dez e + the unit, written as one word: dezesseis, dezessete, dezoito, dezenove. Latin had sēdecim, but the analytic form won out.",
+   "history": [
+    "English sixteen is Germanic (six + ten). Spanish dieciséis and French seize took different paths."
+   ],
+   "cognates": [
+    "English sixteen",
+    "Spanish dieciséis",
+    "French seize",
+    "Italian sedici"
+   ],
+   "pt_family": [
+    "dez",
+    "seis",
+    "dezessete",
+    "dezoito",
+    "dezenove"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dezesseis = dez e seis. The same pattern holds through dezenove. (European Portuguese writes dezasseis.) See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "dezessete",
+   "headword": "dezessete",
+   "word_type": "number",
+   "english": "seventeen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and seven, written as one word.",
+   "root": "dez + e + sete",
+   "source_language": "Latin",
+   "root_image": "dez e sete = ten and seven, fused.",
+   "definition_pt": "O número 17.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Same pattern as dezesseis: dez e sete → dezessete.",
+   "history": [
+    "English seventeen is Germanic. Spanish diecisiete, French dix-sept keep the ‘ten-seven’ idea."
+   ],
+   "cognates": [
+    "English seventeen",
+    "Spanish diecisiete",
+    "French dix-sept",
+    "Italian diciassette"
+   ],
+   "pt_family": [
+    "dez",
+    "sete",
+    "dezesseis",
+    "dezoito"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dezessete = dez e sete. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "dezoito",
+   "headword": "dezoito",
+   "word_type": "number",
+   "english": "eighteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and eight, written as one word.",
+   "root": "dez + e + oito",
+   "source_language": "Latin",
+   "root_image": "dez e oito, fused (the e is swallowed in the spelling).",
+   "definition_pt": "O número 18.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "dez e oito contracted to dezoito — you can still hear the parts.",
+   "history": [
+    "English eighteen is Germanic. Spanish dieciocho, French dix-huit, Italian diciotto."
+   ],
+   "cognates": [
+    "English eighteen",
+    "Spanish dieciocho",
+    "French dix-huit",
+    "Italian diciotto"
+   ],
+   "pt_family": [
+    "dez",
+    "oito",
+    "dezessete",
+    "dezenove"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "dezoito = dez e oito. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "dia",
+   "headword": "dia",
+   "word_type": "inanimate_noun",
+   "english": "day",
+   "part_of_speech": "noun (masc.)",
+   "lesson": 2,
+   "is_object": false,
+   "photo": "dia.jpg",
+   "photo_credit": "jenny downing / CC BY 2.0 / Flickr: https://www.flickr.com/photos/7941044@N06/3896597319",
+   "scene": "The sky going from dark to bright as the sun clears the rooftops.",
+   "root": "Latin diēs ‘day’ (from a root ‘to shine’)",
+   "source_language": "Latin",
+   "root_image": "Latin diēs comes from an Indo-European root meaning \"to shine,\" the bright sky. The same root gives Latin deus (god) and divine, Iuppiter (from \"sky-father\"), and Greek Zeus. A day is \"the bright sky.\"",
+   "definition_pt": "O tempo de luz, do sol nascer até a noite; também 24 horas.",
+   "literal": "",
+   "parts": "single noun (masculine, despite the -a)",
+   "parts_meaning": "diēs = day",
+   "origin": "Latin diēs → Vulgar Latin dia.",
+   "history": [
+    "Why English split: English day looks like dia but is NOT related: it's Germanic, from a different root. English uses diēs only in learned words: diary, diurnal, meridian (\"midday\"), and via French journal and journey (originally a day's travel)."
+   ],
+   "cognates": [
+    "diary, dial, diurnal, meridian, and journal (via diurnalis)",
+    "Spanish día",
+    "Italian giorno / dì",
+    "French jour / lundi (the -di of the weekdays)"
+   ],
+   "pt_family": [
+    "diário (daily; diary)",
+    "hoje (today)",
+    "meio-dia (noon)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "noite (night)"
+   ],
+   "culture": [],
+   "notes": [
+    "dia is masculine despite the -a (o dia), so it's bom dia, not boa dia."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson02"
    ]
   },
   {
@@ -438,7 +965,7 @@
    "lesson": 5,
    "is_object": true,
    "photo": "dolar.jpg",
-   "photo_credit": "ESEMES (photograph of a US Treasury note) / Public domain / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:US_one_dollar_bill,_obverse,_series_2009.jpg",
+   "photo_credit": "401(K) 2013 / CC BY-SA 2.0 / Flickr: https://www.flickr.com/photos/68751915@N05/6280514227",
    "scene": "A United States one-dollar note, Washington in the center, ONE DOLLAR along the bottom.",
    "root": "German Thaler, from Joachimsthaler (a coin of Joachimsthal)",
    "source_language": "German",
@@ -474,6 +1001,185 @@
    "tags": [
     "pimsleur",
     "lesson05"
+   ]
+  },
+  {
+   "id": "doze",
+   "headword": "doze",
+   "word_type": "number",
+   "english": "twelve",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A clock face; a dozen.",
+   "root": "Latin duodecim ‘twelve’ (duo + decem)",
+   "source_language": "Latin",
+   "root_image": "Latin duodecim = two + ten.",
+   "definition_pt": "O número 12. Também: uma dúzia.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin duodecim → Portuguese doze. Same -ze ending as onze–quinze.",
+   "history": [
+    "English twelve is Germanic; Latin duodecim gives dozen, duodecimal."
+   ],
+   "cognates": [
+    "English dozen, duodecimal",
+    "Spanish doce",
+    "French douze",
+    "Italian dodici"
+   ],
+   "pt_family": [
+    "onze",
+    "treze",
+    "dois",
+    "dúzia (dozen)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "See Spelling & sounds: 11–15 as irregular -ze forms."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "e_and",
+   "headword": "e",
+   "word_type": "conjunction",
+   "english": "and",
+   "part_of_speech": "conjunction",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two things standing side by side, a small plus in the space between them.",
+   "root": "Latin et ‘and’",
+   "source_language": "Latin",
+   "root_image": "Latin et = and: two things joined, a little word in the middle.",
+   "definition_pt": "Liga duas coisas: “você e eu”, “o hotel e o restaurante.”",
+   "literal": "“and”",
+   "parts": "single conjunction",
+   "parts_meaning": "et = and",
+   "origin": "Latin et → Portuguese e (the final t was lost). The same word gives Spanish y / e, French et, and Italian e.",
+   "history": [
+    "English link: English and is Germanic. The Latin et survived in et cetera (etc.) and in the ampersand &, which began as a ligature of e and t."
+   ],
+   "cognates": [
+    "English et cetera, ampersand (&)",
+    "Spanish y (e before i- or hi-)",
+    "French et",
+    "Italian e"
+   ],
+   "pt_family": [
+    "etc. (et cetera)",
+    "é (is; spelled with an accent)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "The accent is the whole difference: e (no accent, sounds like “ee”) = “and”; é (open “eh”) = “is.” See Spelling & sounds."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson01"
+   ]
+  },
+  {
+   "id": "ele",
+   "headword": "ele",
+   "word_type": "pronoun",
+   "english": "he; she; they",
+   "part_of_speech": "pronoun",
+   "lesson": 7,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Someone standing a little way off, pointed out with a nod: him, her, them.",
+   "root": "Latin ille, illa ‘that one’",
+   "source_language": "Latin",
+   "root_image": "Latin ille / illa = that one over there, which became the everyday he / she.",
+   "definition_pt": "Pronome de terceira pessoa: ele (um homem), ela (uma mulher), eles / elas (mais de um).",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin ille (‘that one,’ masculine) and illa (feminine) became Portuguese ele and ela. The plurals eles and elas add the usual -s.",
+   "history": [
+    "English he, she, they are Germanic. The Latin ille also gives French il / elle and Spanish él / ella, and the English article in ‘the’ via a long road through demonstratives."
+   ],
+   "cognates": [
+    "English (related idea) he, she, they",
+    "Spanish él, ella, ellos, ellas",
+    "French il, elle, ils, elles",
+    "Italian egli, ella, loro"
+   ],
+   "pt_family": [
+    "você",
+    "eu",
+    "o / a (the) — all can point at a person"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "ele / ela / eles / elas agree in gender and number with who you mean. For a mixed group, eles is the usual form."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson07",
+    "pronoun"
+   ]
+  },
+  {
+   "id": "em",
+   "headword": "em",
+   "word_type": "preposition",
+   "english": "in, at, on",
+   "part_of_speech": "preposition",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A small object dropped inside an open box; the lid closes over it.",
+   "root": "Latin in ‘in, into’",
+   "source_language": "Latin",
+   "root_image": "Latin in = in, inside: the space within something.",
+   "definition_pt": "Dentro de, num lugar: “em casa”, “no hotel”, “na carteira”.",
+   "literal": "“in”",
+   "parts": "single preposition; with the article: em + o = no, em + a = na, em + os = nos, em + as = nas",
+   "parts_meaning": "in = in, inside",
+   "origin": "Latin in → em. Before the article it fuses: Latin in illum → no, in illam → na (the article itself comes from Latin ille, illa “that”).",
+   "history": [
+    "English link: English in is the Germanic cousin of Latin in. English has no everyday contraction like na (in + the). The possessive, as with sua, is a 3rd-person form used for você.",
+    "English link: English in is the Germanic cousin of Latin in / Portuguese em. English says in the hotel or at the hotel, with a separate the; Portuguese fuses in + the into no."
+   ],
+   "cognates": [
+    "English in (Germanic cousin), in- / en- (include, enter)",
+    "Spanish en",
+    "French en",
+    "Italian in (nel, nella)"
+   ],
+   "pt_family": [
+    "dentro (inside)",
+    "entre (between)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "fora (outside)"
+   ],
+   "culture": [],
+   "notes": [
+    "no is the regular contraction of em + o, the masculine partner of na (em + a). Portuguese almost always contracts em with the article: no hotel, na carteira, nos Estados Unidos. The noun hotel is the same word as in Lesson 4 (silent h, stress on the end)."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson06"
    ]
   },
   {
@@ -590,14 +1296,20 @@
    "scene": "Someone standing on a spot right now; a moment later the spot is empty.",
    "root": "Latin stāre ‘to stand’",
    "source_language": "Latin",
-   "root_image": "Latin stāre = to stand: where you are standing now, not what you are.",
+   "root_image": "Latin stāre = to stand: something upright in its spot right now.",
    "definition_pt": "Como ou onde uma coisa está agora: “Onde está o hotel?” “Está bem.”",
    "literal": "",
    "parts": "est- (stand) + -ar (infinitive)",
    "parts_meaning": "Portuguese puts an e- in front of st- (Latin stāre → estar), as in estado and Estados Unidos.",
    "origin": "Latin stāre ‘to stand’. Portuguese adds a supporting e- before s + consonant, so stāre → estar.",
-   "history": [],
-   "cognates": [],
+   "history": [
+    "Why English split: English stand is the Germanic cousin of stāre. English uses \"is\" for location; Portuguese asks \"where does it stand?\" Ser = be (by essence); estar = stand (for now)."
+   ],
+   "cognates": [
+    "English stand (Germanic relative), stable, static, station, stay (via Old French ester)",
+    "Spanish está",
+    "Italian sta"
+   ],
    "pt_family": [
     "estado (state)",
     "estou (I am, right now)",
@@ -607,7 +1319,8 @@
    "antonyms": [],
    "culture": [],
    "notes": [
-    "ser is for what something is (identity, origin); estar is for how or where it is right now."
+    "ser is for what something is (identity, origin); estar is for how or where it is right now.",
+    "estar = temporary state or location; ser = identity. In speech, está is often shortened to tá: Onde tá?, Tá bom (\"OK\")."
    ],
    "tags": [
     "pimsleur",
@@ -658,6 +1371,94 @@
    "tags": [
     "pimsleur",
     "lesson01"
+   ]
+  },
+  {
+   "id": "favor",
+   "headword": "favor",
+   "word_type": "inanimate_noun",
+   "english": "favor, kindness",
+   "part_of_speech": "noun (masc.)",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Someone holding a door open for you, arms full of bags.",
+   "root": "Latin favor (favēre ‘to be well-disposed’)",
+   "source_language": "Latin",
+   "root_image": "Latin favēre = to be well-disposed toward someone, to back them. At Roman rites the call favete linguis (\"favor with your tongues\") meant \"keep holy silence,\" so no ill-omened word would spoil the ceremony. Favor = goodwill shown.",
+   "definition_pt": "Uma coisa boa que alguém faz para você sem obrigação.",
+   "literal": "",
+   "parts": "single noun",
+   "parts_meaning": "favor = goodwill, support, from favēre “to be well-disposed”",
+   "origin": "Latin favor came straight into Portuguese unchanged.",
+   "history": [],
+   "cognates": [
+    "English favor, favorite, favorable",
+    "Spanish favor",
+    "Italian favore",
+    "French faveur"
+   ],
+   "pt_family": [
+    "favorito (favorite)",
+    "favorável (favorable)",
+    "favorecer (to favor)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Faz um favor? = Can you do me a favor?"
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson01"
+   ]
+  },
+  {
+   "id": "ficar",
+   "headword": "ficar",
+   "word_type": "verb",
+   "english": "to be located; to stay; to become",
+   "part_of_speech": "verb",
+   "lesson": 4,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A stake hammered into the ground; it stays exactly where it was driven in.",
+   "root": "Latin fīgere ‘to fix, fasten’ (via reconstructed *figicāre)",
+   "source_language": "Latin",
+   "root_image": "Latin fīgere = to fix, fasten, drive in: hammering a nail or stake so something can't move. A crucifix is something fixed to a cross. Ficar comes from a reconstructed Late Latin form, *figicāre.",
+   "definition_pt": "Estar num lugar, sempre no mesmo lugar: “O hotel fica aqui.” Também: continuar num lugar (“eu fico”).",
+   "literal": "",
+   "parts": "fic- (fix, fasten) + -ar (infinitive)",
+   "parts_meaning": "ficar < Vulgar Latin *figicāre, from Latin fīgere \"to fix, fasten\"",
+   "origin": "*figicāre (reconstructed) → ficar: \"to be fixed\" → \"to remain, stay\" → \"to be located.\" Spanish has fincar (\"to plant, fix\") and Italian ficcare (\"to thrust in\").",
+   "history": [
+    "Why English split: English got fix from the Latin participle fixus, but for these senses it uses stay (from Old French ester < stāre, \"to stand\") or \"be located.\""
+   ],
+   "cognates": [
+    "English fix, fixture, affix, prefix, suffix, crucifix"
+   ],
+   "pt_family": [
+    "fico (I stay)",
+    "fixo (fixed)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [
+    "ficar is one of Brazil's busiest verbs:",
+    "\"to stay\": Fico aqui = I'll stay here",
+    "\"to become\": ficar triste = to get sad",
+    "Fica à vontade = \"make yourself at home\"",
+    "slang ficar com alguém = to hook up or make out casually, without dating"
+   ],
+   "notes": [
+    "ficar is for things that don't move (buildings, cities); estar is for where something is right now: Onde fica o hotel? / Onde está a mala?"
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson04"
    ]
   },
   {
@@ -722,7 +1523,7 @@
    "lesson": 4,
    "is_object": true,
    "photo": "o_hotel.jpg",
-   "photo_credit": "The Connaught (Flickr) / CC BY-SA 2.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:The_connaught_hotel_london_exterior_entrance.jpg",
+   "photo_credit": "Mr.TinDC / CC BY 2.0 / Flickr: https://www.flickr.com/photos/7471115@N08/3348335200",
    "scene": "A traveler crossing a threshold, received as both guest and host in the same house.",
    "root": "French hôtel ← Latin hospitāle (hospes ‘guest/host’)",
    "source_language": "French ← Latin",
@@ -849,6 +1650,185 @@
    ]
   },
   {
+   "id": "isso",
+   "headword": "isso",
+   "word_type": "pronoun",
+   "english": "this; that",
+   "part_of_speech": "demonstrative pronoun",
+   "lesson": 7,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A thing in someone’s hands, or just in front of them, being pointed at: this, that.",
+   "root": "Latin istud, ipsum, and eccum illud — three degrees of ‘this / that’",
+   "source_language": "Latin",
+   "root_image": "Latin had a near, mid, and far ‘this/that.’ Portuguese kept three: isto, isso, aquilo.",
+   "definition_pt": "isto: isto aqui, perto de quem fala. isso: isso aí, perto de quem escuta. aquilo: aquilo lá, longe dos dois. No dia a dia no Brasil, isso cobre muitas vezes isto e isso.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "isto comes from Latin istud (‘this/that near you’); isso from ipsum; aquilo from eccum illud (‘behold that’). The three-way contrast is still alive, but spoken Brazilian Portuguese often uses isso for both ‘this’ and ‘that.’",
+   "history": [
+    "English this / that is Germanic and has only two degrees. Spanish este / ese / aquel and Portuguese isto / isso / aquilo keep the older three-way map."
+   ],
+   "cognates": [
+    "English this, that (the idea)",
+    "Spanish esto, eso, aquello",
+    "French ceci, cela, ça",
+    "Italian questo, ciò, quello"
+   ],
+   "pt_family": [
+    "o que",
+    "isto",
+    "aquilo",
+    "isso"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "One page for the set: isto (near the speaker), isso (near the listener), aquilo (over there). In casual Brazilian speech, isso often does the work of both isto and isso. See Spelling & sounds for how isso and isto sound."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson07",
+    "demonstrative"
+   ]
+  },
+  {
+   "id": "la",
+   "headword": "lá",
+   "word_type": "adverb",
+   "english": "there, over there",
+   "part_of_speech": "adverb of place",
+   "lesson": 4,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "An arm stretched out, pointing far across the square, past everyone.",
+   "root": "Latin illāc ‘that way, over there’",
+   "source_language": "Latin",
+   "root_image": "lá < Latin illāc, \"that way, over there.\"",
+   "definition_pt": "Num lugar longe de mim e de você: “O hotel fica lá.”",
+   "literal": "",
+   "parts": "single word",
+   "parts_meaning": "lá < Latin illāc \"that way, over there\"",
+   "origin": "illāc → lá (initial il- dropped, like illum → o).",
+   "history": [],
+   "cognates": [
+    "French là",
+    "Italian là",
+    "Spanish allá"
+   ],
+   "pt_family": [
+    "ali (there)",
+    "aí (there, near you)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "aqui (here)"
+   ],
+   "culture": [
+    "lá is everywhere in casual speech. Sei lá (lit. \"I know there\") = \"who knows / no idea,\" often with a shrug."
+   ],
+   "notes": [
+    "Three distances: aqui (here, by me), aí (there, by you), lá (over there, away from both)."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson04"
+   ]
+  },
+  {
+   "id": "licenca",
+   "headword": "licença",
+   "word_type": "inanimate_noun",
+   "english": "permission; license",
+   "part_of_speech": "noun (fem.)",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A gate arm lifting as the guard waves you through.",
+   "root": "Latin licentia (licēre ‘to be allowed’)",
+   "source_language": "Latin",
+   "root_image": "Latin licet = \"it is allowed,\" a word from law and custom rather than a physical picture. Licentia = the freedom to act, a granted allowance. No concrete original image is known.",
+   "definition_pt": "Quando alguém deixa você fazer uma coisa; também o papel oficial (licença de motorista).",
+   "literal": "",
+   "parts": "licenç- (permission) + -a (noun ending)",
+   "parts_meaning": "licentia = freedom, permission, from licēre “to be allowed” + -entia (abstract noun “-ence”)",
+   "origin": "Latin licentia → licença (-tia → -ça, the same shift as -tion → -ção).",
+   "history": [
+    "Why English split: English license took the official-permit sense (driver's license), and licentious took the “too much freedom” sense."
+   ],
+   "cognates": [
+    "English license, licit, illicit, leisure (via Old French loisir < licēre)",
+    "Spanish licencia",
+    "Italian licenza",
+    "French licence"
+   ],
+   "pt_family": [
+    "licenciado (licensed; graduate)",
+    "lícito (lawful)"
+   ],
+   "synonyms": [
+    "permissão (permission)"
+   ],
+   "antonyms": [],
+   "culture": [
+    "You'll often hear just Licença! in a crowded bus or market."
+   ],
+   "notes": [],
+   "tags": [
+    "pimsleur",
+    "lesson01"
+   ]
+  },
+  {
+   "id": "logo",
+   "headword": "logo",
+   "word_type": "adverb",
+   "english": "soon, right away; therefore",
+   "part_of_speech": "adverb / conjunction",
+   "lesson": 2,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A runner already off the blocks the instant the gun fires.",
+   "root": "Latin locō ‘on the spot’",
+   "source_language": "Latin",
+   "root_image": "logo is Latin locō, \"in the place\": right on the spot. \"On the spot\" → \"immediately\" → \"soon.\" English makes the same move when it says \"I'll do it on the spot.\"",
+   "definition_pt": "Daqui a pouco, já: “até logo”. Também “então”: “Penso, logo existo.”",
+   "literal": "",
+   "parts": "single word",
+   "parts_meaning": "locō = in the place",
+   "origin": "disputed. It's often traced to Arabic ḥattā \"until\" (also proposed for Spanish hasta), a legacy of centuries of Arabic presence in Iberia. Latin sources have also been proposed.",
+   "history": [],
+   "cognates": [
+    "locō: English local, location, locomotive, locus",
+    "Spanish luego",
+    "Italian luogo (place)",
+    "French lieu (place)"
+   ],
+   "pt_family": [
+    "lugar (place, same Latin locus)",
+    "local (local)"
+   ],
+   "synonyms": [
+    "já (right now)",
+    "em breve (soon)"
+   ],
+   "antonyms": [],
+   "culture": [
+    "Logo also means \"therefore\": Penso, logo existo = \"I think, therefore I am.\""
+   ],
+   "notes": [],
+   "tags": [
+    "pimsleur",
+    "lesson02"
+   ]
+  },
+  {
    "id": "mala",
    "headword": "mala",
    "word_type": "inanimate_noun",
@@ -857,7 +1837,7 @@
    "lesson": 4,
    "is_object": true,
    "photo": "mala.jpg",
-   "photo_credit": "Sandrine Z / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Belber_Suitcase.jpg",
+   "photo_credit": "libookperson / CC BY 2.0 / Flickr: https://www.flickr.com/photos/33144596@N00/5152423193",
    "scene": "A traveler's bag in the hand, a pouch ready for the road.",
    "root": "Old French male ‘bag, pouch’, from Frankish *malha (Germanic)",
    "source_language": "Old French ← Frankish (Germanic)",
@@ -979,6 +1959,50 @@
    ]
   },
   {
+   "id": "mil",
+   "headword": "mil",
+   "word_type": "number",
+   "english": "thousand",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A long road of a thousand steps.",
+   "root": "Latin mille ‘thousand’",
+   "source_language": "Latin",
+   "root_image": "Latin mille = a thousand.",
+   "definition_pt": "O número 1.000.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin mille → Portuguese mil. The same word gives milha (mile) and milênio (millennium).",
+   "history": [
+    "English thousand is Germanic; Latin mille gives mile, millennium, millimeter."
+   ],
+   "cognates": [
+    "English mile, millennium, millimeter",
+    "Spanish mil",
+    "French mil / mille",
+    "Italian mille"
+   ],
+   "pt_family": [
+    "cem",
+    "milhão (million)",
+    "milênio (millennium)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Written 1.000 in Portuguese (a dot marks thousands)."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
    "id": "muito",
    "headword": "muito",
    "word_type": "adverb",
@@ -1024,6 +2048,226 @@
    "tags": [
     "pimsleur",
     "lesson02"
+   ]
+  },
+  {
+   "id": "nao",
+   "headword": "não",
+   "word_type": "adverb",
+   "english": "no; not",
+   "part_of_speech": "adverb (negation)",
+   "lesson": 5,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A head shaking side to side; a hand held up, palm out.",
+   "root": "Latin nōn ‘not’",
+   "source_language": "Latin",
+   "root_image": "Latin nōn is simply “not,” the same particle that English keeps in non-.",
+   "definition_pt": "A palavra para negar: “Eu não sei.” Também a resposta “não” (o contrário de “sim”).",
+   "literal": "“not”",
+   "parts": "single word",
+   "parts_meaning": "nōn = not",
+   "origin": "Latin nōn became Portuguese não (the tilde marks a nasal vowel).",
+   "history": [
+    "English link: English kept the Latin particle in the prefix non- (nonsense, nonstop); everyday no and not are Germanic."
+   ],
+   "cognates": [
+    "English non- (nonsense, nonstop)",
+    "Spanish no",
+    "French non / ne … pas",
+    "Italian no / non"
+   ],
+   "pt_family": [
+    "nunca (never)",
+    "nada (nothing)",
+    "nenhum / nenhuma (none)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "sim (yes)"
+   ],
+   "culture": [],
+   "notes": [
+    "não goes before the verb: eu não sei, não é muito.",
+    "Brazilians often double it for emphasis: Não sei, não."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson05"
+   ]
+  },
+  {
+   "id": "noite",
+   "headword": "noite",
+   "word_type": "inanimate_noun",
+   "english": "night; evening",
+   "part_of_speech": "noun (fem.)",
+   "lesson": 3,
+   "is_object": false,
+   "photo": "noite.jpg",
+   "photo_credit": "dave.see / CC BY 2.0 / Flickr: https://www.flickr.com/photos/9639178@N08/15558667478",
+   "scene": "Street lamps flicking on one by one under a dark blue sky.",
+   "root": "Latin noctem ‘night’",
+   "source_language": "Latin",
+   "root_image": "Latin nox, noctis = night, the dark half of the day.",
+   "definition_pt": "O tempo escuro, depois da tarde e antes do dia.",
+   "literal": "",
+   "parts": "single noun (feminine)",
+   "parts_meaning": "noite < Latin noctem",
+   "origin": "noctem → noite (-ct- → -it-, the signature Portuguese change; Spanish has noche).",
+   "history": [
+    "English link: A true cognate: Latin noctem and English night come from the same Indo-European word. Also nocturnal and equinox (\"equal night\")."
+   ],
+   "cognates": [
+    "English night (Germanic relative), nocturnal, nocturne, equinox",
+    "French nuit",
+    "Italian notte"
+   ],
+   "pt_family": [
+    "noturno (nocturnal)",
+    "anoitecer (nightfall)",
+    "meia-noite (midnight)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "dia (day)"
+   ],
+   "culture": [],
+   "notes": [
+    "noite is feminine: a noite, so boa noite."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson03"
+   ]
+  },
+  {
+   "id": "nova_york",
+   "headword": "Nova York",
+   "word_type": "proper_noun",
+   "english": "New York",
+   "part_of_speech": "proper noun (city)",
+   "lesson": 3,
+   "is_object": false,
+   "photo": "nova_york.jpg",
+   "photo_credit": "dolbinator1000 / CC BY 2.0 / Flickr: https://www.flickr.com/photos/126654539@N08/17154092340",
+   "scene": "A skyline of towers at dusk, lights coming on floor by floor.",
+   "root": "Latin nova ‘new’ + York (Old English Eoforwīc ← Latin Eboracum ← Celtic, probably ‘place of yews’)",
+   "source_language": "Latin + Old English ← Celtic",
+   "root_image": "nova = new (Latin novus); York = probably a Celtic “place of yews.” A new York across the ocean.",
+   "definition_pt": "Uma cidade grande dos Estados Unidos.",
+   "literal": "“New York”",
+   "parts": "nov- (new) + -a (fem.) + York",
+   "parts_meaning": "nova < Latin nova (fem. of novus \"new\")",
+   "origin": "nova kept its Latin form. Portuguese doesn't break the o into ue the way Spanish does (Nueva York). York goes back to Old English Eoforwīc, from Latin Eboracum, from a Celtic name probably meaning \"place of yews.\" New York was named in 1664 for the Duke of York (later James II).",
+   "history": [
+    "English link: Latin novus and English new are true cognates. A nova is a \"new\" star."
+   ],
+   "cognates": [
+    "English novel, novice, innovate, renovate, nova",
+    "Spanish Nueva York"
+   ],
+   "pt_family": [
+    "novo / nova (new)",
+    "novidade (news, novelty)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Brazilian spelling is Nova York; Nova Iorque is the Portugal/standard spelling. de novo = \"again.\""
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson03"
+   ]
+  },
+  {
+   "id": "nove",
+   "headword": "nove",
+   "word_type": "number",
+   "english": "nine",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Almost ten: nine marks, one empty.",
+   "root": "Latin novem ‘nine’",
+   "source_language": "Latin",
+   "root_image": "Latin novem = nine.",
+   "definition_pt": "O número 9.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin novem → Portuguese nove.",
+   "history": [
+    "English nine is Germanic; Latin novem gives November (once the ninth month)."
+   ],
+   "cognates": [
+    "English nine, November, novena",
+    "Spanish nueve",
+    "French neuf",
+    "Italian nove"
+   ],
+   "pt_family": [
+    "dezenove (nineteen)",
+    "nono (ninth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "o",
+   "headword": "o",
+   "word_type": "article",
+   "english": "the",
+   "part_of_speech": "definite article",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A finger pointing at one particular suitcase on the carousel: that one, the one we both know.",
+   "root": "Latin ille, illa ‘that’",
+   "source_language": "Latin",
+   "root_image": "Latin ille = that (one over there): a pointing word that wore down into “the.”",
+   "definition_pt": "A palavra antes de uma coisa conhecida: “o hotel”, “a mala”, “os dólares”, “as malas”.",
+   "literal": "“that” → “the”",
+   "parts": "single article: o (masc.), a (fem.), os, as (plural)",
+   "parts_meaning": "ille / illa = that",
+   "origin": "Latin illum → lo → o; illam → la → a. The l dropped between vowels, leaving just the vowel. The same l survives in Spanish el / la and Italian il / la.",
+   "history": [
+    "English link: English the is Germanic (related to that), but it went down the same road: a pointing word (“that”) became the article."
+   ],
+   "cognates": [
+    "Spanish el / la / los / las",
+    "French le / la / les",
+    "Italian il / la",
+    "English that (same idea, Germanic)"
+   ],
+   "pt_family": [
+    "um / uma (a, an: the indefinite article)",
+    "ele / ela (he / she, from the same Latin ille)",
+    "aquele (that one)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "It merges with prepositions: de + o = do, em + o = no (see de and em).",
+    "Brazilians often use it before names: o Zach, a Maria.",
+    "Pronounced like “u” when unstressed: o hotel ≈ “u o-TÉL”."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson01"
    ]
   },
   {
@@ -1080,6 +2324,177 @@
    ]
   },
   {
+   "id": "oito",
+   "headword": "oito",
+   "word_type": "number",
+   "english": "eight",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two squares side by side, or an 8 on its side like a knot.",
+   "root": "Latin octō ‘eight’",
+   "source_language": "Latin",
+   "root_image": "Latin octō = eight.",
+   "definition_pt": "O número 8.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin octō → Portuguese oito (ct became it, as in noite from noctem).",
+   "history": [
+    "English eight is Germanic; Latin octō gives October, octave, octopus (via Greek)."
+   ],
+   "cognates": [
+    "English eight, October, octave",
+    "Spanish ocho",
+    "French huit",
+    "Italian otto"
+   ],
+   "pt_family": [
+    "dezoito (eighteen)",
+    "oitavo (eighth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "onde",
+   "headword": "onde",
+   "word_type": "question_word",
+   "english": "where",
+   "part_of_speech": "interrogative / relative adverb",
+   "lesson": 3,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A finger hovering over a map, circling, not yet landing on a spot.",
+   "root": "Latin unde ‘from where, whence’",
+   "source_language": "Latin",
+   "root_image": "Latin unde = \"from which place, whence\": looking back down the road someone came by.",
+   "definition_pt": "Em que lugar? “Onde fica o hotel?” “Onde está a mala?”",
+   "literal": "“whence” → “where”",
+   "parts": "single word (from Latin unde)",
+   "parts_meaning": "unde = from which place, whence",
+   "origin": "Latin unde meant “from where,” but in Portuguese onde drifted to plain “where.” To say “from where” again, Portuguese puts de in front: de onde.",
+   "history": [
+    "English link: English where is Germanic (the wh- family of who, what, when); Latin unde has no everyday English descendant."
+   ],
+   "cognates": [
+    "Italian onde (literary \"whence\")",
+    "Spanish donde (de + unde fused into one word)",
+    "French dont (of which) < Latin dē unde"
+   ],
+   "pt_family": [
+    "aonde (to where)",
+    "para onde (to where)",
+    "por onde (which way)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "In casual Brazilian speech cadê? also asks where something or someone is: Cadê a mala?"
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson03"
+   ]
+  },
+  {
+   "id": "onze",
+   "headword": "onze",
+   "word_type": "number",
+   "english": "eleven",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten fingers and one more.",
+   "root": "Latin ūndecim ‘eleven’ (ūnus + decem)",
+   "source_language": "Latin",
+   "root_image": "Latin ūndecim = one + ten.",
+   "definition_pt": "O número 11.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin ūndecim (one-ten) → Portuguese onze. The -ze in onze–quinze comes from Latin -decim ‘ten.’",
+   "history": [
+    "English eleven is Germanic (‘one left’ after ten). The Latin -decim teens give French onze, Spanish once, Italian undici."
+   ],
+   "cognates": [
+    "English eleventh (the idea, not the form)",
+    "Spanish once",
+    "French onze",
+    "Italian undici"
+   ],
+   "pt_family": [
+    "doze",
+    "treze",
+    "catorze",
+    "quinze"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "onze, doze, treze, catorze, quinze are irregular -ze forms, from Latin -decim. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "por",
+   "headword": "por",
+   "word_type": "preposition",
+   "english": "for, by; through; per",
+   "part_of_speech": "preposition",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A hand passing a coin across the counter in exchange for a ticket.",
+   "root": "Latin prō ‘for, on behalf of’ (blended with per ‘through’)",
+   "source_language": "Latin",
+   "root_image": "Latin prō = in front of, on behalf of; per = through. Portuguese merged them into one word.",
+   "definition_pt": "Em troca de, através de, por causa de: “por favor”, “obrigado por tudo”.",
+   "literal": "",
+   "parts": "single preposition",
+   "parts_meaning": "pro = for, on behalf of; per = through",
+   "origin": "Latin prō and per fell together in por. With the article it fuses: por + o = pelo, por + a = pela.",
+   "history": [],
+   "cognates": [
+    "English pro- (on behalf of), per (per day)",
+    "Spanish por",
+    "Italian per",
+    "French pour / par"
+   ],
+   "pt_family": [
+    "pelo / pela (por + o / a)",
+    "porque (because)",
+    "por que? (why?)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "por vs para: por = through / in exchange / because of; para = toward, for the purpose of. obrigado por = thanks for."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson01"
+   ]
+  },
+  {
    "id": "portugues",
    "headword": "português",
    "word_type": "inanimate_noun",
@@ -1120,6 +2535,102 @@
    "tags": [
     "pimsleur",
     "lesson01"
+   ]
+  },
+  {
+   "id": "pouco",
+   "headword": "pouco",
+   "word_type": "adverb",
+   "english": "little, not much; (pl.) few",
+   "part_of_speech": "adverb / adjective",
+   "lesson": 1,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A pinch of salt between finger and thumb; the jar beside it almost empty.",
+   "root": "Latin paucum ‘few, little’",
+   "source_language": "Latin",
+   "root_image": "Latin paucus = few, a small number: a pinch, not a handful.",
+   "definition_pt": "Uma quantidade pequena; o contrário de muito: “é muito pouco”, “um pouco”.",
+   "literal": "“few, little”",
+   "parts": "pouc- (few, little) + -o",
+   "parts_meaning": "paucum = few, little",
+   "origin": "paucum → pouco (au → ou, a regular change).",
+   "history": [
+    "English link: English few is the Germanic relative of Latin paucus (same Indo-European root). Paucity is the learned borrowing.",
+    "English link: little and few are Germanic. Latin paucus survived in English as paucity and in the music term poco. The same muito that means \"much\" also does the job of English very."
+   ],
+   "cognates": [
+    "paucity (paucus), and English few shares the same ancient root",
+    "music term poco a poco",
+    "English paucity, poco a poco",
+    "Spanish poco",
+    "Italian poco",
+    "French peu"
+   ],
+   "pt_family": [
+    "pouquinho (a tiny bit)",
+    "poucos (few)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "muito (much, a lot)"
+   ],
+   "culture": [],
+   "notes": [
+    "As an adjective it agrees: pouco dinheiro, pouca coisa, poucos dólares, poucas malas."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson01"
+   ]
+  },
+  {
+   "id": "prazer",
+   "headword": "prazer",
+   "word_type": "inanimate_noun",
+   "english": "pleasure",
+   "part_of_speech": "noun (masc.)",
+   "lesson": 4,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Warm sun on your face after a long winter; your shoulders drop and you smile.",
+   "root": "Latin placēre ‘to please’",
+   "source_language": "Latin",
+   "root_image": "Latin placēre = to please, be agreeable. It's often linked to placāre (to calm, soothe), but the deeper image behind the root is uncertain.",
+   "definition_pt": "Uma coisa boa que a gente sente; alegria. “Muito prazer” = estou contente de conhecer você.",
+   "literal": "",
+   "parts": "praz- (please) + -er (infinitive, used as a noun)",
+   "parts_meaning": "prazer < Latin placēre \"to please\"; the infinitive works as a noun (\"pleasure\")",
+   "origin": "placēre → prazer. Two regular changes: pl → pr (consonant + l → r) and intervocalic c → z (like facere → fazer, dicere → dizer).",
+   "history": [
+    "Why English split: English kept please and pleasure, but for introductions it says \"nice to meet you.\" Nice comes from Latin nescius (\"not knowing, ignorant\") and meant \"foolish\" in Middle English before softening to \"pleasant.\" Portuguese just says \"much pleasure.\""
+   ],
+   "cognates": [
+    "English please, pleasure, placid, complacent, placebo (\"I will please\")",
+    "Spanish mucho gusto (different word) / placer",
+    "French plaisir",
+    "Italian piacere (also how Italians say \"nice to meet you\")"
+   ],
+   "pt_family": [
+    "prazeroso (pleasant)",
+    "agradar (to please)"
+   ],
+   "synonyms": [
+    "alegria (joy)",
+    "gosto (liking, taste)"
+   ],
+   "antonyms": [
+    "desprazer (displeasure)"
+   ],
+   "culture": [],
+   "notes": [
+    "The noun is the old infinitive (to please → a pleasure), the same move as o saber (knowledge)."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson04"
    ]
   },
   {
@@ -1164,6 +2675,137 @@
    "tags": [
     "pimsleur",
     "lesson06"
+   ]
+  },
+  {
+   "id": "quatro",
+   "headword": "quatro",
+   "word_type": "number",
+   "english": "four",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Four corners of a window; a square.",
+   "root": "Latin quattuor ‘four’",
+   "source_language": "Latin",
+   "root_image": "Latin quattuor = four: the corners of a square.",
+   "definition_pt": "O número 4.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quattuor → Portuguese quatro (the double t simplified).",
+   "history": [
+    "English four is Germanic; Latin quattuor gives quarter, quartet, quad-."
+   ],
+   "cognates": [
+    "English quarter, quartet, quad",
+    "Spanish cuatro",
+    "French quatre",
+    "Italian quattro"
+   ],
+   "pt_family": [
+    "catorze (fourteen)",
+    "quarto (fourth; room)",
+    "quadrado (square)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "que",
+   "headword": "que",
+   "word_type": "question_word",
+   "english": "what",
+   "part_of_speech": "interrogative pronoun",
+   "lesson": 7,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A small unknown thing on the table; someone pointing and asking what it is.",
+   "root": "Latin quid ‘what’",
+   "source_language": "Latin",
+   "root_image": "Latin quid = what: asking the name or nature of a thing.",
+   "definition_pt": "Pergunta pela coisa. Muito comum com o artigo: “O que é isso?”, “O que é isto?”",
+   "literal": "“what”",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quid → Portuguese que. In questions about a thing, Brazilian Portuguese almost always says o que (the article o + que).",
+   "history": [
+    "English what is Germanic. Latin quid gives Spanish qué, French que / quoi, Italian che, and English quid (in ‘quid pro quo’)."
+   ],
+   "cognates": [
+    "English what (the idea), quid pro quo",
+    "Spanish qué",
+    "French que, quoi",
+    "Italian che"
+   ],
+   "pt_family": [
+    "quem (who)",
+    "o que (what — the usual question form)",
+    "isso",
+    "isto"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Learn o que as a pair: O que é isso? The bare que also means ‘that’ in other constructions, but the question you want first is o que. Sounds like “kee” [ki], not like quem."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson07"
+   ]
+  },
+  {
+   "id": "quem",
+   "headword": "quem",
+   "word_type": "question_word",
+   "english": "who",
+   "part_of_speech": "interrogative pronoun",
+   "lesson": 7,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A knock at the door; someone asking, with an open hand, who is there.",
+   "root": "Latin quem ‘whom’ (accusative of quis ‘who’)",
+   "source_language": "Latin",
+   "root_image": "Latin quis / quem = who / whom: the person you are asking after.",
+   "definition_pt": "Pergunta pela pessoa: “Quem é?”, “Quem está aí?”",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quem, the accusative of quis ‘who,’ became Portuguese quem — used for both ‘who’ and ‘whom.’",
+   "history": [
+    "English who / whom is Germanic. Latin quis / quem gives Spanish quién, French qui, Italian chi, and English question, quest."
+   ],
+   "cognates": [
+    "English who, question, quest",
+    "Spanish quién",
+    "French qui",
+    "Italian chi"
+   ],
+   "pt_family": [
+    "que (what)",
+    "onde (where)",
+    "Qual (which)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "The ending -em is a nasal diphthong [kẽj̃], the same sound as in tem — there is no ‘n’ consonant. See Spelling & sounds."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson07"
    ]
   },
   {
@@ -1216,6 +2858,51 @@
    ]
   },
   {
+   "id": "quinze",
+   "headword": "quinze",
+   "word_type": "number",
+   "english": "fifteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and five: three hands, or a game of fifteen.",
+   "root": "Latin quīndecim ‘fifteen’ (quīnque + decem)",
+   "source_language": "Latin",
+   "root_image": "Latin quīndecim = five + ten.",
+   "definition_pt": "O número 15.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin quīndecim → Portuguese quinze. The last of the irregular -ze teens.",
+   "history": [
+    "English fifteen is Germanic. Latin quīndecim gives Spanish quince, French quinze, Italian quindici."
+   ],
+   "cognates": [
+    "English fifteen",
+    "Spanish quince",
+    "French quinze",
+    "Italian quindici"
+   ],
+   "pt_family": [
+    "onze",
+    "catorze",
+    "dezesseis",
+    "cinco"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "After quinze the pattern changes: 16–19 are dez + e + the unit. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
    "id": "real",
    "headword": "real",
    "word_type": "inanimate_noun",
@@ -1224,7 +2911,7 @@
    "lesson": 5,
    "is_object": true,
    "photo": "o_real.jpg",
-   "photo_credit": "Rawlan1998 / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:1_Brazil_real_Second_Obverse.jpg",
+   "photo_credit": "markhillary / CC BY 2.0 / Flickr: https://www.flickr.com/photos/56087830@N00/5471385929",
    "scene": "A Brazilian one-real note, the word REAL under the republic's laurel-crowned head.",
    "root": "Latin rēgālis ‘royal’",
    "source_language": "Latin",
@@ -1276,7 +2963,7 @@
    "lesson": 4,
    "is_object": true,
    "photo": "o_restaurante.jpg",
-   "photo_credit": "Keizers / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Caesar%27s_restaurant_exterior_2019.jpg",
+   "photo_credit": "PattayaPatrol / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:DZ6_2629_A_cozy_table_for_two_-_soft_lights_a_single_orchid_and_the_promise_of_a_perfect_evening.jpg",
    "scene": "A worn body sitting down to a meal and feeling itself rebuilt.",
    "root": "French restaurant ← Latin re- + restaurāre ‘to restore, rebuild’ (deeper root of -staurāre is uncertain)",
    "source_language": "French ← Latin",
@@ -1324,17 +3011,21 @@
    "scene": "The flavor lands on the tongue; your eyes light up — you have it.",
    "root": "Latin sapere ‘to taste’",
    "source_language": "Latin",
-   "root_image": "The same tasting root as sei: the flavor is there this time. You have sampled it, and you know.",
+   "root_image": "Latin sapere = to taste, to have flavor. Taste is the first test of what is in front of you: bitter or sweet, sound or spoiled. From that bodily judgment came \"to have discernment,\" then \"to know, to be wise.\" Homo sapiens is literally \"the tasting / wise human.\"",
    "definition_pt": "Ter a informação na cabeça.",
    "literal": "",
    "parts": "sab- (taste, know) + -er (infinitive)",
    "parts_meaning": "sabe is the 3rd-person present of saber. você takes 3rd-person verbs because it comes from Vossa Mercê, \"Your Grace.\"",
    "origin": "the same Latin sapere \"to taste\" → \"to know,\" as in eu não sei. The 3rd-person sabe is the regular present of saber.",
    "history": [
+    "Why English split: English know is Germanic (related to can, cunning, and ken). The Latin root survived in English as savor (taste), sapient and sage (wise), insipid (\"without taste\"), and sapiens.",
     "English link: Same split as eu não sei: English know is Germanic; savor / sapient / sapiens keep the Latin root."
    ],
    "cognates": [
-    "same family as eu não sei: savor, sapient, sapiens",
+    "English savor, sapient, sage, insipid, Homo sapiens",
+    "Spanish saber / no sé",
+    "French savoir / je ne sais pas",
+    "Italian sapere / non so",
     "Spanish sabe",
     "French sait",
     "Italian sa"
@@ -1343,7 +3034,8 @@
     "sei (I know)",
     "sabe? (you know?, filler)",
     "saber de cor (to know by heart)",
-    "sabor (taste)"
+    "sabor (taste)",
+    "sábio (wise)"
    ],
    "synonyms": [],
    "antonyms": [
@@ -1354,6 +3046,47 @@
    "tags": [
     "pimsleur",
     "lesson05"
+   ]
+  },
+  {
+   "id": "seis",
+   "headword": "seis",
+   "word_type": "number",
+   "english": "six",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A die showing six; two rows of three.",
+   "root": "Latin sex ‘six’",
+   "source_language": "Latin",
+   "root_image": "Latin sex = six.",
+   "definition_pt": "O número 6.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin sex → Portuguese seis (the x became a diphthong ei).",
+   "history": [
+    "English six is Germanic; Latin sex gives sextet, hexagon (via Greek)."
+   ],
+   "cognates": [
+    "English six, sextet",
+    "Spanish seis",
+    "French six",
+    "Italian sei"
+   ],
+   "pt_family": [
+    "dezesseis (sixteen)",
+    "sexto (sixth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
    ]
   },
   {
@@ -1466,6 +3199,47 @@
    ]
   },
   {
+   "id": "sete",
+   "headword": "sete",
+   "word_type": "number",
+   "english": "seven",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Seven marks on a clock, just past the top.",
+   "root": "Latin septem ‘seven’",
+   "source_language": "Latin",
+   "root_image": "Latin septem = seven.",
+   "definition_pt": "O número 7.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin septem → Portuguese sete.",
+   "history": [
+    "English seven is Germanic; Latin septem gives September (once the seventh month)."
+   ],
+   "cognates": [
+    "English seven, September, septet",
+    "Spanish siete",
+    "French sept",
+    "Italian sette"
+   ],
+   "pt_family": [
+    "dezessete (seventeen)",
+    "sétimo (seventh)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
    "id": "seu",
    "headword": "seu",
    "word_type": "possessive",
@@ -1507,6 +3281,51 @@
    "tags": [
     "pimsleur",
     "lesson06"
+   ]
+  },
+  {
+   "id": "tarde",
+   "headword": "tarde",
+   "word_type": "inanimate_noun",
+   "english": "afternoon; (adverb) late",
+   "part_of_speech": "noun (fem.) / adverb",
+   "lesson": 3,
+   "is_object": false,
+   "photo": "tarde.jpg",
+   "photo_credit": "Nate Loper / CC BY 2.0 / Flickr: https://www.flickr.com/photos/46478303@N03/41741061510",
+   "scene": "Long shadows across a quiet street; the sun drags slowly toward evening.",
+   "root": "Latin tardē ‘late, slowly’",
+   "source_language": "Latin",
+   "root_image": "Latin tardus = slow, sluggish, late. As a memory aid (not etymology), the afternoon is the slow, late stretch of the day as the sun drags toward evening.",
+   "definition_pt": "A parte do dia entre o meio-dia e a noite. Também: depois da hora (“É tarde”).",
+   "literal": "",
+   "parts": "single word",
+   "parts_meaning": "tardē = late, slowly",
+   "origin": "The adverb tardē (“late”) became a noun meaning “the late part of the day.”",
+   "history": [
+    "English link: tardy (late to class); retard originally meant \"to slow down\"; ritardando in music = slowing."
+   ],
+   "cognates": [
+    "English tardy, retard (to delay), ritardando",
+    "French tard (\"late\")",
+    "Italian tardi"
+   ],
+   "pt_family": [
+    "atrasado (late, for a person)",
+    "tardio (late, belated)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "cedo (early)",
+    "manhã (morning)"
+   ],
+   "culture": [],
+   "notes": [
+    "tarde is feminine, so it's boa. As an adverb it still means \"late\": É tarde = \"It's late.\" Use it from noon to dusk."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson03"
    ]
   },
   {
@@ -1566,6 +3385,138 @@
    ]
   },
   {
+   "id": "tres",
+   "headword": "três",
+   "word_type": "number",
+   "english": "three",
+   "part_of_speech": "number",
+   "lesson": 6,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Three fingers held up; a small triangle of things.",
+   "root": "Latin trēs ‘three’",
+   "source_language": "Latin",
+   "root_image": "Latin trēs = three: a triad.",
+   "definition_pt": "O número 3.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin trēs → Portuguese três. The circumflex marks a close vowel.",
+   "history": [
+    "English three, trio, triple, triangle come from the same Indo-European root, through Germanic or Latin."
+   ],
+   "cognates": [
+    "English three, trio, triple, triangle",
+    "Spanish tres",
+    "French trois",
+    "Italian tre"
+   ],
+   "pt_family": [
+    "treze (thirteen)",
+    "terceiro (third)",
+    "triplo (triple)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "The accent is part of the spelling: três, not tres."
+   ],
+   "tags": [
+    "number",
+    "lesson06"
+   ]
+  },
+  {
+   "id": "treze",
+   "headword": "treze",
+   "word_type": "number",
+   "english": "thirteen",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Ten and three together.",
+   "root": "Latin tredecim ‘thirteen’ (trēs + decem)",
+   "source_language": "Latin",
+   "root_image": "Latin tredecim = three + ten.",
+   "definition_pt": "O número 13.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin tredecim → Portuguese treze.",
+   "history": [
+    "English thirteen is Germanic (three + ten). Latin tredecim gives Spanish trece, French treize."
+   ],
+   "cognates": [
+    "English thirteen",
+    "Spanish trece",
+    "French treize",
+    "Italian tredici"
+   ],
+   "pt_family": [
+    "onze",
+    "doze",
+    "três",
+    "catorze"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "See Spelling & sounds: 11–15 as irregular -ze forms."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
+   ]
+  },
+  {
+   "id": "tudo",
+   "headword": "tudo",
+   "word_type": "pronoun",
+   "english": "everything, all",
+   "part_of_speech": "pronoun (indefinite)",
+   "lesson": 2,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Arms sweeping the whole table clear in one wide gesture: all of it.",
+   "root": "Latin tōtum ‘all, the whole’",
+   "source_language": "Latin",
+   "root_image": "Latin tōtus = whole, entire, undivided. English total; in music, tutti = \"everyone plays.\"",
+   "definition_pt": "Todas as coisas: “Tudo bem?” “Obrigado por tudo.”",
+   "literal": "",
+   "parts": "single word",
+   "parts_meaning": "tudo < Latin tōtum \"all, the whole\"",
+   "origin": "tōtum → tudo (intervocalic t → d).",
+   "history": [],
+   "cognates": [
+    "English total, totality, tutti (music)",
+    "Spanish todo",
+    "Italian tutto",
+    "French tout"
+   ],
+   "pt_family": [
+    "todo (every, whole)",
+    "todos / todas (everyone, all)"
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "nada (nothing)"
+   ],
+   "culture": [],
+   "notes": [
+    "tudo (everything, unchanging) vs todo/toda (\"all, the whole,\" agrees with its noun)."
+   ],
+   "tags": [
+    "pimsleur",
+    "lesson02"
+   ]
+  },
+  {
    "id": "um",
    "headword": "um",
    "word_type": "article",
@@ -1616,6 +3567,50 @@
    "tags": [
     "pimsleur",
     "lesson05"
+   ]
+  },
+  {
+   "id": "vinte",
+   "headword": "vinte",
+   "word_type": "number",
+   "english": "twenty",
+   "part_of_speech": "number",
+   "lesson": 8,
+   "is_object": false,
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Two tens; a score.",
+   "root": "Latin vīgintī ‘twenty’",
+   "source_language": "Latin",
+   "root_image": "Latin vīgintī = twenty.",
+   "definition_pt": "O número 20.",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "Latin vīgintī → Portuguese vinte. After the teens, a new word — not dez-e-dez.",
+   "history": [
+    "English twenty is Germanic (two tens). Latin vīgintī gives Spanish veinte, French vingt, Italian venti."
+   ],
+   "cognates": [
+    "English twenty",
+    "Spanish veinte",
+    "French vingt",
+    "Italian venti"
+   ],
+   "pt_family": [
+    "dezenove",
+    "cem",
+    "vigésimo (twentieth)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "vinte is a new root, not a ‘dez e…’ form. 21 would be vinte e um, like cento e um. See Spelling & sounds."
+   ],
+   "tags": [
+    "number",
+    "lesson08"
    ]
   },
   {
@@ -1723,6 +3718,33 @@
    "accept_also": []
   },
   {
+   "id": "ate",
+   "lemma_id": "ate",
+   "form": "até",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 2,
+   "english": "until; even",
+   "part_of_speech": "preposition",
+   "audio": "ate.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "bem",
    "lemma_id": "bem",
    "form": "bem",
@@ -1736,6 +3758,60 @@
    "english": "well; fine",
    "part_of_speech": "adverb",
    "audio": "bem.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "bom",
+   "lemma_id": "bom",
+   "form": "bom",
+   "label": "masculine",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 2,
+   "english": "good (masc.)",
+   "part_of_speech": "adjective (masc.)",
+   "audio": "bom.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "boa",
+   "lemma_id": "bom",
+   "form": "boa",
+   "label": "feminine",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "good (fem.)",
+   "part_of_speech": "adjective (fem.)",
+   "audio": "boa.mp3",
    "photo": "",
    "photo_credit": "",
    "scene": "",
@@ -1858,6 +3934,143 @@
    "accept_also": []
   },
   {
+   "id": "catorze",
+   "lemma_id": "catorze",
+   "form": "catorze",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "fourteen",
+   "part_of_speech": "number",
+   "audio": "catorze.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": [
+    "quatorze"
+   ]
+  },
+  {
+   "id": "cem",
+   "lemma_id": "cem",
+   "form": "cem",
+   "label": "100, standing alone",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "hundred",
+   "part_of_speech": "number",
+   "audio": "cem.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "cento",
+   "lemma_id": "cem",
+   "form": "cento",
+   "label": "in 101+, e.g. cento e um",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "hundred (in 101+)",
+   "part_of_speech": "number",
+   "audio": "cento.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "cinco",
+   "lemma_id": "cinco",
+   "form": "cinco",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "five",
+   "part_of_speech": "number",
+   "audio": "cinco.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "com",
+   "lemma_id": "com",
+   "form": "com",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "with",
+   "part_of_speech": "preposition",
+   "audio": "com.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "como",
    "lemma_id": "como",
    "form": "como",
@@ -1942,6 +4155,249 @@
    "accept_also": []
   },
   {
+   "id": "do",
+   "lemma_id": "de",
+   "form": "do",
+   "label": "contraction · de + o (masc.)",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "of the, from the (masc.)",
+   "part_of_speech": "contraction (de + o)",
+   "audio": "do.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "da",
+   "lemma_id": "de",
+   "form": "da",
+   "label": "contraction · de + a (fem.)",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "of the, from the (fem.)",
+   "part_of_speech": "contraction (de + a)",
+   "audio": "da.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "das",
+   "lemma_id": "de",
+   "form": "das",
+   "label": "contraction · de + as (fem. plural)",
+   "gender": "fem",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "of the, from the (fem. pl.)",
+   "part_of_speech": "contraction (de + as)",
+   "audio": "das.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dez",
+   "lemma_id": "dez",
+   "form": "dez",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "ten",
+   "part_of_speech": "number",
+   "audio": "dez.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dezenove",
+   "lemma_id": "dezenove",
+   "form": "dezenove",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "nineteen",
+   "part_of_speech": "number",
+   "audio": "dezenove.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dezesseis",
+   "lemma_id": "dezesseis",
+   "form": "dezesseis",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "sixteen",
+   "part_of_speech": "number",
+   "audio": "dezesseis.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dezessete",
+   "lemma_id": "dezessete",
+   "form": "dezessete",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "seventeen",
+   "part_of_speech": "number",
+   "audio": "dezessete.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dezoito",
+   "lemma_id": "dezoito",
+   "form": "dezoito",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "eighteen",
+   "part_of_speech": "number",
+   "audio": "dezoito.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "dia",
+   "lemma_id": "dia",
+   "form": "dia",
+   "label": "",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 2,
+   "english": "day",
+   "part_of_speech": "noun (masc.)",
+   "audio": "dia.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "dois",
    "lemma_id": "dois",
    "form": "dois",
@@ -1977,8 +4433,8 @@
    "number": "",
    "person": "",
    "tense": "",
-   "taught": false,
-   "lesson": null,
+   "taught": true,
+   "lesson": 6,
    "english": "two (fem.)",
    "part_of_speech": "number (fem.)",
    "audio": "duas.mp3",
@@ -1992,9 +4448,7 @@
    "parts": "",
    "parts_meaning": "",
    "origin": "",
-   "notes": [
-    "Reference form: not yet taught on its own (duas malas)."
-   ],
+   "notes": [],
    "accept_also": []
   },
   {
@@ -2039,7 +4493,7 @@
    "part_of_speech": "noun (masc. plural)",
    "audio": "dolares.mp3",
    "photo": "dolares.jpg",
-   "photo_credit": "United States Department of the Treasury / Public domain / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Folding_money_(20_dollar_US_banknotes).jpg",
+   "photo_credit": "401(K) 2013 / CC BY-SA 2.0 / Flickr: https://www.flickr.com/photos/68751915@N05/6280514227",
    "scene": "A hand holding a small fold of twenty-dollar notes, more than one bill in the fingers.",
    "definition_pt": "Mais de um dólar: “vinte dólares”.",
    "root": "German Thaler, from Joachimsthaler (plural)",
@@ -2051,6 +4505,305 @@
    "notes": [
     "Word history: from German Thaler, from Joachimsthaler (a silver coin of Joachimsthal)."
    ],
+   "accept_also": []
+  },
+  {
+   "id": "doze",
+   "lemma_id": "doze",
+   "form": "doze",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "twelve",
+   "part_of_speech": "number",
+   "audio": "doze.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "e_and",
+   "lemma_id": "e_and",
+   "form": "e",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "and",
+   "part_of_speech": "conjunction",
+   "audio": "e_and.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "ele",
+   "lemma_id": "ele",
+   "form": "ele",
+   "label": "masculine singular",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "he",
+   "part_of_speech": "pronoun",
+   "audio": "ele.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "ela",
+   "lemma_id": "ele",
+   "form": "ela",
+   "label": "feminine singular",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "she",
+   "part_of_speech": "pronoun",
+   "audio": "ela.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "eles",
+   "lemma_id": "ele",
+   "form": "eles",
+   "label": "masculine plural",
+   "gender": "masc",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "they (masc. or mixed)",
+   "part_of_speech": "pronoun",
+   "audio": "eles.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "elas",
+   "lemma_id": "ele",
+   "form": "elas",
+   "label": "feminine plural",
+   "gender": "fem",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "they (fem.)",
+   "part_of_speech": "pronoun",
+   "audio": "elas.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "em",
+   "lemma_id": "em",
+   "form": "em",
+   "label": "em · on its own",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "in, at, on",
+   "part_of_speech": "preposition",
+   "audio": "em.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "no",
+   "lemma_id": "em",
+   "form": "no",
+   "label": "em + o · masculine",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "in the, at the (masc.)",
+   "part_of_speech": "contraction (em + o)",
+   "audio": "no.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "na",
+   "lemma_id": "em",
+   "form": "na",
+   "label": "em + a · feminine",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "in the, at the (fem.)",
+   "part_of_speech": "contraction (em + a)",
+   "audio": "na.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "nos",
+   "lemma_id": "em",
+   "form": "nos",
+   "label": "em + os · masculine plural",
+   "gender": "masc",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "in the (masc. pl.)",
+   "part_of_speech": "contraction (em + os)",
+   "audio": "nos.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [
+    "nos Estados Unidos = in the United States"
+   ],
+   "accept_also": []
+  },
+  {
+   "id": "nas",
+   "lemma_id": "em",
+   "form": "nas",
+   "label": "em + as · feminine plural",
+   "gender": "fem",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "in the (fem. pl.)",
+   "part_of_speech": "contraction (em + as)",
+   "audio": "nas.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
    "accept_also": []
   },
   {
@@ -2143,7 +4896,7 @@
    "number": "sing",
    "person": "3rd (ele, ela, você)",
    "tense": "present",
-   "taught": false,
+   "taught": true,
    "lesson": 4,
    "english": "is (right now); you are",
    "part_of_speech": "verb (estar), 3rd person",
@@ -2177,6 +4930,60 @@
    "english": "I",
    "part_of_speech": "pronoun",
    "audio": "eu.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "favor",
+   "lemma_id": "favor",
+   "form": "favor",
+   "label": "",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "favor",
+   "part_of_speech": "noun (masc.)",
+   "audio": "favor.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "fica",
+   "lemma_id": "ficar",
+   "form": "fica",
+   "label": "ele / ela / você · is located",
+   "gender": "",
+   "number": "sing",
+   "person": "3rd (ele, ela, você)",
+   "tense": "present",
+   "taught": true,
+   "lesson": 4,
+   "english": "is (located); stays",
+   "part_of_speech": "verb (ficar), 3rd person",
+   "audio": "fica.mp3",
    "photo": "",
    "photo_credit": "",
    "scene": "",
@@ -2299,6 +5106,168 @@
    "accept_also": []
   },
   {
+   "id": "isto",
+   "lemma_id": "isso",
+   "form": "isto",
+   "label": "this, near the speaker",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "this (near the speaker)",
+   "part_of_speech": "demonstrative pronoun",
+   "audio": "isto.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "isso",
+   "lemma_id": "isso",
+   "form": "isso",
+   "label": "that, near the listener (also used for both in speech)",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "that (near the listener); this/that (casual)",
+   "part_of_speech": "demonstrative pronoun",
+   "audio": "isso.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "aquilo",
+   "lemma_id": "isso",
+   "form": "aquilo",
+   "label": "that, over there",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "that (over there)",
+   "part_of_speech": "demonstrative pronoun",
+   "audio": "aquilo.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "la",
+   "lemma_id": "la",
+   "form": "lá",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 4,
+   "english": "there, over there",
+   "part_of_speech": "adverb",
+   "audio": "la.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "licenca",
+   "lemma_id": "licenca",
+   "form": "licença",
+   "label": "",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "permission",
+   "part_of_speech": "noun (fem.)",
+   "audio": "licenca.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "logo",
+   "lemma_id": "logo",
+   "form": "logo",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 2,
+   "english": "soon; therefore",
+   "part_of_speech": "adverb",
+   "audio": "logo.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "mala",
    "lemma_id": "mala",
    "form": "mala",
@@ -2361,8 +5330,8 @@
    "number": "sing",
    "person": "",
    "tense": "",
-   "taught": false,
-   "lesson": null,
+   "taught": true,
+   "lesson": 4,
    "english": "my (masc.)",
    "part_of_speech": "possessive (masc.)",
    "audio": "meu.mp3",
@@ -2409,6 +5378,33 @@
    "accept_also": []
   },
   {
+   "id": "mil",
+   "lemma_id": "mil",
+   "form": "mil",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "thousand",
+   "part_of_speech": "number",
+   "audio": "mil.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "muito",
    "lemma_id": "muito",
    "form": "muito",
@@ -2444,8 +5440,8 @@
    "number": "sing",
    "person": "",
    "tense": "",
-   "taught": false,
-   "lesson": null,
+   "taught": true,
+   "lesson": 2,
    "english": "much, a lot of (fem.)",
    "part_of_speech": "adjective (fem.)",
    "audio": "muita.mp3",
@@ -2473,7 +5469,7 @@
    "number": "plur",
    "person": "",
    "tense": "",
-   "taught": false,
+   "taught": true,
    "lesson": 6,
    "english": "many (masc.)",
    "part_of_speech": "adjective (masc. plural)",
@@ -2491,6 +5487,226 @@
    "notes": [
     "Taught inside muitos dólares (Lesson 6); not drilled on its own."
    ],
+   "accept_also": []
+  },
+  {
+   "id": "nao",
+   "lemma_id": "nao",
+   "form": "não",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 5,
+   "english": "no; not",
+   "part_of_speech": "adverb",
+   "audio": "nao.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "noite",
+   "lemma_id": "noite",
+   "form": "noite",
+   "label": "",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "night; evening",
+   "part_of_speech": "noun (fem.)",
+   "audio": "noite.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "nova_york",
+   "lemma_id": "nova_york",
+   "form": "Nova York",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "New York",
+   "part_of_speech": "proper noun",
+   "audio": "nova_york.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": [
+    "Nova Iorque"
+   ]
+  },
+  {
+   "id": "nove",
+   "lemma_id": "nove",
+   "form": "nove",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "nine",
+   "part_of_speech": "number",
+   "audio": "nove.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "o",
+   "lemma_id": "o",
+   "form": "o",
+   "label": "masculine",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "the (masc.)",
+   "part_of_speech": "article (masc.)",
+   "audio": "o.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "a",
+   "lemma_id": "o",
+   "form": "a",
+   "label": "feminine",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "the (fem.)",
+   "part_of_speech": "article (fem.)",
+   "audio": "a.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "os",
+   "lemma_id": "o",
+   "form": "os",
+   "label": "masculine plural",
+   "gender": "masc",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "the (masc. pl.)",
+   "part_of_speech": "article (masc. pl.)",
+   "audio": "os.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [
+    "os Estados Unidos"
+   ],
+   "accept_also": []
+  },
+  {
+   "id": "as",
+   "lemma_id": "o",
+   "form": "as",
+   "label": "feminine plural",
+   "gender": "fem",
+   "number": "plur",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "the (fem. pl.)",
+   "part_of_speech": "article (fem. pl.)",
+   "audio": "as.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
    "accept_also": []
   },
   {
@@ -2550,6 +5766,114 @@
    "accept_also": []
   },
   {
+   "id": "oito",
+   "lemma_id": "oito",
+   "form": "oito",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "eight",
+   "part_of_speech": "number",
+   "audio": "oito.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "onde",
+   "lemma_id": "onde",
+   "form": "onde",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "where",
+   "part_of_speech": "interrogative adverb",
+   "audio": "onde.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "onze",
+   "lemma_id": "onze",
+   "form": "onze",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "eleven",
+   "part_of_speech": "number",
+   "audio": "onze.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "por",
+   "lemma_id": "por",
+   "form": "por",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "for, by",
+   "part_of_speech": "preposition",
+   "audio": "por.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "portugues",
    "lemma_id": "portugues",
    "form": "português",
@@ -2577,6 +5901,60 @@
    "accept_also": []
   },
   {
+   "id": "pouco",
+   "lemma_id": "pouco",
+   "form": "pouco",
+   "label": "",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 1,
+   "english": "little; not much",
+   "part_of_speech": "adverb / adjective (masc.)",
+   "audio": "pouco.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "prazer",
+   "lemma_id": "prazer",
+   "form": "prazer",
+   "label": "",
+   "gender": "masc",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 4,
+   "english": "pleasure",
+   "part_of_speech": "noun (masc.)",
+   "audio": "prazer.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "quantos",
    "lemma_id": "quanto",
    "form": "quantos",
@@ -2590,6 +5968,87 @@
    "english": "how many",
    "part_of_speech": "interrogative adjective / pronoun (masc. pl.)",
    "audio": "quantos.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "quatro",
+   "lemma_id": "quatro",
+   "form": "quatro",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "four",
+   "part_of_speech": "number",
+   "audio": "quatro.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "que",
+   "lemma_id": "que",
+   "form": "que",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "what",
+   "part_of_speech": "interrogative pronoun",
+   "audio": "que.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "quem",
+   "lemma_id": "quem",
+   "form": "quem",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 7,
+   "english": "who",
+   "part_of_speech": "interrogative pronoun",
+   "audio": "quem.mp3",
    "photo": "",
    "photo_credit": "",
    "scene": "",
@@ -2660,6 +6119,33 @@
    "accept_also": []
   },
   {
+   "id": "quinze",
+   "lemma_id": "quinze",
+   "form": "quinze",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "fifteen",
+   "part_of_speech": "number",
+   "audio": "quinze.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "o_real",
    "lemma_id": "real",
    "form": "o real",
@@ -2701,7 +6187,7 @@
    "part_of_speech": "noun (masc. plural)",
    "audio": "reais.mp3",
    "photo": "reais.jpg",
-   "photo_credit": "Oleg Yunakov / CC BY-SA 4.0 / Wikimedia Commons: https://commons.wikimedia.org/wiki/File:20_Brazilian_Real_banknote_featuring_a_Golden_Lion_Tamarin_monkey.jpg",
+   "photo_credit": "markhillary / CC BY 2.0 / Flickr: https://www.flickr.com/photos/56087830@N00/5471385929",
    "scene": "A Brazilian twenty-reais note, a golden lion tamarin on a branch, the words VINTE REAIS along the edge.",
    "definition_pt": "Mais de um real: “vinte reais”.",
    "root": "Latin rēgālis ‘royal’ (plural)",
@@ -2752,7 +6238,7 @@
    "number": "sing",
    "person": "1st (eu)",
    "tense": "present",
-   "taught": false,
+   "taught": true,
    "lesson": 5,
    "english": "I know",
    "part_of_speech": "verb (saber), 1st person",
@@ -2766,7 +6252,7 @@
    "literal": "",
    "parts": "",
    "parts_meaning": "",
-   "origin": "",
+   "origin": "The 1st-person present is irregular: eu sei, not *sabo (compare Spanish sé, French sais, Italian so).",
    "notes": [
     "Taught inside eu não sei (Lesson 5); not drilled on its own."
    ],
@@ -2791,9 +6277,36 @@
    "scene": "",
    "definition_pt": "Pergunta ou diz que a outra pessoa tem a informação: “Você sabe onde fica?”",
    "root": "",
-   "root_image": "",
+   "root_image": "The same tasting root as sei: the flavor is there this time. You have sampled it, and you know.",
    "literal": "\"Your Grace knows\" → \"you know\"",
    "parts": "você (you) + sabe (knows)",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "seis",
+   "lemma_id": "seis",
+   "form": "seis",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "six",
+   "part_of_speech": "number",
+   "audio": "seis.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
    "parts_meaning": "",
    "origin": "",
    "notes": [],
@@ -2938,6 +6451,33 @@
    "accept_also": []
   },
   {
+   "id": "sete",
+   "lemma_id": "sete",
+   "form": "sete",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "seven",
+   "part_of_speech": "number",
+   "audio": "sete.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "seu",
    "lemma_id": "seu",
    "form": "seu",
@@ -2946,8 +6486,8 @@
    "number": "sing",
    "person": "",
    "tense": "",
-   "taught": false,
-   "lesson": null,
+   "taught": true,
+   "lesson": 6,
    "english": "your (masc.)",
    "part_of_speech": "possessive (masc.)",
    "audio": "seu.mp3",
@@ -2988,6 +6528,33 @@
    "root_image": "",
    "literal": "",
    "parts": "single possessive (feminine); masculine seu",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "tarde",
+   "lemma_id": "tarde",
+   "form": "tarde",
+   "label": "",
+   "gender": "fem",
+   "number": "sing",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 3,
+   "english": "afternoon; late",
+   "part_of_speech": "noun (fem.) / adverb",
+   "audio": "tarde.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
    "parts_meaning": "",
    "origin": "",
    "notes": [],
@@ -3048,6 +6615,87 @@
    "accept_also": []
   },
   {
+   "id": "tres",
+   "lemma_id": "tres",
+   "form": "três",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 6,
+   "english": "three",
+   "part_of_speech": "number",
+   "audio": "tres.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "treze",
+   "lemma_id": "treze",
+   "form": "treze",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "thirteen",
+   "part_of_speech": "number",
+   "audio": "treze.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
+   "id": "tudo",
+   "lemma_id": "tudo",
+   "form": "tudo",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 2,
+   "english": "everything",
+   "part_of_speech": "pronoun",
+   "audio": "tudo.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "um",
    "lemma_id": "um",
    "form": "um",
@@ -3102,6 +6750,33 @@
    "accept_also": []
   },
   {
+   "id": "vinte",
+   "lemma_id": "vinte",
+   "form": "vinte",
+   "label": "",
+   "gender": "",
+   "number": "",
+   "person": "",
+   "tense": "",
+   "taught": true,
+   "lesson": 8,
+   "english": "twenty",
+   "part_of_speech": "number",
+   "audio": "vinte.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "",
+   "definition_pt": "",
+   "root": "",
+   "root_image": "",
+   "literal": "",
+   "parts": "",
+   "parts_meaning": "",
+   "origin": "",
+   "notes": [],
+   "accept_also": []
+  },
+  {
    "id": "voce",
    "lemma_id": "voce",
    "form": "você",
@@ -3137,8 +6812,8 @@
    "part_of_speech": "farewell",
    "lesson": 2,
    "components": [
-    "até",
-    "logo"
+    "até=ate#ate",
+    "logo=logo#logo"
    ],
    "audio": "ate_logo.mp3",
    "photo": "",
@@ -3146,22 +6821,17 @@
    "scene": "You part on a path and point back to the same spot, to meet there again soon.",
    "root": "até possibly Arabic ḥattā ‘until’ (disputed); logo ← Latin locō ‘on the spot’",
    "source_language": "Arabic (disputed) + Latin",
-   "root_image": "logo is Latin locō, \"in the place\": right on the spot. \"On the spot\" → \"immediately\" → \"soon.\" English makes the same move when it says \"I'll do it on the spot.\"",
+   "root_image": "",
    "definition_pt": "O que se diz quando vai embora e espera ver a pessoa de novo.",
    "literal": "\"until (it's) soon,\" meaning see you soon",
    "parts": "até (until) + logo (soon, right away)",
    "parts_meaning": "até = \"until, up to; even\"; logo < Latin locō \"in the place\"",
-   "origin": "logo: Latin locō (\"on the spot\") → \"immediately\" → \"soon.\" até: disputed. It's often traced to Arabic ḥattā \"until\" (also proposed for Spanish hasta), a legacy of centuries of Arabic presence in Iberia. Latin sources have also been proposed.",
+   "origin": "",
    "history": [],
    "cognates": [
-    "locō: English local, location, locomotive, locus",
     "Spanish hasta luego (luego = logo)"
    ],
-   "pt_family": [
-    "até amanhã (see you tomorrow)",
-    "até já (see you in a moment)",
-    "logo (soon; therefore)"
-   ],
+   "pt_family": [],
    "synonyms": [
     "tchau",
     "até mais",
@@ -3173,13 +6843,9 @@
    ],
    "culture": [
     "Até logo is a friendly, neutral goodbye and doesn't have to mean the same day.",
-    "Family: até amanhã (until tomorrow), até mais (until later), até já (see you in a moment, more common in Portugal).",
-    "The most common casual Brazilian goodbye is tchau, from Italian ciao, which comes from Venetian s-ciao \"(I am your) slave,\" originally a deferential greeting, from Latin sclavus.",
-    "Logo also means \"therefore\": Penso, logo existo = \"I think, therefore I am.\""
+    "The most common casual Brazilian goodbye is tchau, from Italian ciao, which comes from Venetian s-ciao \"(I am your) slave,\" originally a deferential greeting, from Latin sclavus."
    ],
-   "notes": [
-    "até has no confirmed Latin image. Arabic ḥattā \"until\" is the leading theory, but it's disputed."
-   ],
+   "notes": [],
    "accept_also": [],
    "tags": [
     "pimsleur",
@@ -3193,8 +6859,8 @@
    "part_of_speech": "greeting / farewell",
    "lesson": 3,
    "components": [
-    "boa",
-    "noite"
+    "boa=bom#boa",
+    "noite=noite#noite"
    ],
    "audio": "boa_noite.mp3",
    "photo": "",
@@ -3206,19 +6872,11 @@
    "definition_pt": "O que se diz para cumprimentar ou para ir embora, à noite.",
    "literal": "\"good night\"",
    "parts": "boa (good, fem.) + noite (night)",
-   "parts_meaning": "noite < Latin noctem",
-   "origin": "noctem → noite (-ct- → -it-, the signature Portuguese change; Spanish has noche).",
-   "history": [
-    "English link: A true cognate: Latin noctem and English night come from the same Indo-European word. Also nocturnal and equinox (\"equal night\")."
-   ],
-   "cognates": [
-    "English night (Germanic relative), nocturnal, nocturne, equinox",
-    "French nuit",
-    "Italian notte"
-   ],
+   "parts_meaning": "",
+   "origin": "",
+   "history": [],
+   "cognates": [],
    "pt_family": [
-    "noite (night)",
-    "noturno (nocturnal)",
     "bom dia (good morning)",
     "boa tarde (good afternoon)"
    ],
@@ -3241,8 +6899,8 @@
    "part_of_speech": "greeting",
    "lesson": 3,
    "components": [
-    "boa",
-    "tarde"
+    "boa=bom#boa",
+    "tarde=tarde#tarde"
    ],
    "audio": "boa_tarde.mp3",
    "photo": "",
@@ -3250,33 +6908,24 @@
    "scene": "The sun hangs lower, the air slows; you greet someone in the late light.",
    "root": "Latin bona + tardē ‘late, slowly’",
    "source_language": "Latin",
-   "root_image": "Latin tardus = slow, sluggish, late. As a memory aid (not etymology), the afternoon is the slow, late stretch of the day as the sun drags toward evening.",
+   "root_image": "",
    "definition_pt": "O que se diz para cumprimentar depois do almoço, até a noite.",
    "literal": "\"good late-part-of-the-day\"",
    "parts": "boa (good, fem.) + tarde (afternoon)",
    "parts_meaning": "boa < Latin bona; tarde < Latin tardē \"late, slowly\"",
-   "origin": "bona → boa (intervocalic n dropped). The adverb tardē (\"late\") became a noun meaning \"the late part of the day.\"",
-   "history": [
-    "English link: tardy (late to class); retard originally meant \"to slow down\"; ritardando in music = slowing."
-   ],
+   "origin": "bona → boa (intervocalic n dropped); see bom and tarde.",
+   "history": [],
    "cognates": [
-    "English tardy, retard (to delay), ritardando",
-    "Spanish buenas tardes",
-    "French tard (\"late\")",
-    "Italian tardi"
+    "Spanish buenas tardes"
    ],
    "pt_family": [
-    "tarde (afternoon; also late)",
     "bom dia (good morning)",
-    "boa noite (good evening)",
-    "atrasado (late, for a person)"
+    "boa noite (good evening)"
    ],
    "synonyms": [],
    "antonyms": [],
    "culture": [],
-   "notes": [
-    "tarde is feminine, so it's boa. As an adverb it still means \"late\": É tarde = \"It's late.\" Use it from noon to dusk."
-   ],
+   "notes": [],
    "accept_also": [],
    "tags": [
     "pimsleur",
@@ -3290,8 +6939,8 @@
    "part_of_speech": "greeting",
    "lesson": 2,
    "components": [
-    "bom",
-    "dia"
+    "bom=bom#bom",
+    "dia=dia#dia"
    ],
    "audio": "bom_dia.mp3",
    "photo": "",
@@ -3299,26 +6948,20 @@
    "scene": "Morning light floods the sky; you greet someone under the brightness.",
    "root": "Latin bonum + diēs ‘day’ (from a root ‘to shine’)",
    "source_language": "Latin",
-   "root_image": "Latin diēs comes from an Indo-European root meaning \"to shine,\" the bright sky. The same root gives Latin deus (god) and divine, Iuppiter (from \"sky-father\"), and Greek Zeus. A day is \"the bright sky.\"",
+   "root_image": "",
    "definition_pt": "O que se diz para cumprimentar de manhã, até o almoço.",
    "literal": "\"good day,\" used as \"good morning\"",
    "parts": "bom (good) + dia (day)",
    "parts_meaning": "bom < Latin bonum; dia < Latin diēs \"day\"",
    "origin": "bonum → bom (final -n became a nasal vowel); feminine boa < bona (intervocalic n dropped). Latin diēs → Vulgar Latin dia.",
-   "history": [
-    "Why English split: English day looks like dia but is NOT related: it's Germanic, from a different root. English uses diēs only in learned words: diary, diurnal, meridian (\"midday\"), and via French journal and journey (originally a day's travel)."
-   ],
+   "history": [],
    "cognates": [
-    "English bonus, bona fide, bounty",
-    "diary, dial, diurnal, meridian, and journal (via diurnalis)",
     "Spanish buenos días",
     "French bonjour and Italian buongiorno (both use diurnum for \"day\")"
    ],
    "pt_family": [
     "boa tarde (good afternoon)",
-    "boa noite (good evening)",
-    "dia (day)",
-    "bom (good)"
+    "boa noite (good evening)"
    ],
    "synonyms": [],
    "antonyms": [],
@@ -3329,9 +6972,7 @@
     "Boa noite: after dark, both as \"good evening\" when arriving and \"good night\" when leaving.",
     "Brazilians greet a room, a shop, or an elevator with these. Walking into a store without a bom dia can seem a bit cold."
    ],
-   "notes": [
-    "dia is masculine despite the -a (o dia), so it's bom dia, not boa dia."
-   ],
+   "notes": [],
    "accept_also": [],
    "tags": [
     "pimsleur",
@@ -3345,8 +6986,8 @@
    "part_of_speech": "phrase",
    "lesson": 1,
    "components": [
-    "com",
-    "licença"
+    "com=com#com",
+    "licença=licenca#licenca"
    ],
    "audio": "com_licenca.mp3",
    "photo": "",
@@ -3354,22 +6995,20 @@
    "scene": "You pause in a doorway and wait for a nod before stepping through.",
    "root": "Latin cum + licentia (licēre ‘to be allowed’)",
    "source_language": "Latin",
-   "root_image": "Latin licet = \"it is allowed,\" a word from law and custom rather than a physical picture. Licentia = the freedom to act, a granted allowance. No concrete original image is known.",
+   "root_image": "",
    "definition_pt": "O que se diz, com educação, antes de passar, entrar ou interromper.",
    "literal": "\"with (your) permission\"",
    "parts": "com (with) + licenç- (permission) + -a (noun ending)",
    "parts_meaning": "cum = \"with\"; licentia = \"freedom, permission,\" from licēre \"to be allowed\" + -entia (abstract noun \"-ence\")",
-   "origin": "Latin licentia → licença (-tia → -ça, the same shift as -tion → -ção). Cum → com.",
+   "origin": "Two Latin words kept together: cum (see com) + licentia (see licença).",
    "history": [
-    "Why English split: English license took the official-permit sense (driver's license), and licentious took the \"too much freedom\" sense. For the polite phrase, English says excuse me, from Latin ex + causa (\"out of the charge/accusation\"). English asks to be let off the blame, often after the fact. Portuguese asks for permission before acting."
+    "Why English split: For the polite phrase, English says excuse me, from Latin ex + causa (\"out of the charge/accusation\"). English asks to be let off the blame, often after the fact. Portuguese asks for permission before acting."
    ],
    "cognates": [
-    "English license, licit, illicit, leisure (via Old French loisir < licēre), prefix com-/con- (combine, connect)",
     "Spanish con licencia",
     "Italian con licenza"
    ],
    "pt_family": [
-    "licença (permission, license)",
     "desculpa (sorry, after the fact)"
    ],
    "synonyms": [
@@ -3381,7 +7020,6 @@
    "culture": [
     "It's literally a request for a license to act: to get past someone, step into a room or someone's home, interrupt, leave the table, or take something.",
     "It's said before the action. Desculpa / desculpe (\"sorry\") is said after you bump into someone or make a mistake.",
-    "You'll often hear just Licença! in a crowded bus or market.",
     "Common replies: Pois não (\"of course / go ahead\"), Fique à vontade (\"make yourself comfortable\"). A playful Brazilian reply is Toda! (\"all of it,\" meaning you have all the permission you need). That one is informal."
    ],
    "notes": [],
@@ -3558,8 +7196,6 @@
     "old English How goes it?"
    ],
    "pt_family": [
-    "como (how)",
-    "vai (goes)",
     "como vai você? (how are you?, informal)"
    ],
    "synonyms": [
@@ -3588,7 +7224,7 @@
    "lesson": 3,
    "components": [
     "de=de#de",
-    "Nova York"
+    "Nova York=nova_york#nova_york"
    ],
    "audio": "de_nova_york.mp3",
    "photo": "",
@@ -3600,26 +7236,15 @@
    "definition_pt": "Que vem da cidade de Nova York.",
    "literal": "\"from New York\"",
    "parts": "de (from) + nov- (new) + -a (fem.) + York",
-   "parts_meaning": "nova < Latin nova (fem. of novus \"new\")",
-   "origin": "nova kept its Latin form. Portuguese doesn't break the o into ue the way Spanish does (Nueva York). York goes back to Old English Eoforwīc, from Latin Eboracum, from a Celtic name probably meaning \"place of yews.\" New York was named in 1664 for the Duke of York (later James II).",
-   "history": [
-    "English link: Latin novus and English new are true cognates. A nova is a \"new\" star."
-   ],
-   "cognates": [
-    "English novel, novice, innovate, renovate, nova",
-    "Spanish Nueva York"
-   ],
-   "pt_family": [
-    "novo / nova (new)",
-    "novidade (news, novelty)",
-    "de (from)"
-   ],
+   "parts_meaning": "",
+   "origin": "",
+   "history": [],
+   "cognates": [],
+   "pt_family": [],
    "synonyms": [],
    "antonyms": [],
    "culture": [],
-   "notes": [
-    "Brazilian spelling is Nova York; Nova Iorque is the Portugal/standard spelling. de novo = \"again.\""
-   ],
+   "notes": [],
    "accept_also": [
     "de nova iorque"
    ],
@@ -3636,7 +7261,7 @@
    "lesson": 3,
    "components": [
     "de=de#de",
-    "onde"
+    "onde=onde#onde"
    ],
    "audio": "de_onde.mp3",
    "photo": "",
@@ -3644,7 +7269,7 @@
    "scene": "You turn and look back down the road, to the place someone came from.",
    "root": "Latin dē + unde ‘from where, whence’",
    "source_language": "Latin",
-   "root_image": "Latin unde = \"from which place, whence\": looking back down the road someone came by.",
+   "root_image": "",
    "definition_pt": "Pergunta o lugar de origem: “De onde você é?”",
    "literal": "\"from where?\"",
    "parts": "de (from) + onde (where)",
@@ -3654,14 +7279,9 @@
     "Why English split: English has its own whence (Germanic), but it's archaic, so English says \"from where.\" Portuguese onde lost its \"from\" meaning, so it needed de again."
    ],
    "cognates": [
-    "Spanish ¿de dónde?",
-    "Italian onde (literary \"whence\")"
+    "Spanish ¿de dónde?"
    ],
-   "pt_family": [
-    "onde (where)",
-    "aonde (to where)",
-    "de (from)"
-   ],
+   "pt_family": [],
    "synonyms": [],
    "antonyms": [
     "para onde (to where)"
@@ -3685,7 +7305,7 @@
    "components": [
     "é=ser#e",
     "muito=muito#muito",
-    "pouco"
+    "pouco=pouco#pouco"
    ],
    "audio": "e_muito_pouco.mp3",
    "photo": "",
@@ -3699,20 +7319,15 @@
    "parts": "é (is) + muito (very) + pouco (little)",
    "parts_meaning": "é < est; muito here is the adverb \"very\"; pouco < Latin paucum \"few, little\" (already in um pouco)",
    "origin": "pouco < paucum (au → ou). muito before an adjective or adverb means \"very\" (muito pouco, muito bem, muito gentil). So é muito pouco is stronger than é pouco: it's very little.",
-   "history": [
-    "English link: little and few are Germanic. Latin paucus survived in English as paucity and in the music term poco. The same muito that means \"much\" also does the job of English very."
-   ],
+   "history": [],
    "cognates": [
-    "English paucity, poco a poco",
     "Spanish es muy poco",
     "Italian è molto poco",
     "French c'est très peu"
    ],
    "pt_family": [
-    "pouco (little)",
     "um pouco (a little)",
-    "não é muito (it's not much)",
-    "muito (very / much)"
+    "não é muito (it's not much)"
    ],
    "synonyms": [
     "é pouco"
@@ -3763,8 +7378,6 @@
    ],
    "pt_family": [
     "estar (to be, for now)",
-    "está (is, right now)",
-    "bem (well)",
     "tudo bem (all good)",
     "muito bem (very well)",
     "tá bem (casual)"
@@ -3796,7 +7409,7 @@
    "lesson": 5,
    "components": [
     "eu=eu#eu",
-    "não",
+    "não=nao#nao",
     "sei=saber#eu_sei"
    ],
    "audio": "eu_nao_sei.mp3",
@@ -3805,27 +7418,15 @@
    "scene": "You taste and find nothing — a slow shake of the head, empty hands.",
    "root": "Latin nōn + sapere ‘to taste’",
    "source_language": "Latin",
-   "root_image": "Latin sapere = to taste, to have flavor. Taste is the first test of what is in front of you: bitter or sweet, sound or spoiled. From that bodily judgment came \"to have discernment,\" then \"to know, to be wise.\" Homo sapiens is literally \"the tasting / wise human.\" Latin nōn is simply \"not,\" the same particle that English keeps in non-.",
+   "root_image": "",
    "definition_pt": "O que eu digo quando a resposta não está na minha cabeça.",
    "literal": "\"I not know\"",
    "parts": "eu (I) + não (not) + sei (I know)",
    "parts_meaning": "eu < Latin ego; não < Latin nōn \"not\"; sei is the irregular 1st-person present of saber, \"to know\"",
    "origin": "Latin nōn became Portuguese não (the tilde marks a nasal vowel). sei belongs to saber, from Latin sapere \"to taste, to have flavor.\" That physical sense developed a mental one: to have discernment, to be wise, to know. The 1st-person present is irregular: eu sei, not *sabo (compare Spanish sé, French sais, Italian so).",
-   "history": [
-    "Why English split: English know is Germanic (related to can, cunning, and ken). The Latin root survived in English as savor (taste), sapient and sage (wise), insipid (\"without taste\"), and sapiens."
-   ],
-   "cognates": [
-    "English savor, sapient, sage, insipid, Homo sapiens",
-    "Spanish saber / no sé",
-    "French savoir / je ne sais pas",
-    "Italian sapere / non so"
-   ],
+   "history": [],
+   "cognates": [],
    "pt_family": [
-    "saber (to know)",
-    "sei (I know)",
-    "sabe (knows)",
-    "sabor (taste, flavor)",
-    "sábio (wise)",
     "quem sabe (who knows; maybe)"
    ],
    "synonyms": [
@@ -3852,8 +7453,8 @@
    "part_of_speech": "phrase",
    "lesson": 4,
    "components": [
-    "fica",
-    "lá"
+    "fica=ficar#fica",
+    "lá=la#la"
    ],
    "audio": "fica_la.mp3",
    "photo": "",
@@ -3861,31 +7462,22 @@
    "scene": "You point into the distance, to a spot already fixed in place, over there.",
    "root": "fīgere ‘to fix’ + Latin illāc ‘that way, over there’",
    "source_language": "Latin",
-   "root_image": "lá < Latin illāc, \"that way, over there.\"",
+   "root_image": "",
    "definition_pt": "Está naquele lugar, longe de nós: “O hotel fica lá.”",
    "literal": "\"it's fixed over there\"",
    "parts": "fica (is fixed / located) + lá (there)",
-   "parts_meaning": "lá < Latin illāc \"that way, over there\"",
-   "origin": "illāc → lá (initial il- dropped, like illum → o).",
+   "parts_meaning": "",
+   "origin": "",
    "history": [],
-   "cognates": [
-    "French là",
-    "Italian là",
-    "Spanish allá"
-   ],
+   "cognates": [],
    "pt_family": [
-    "ficar (to be located)",
-    "lá (over there)",
-    "ali (there)",
     "onde fica? (where is it?)"
    ],
    "synonyms": [],
    "antonyms": [
     "fica aqui"
    ],
-   "culture": [
-    "lá is everywhere in casual speech. Sei lá (lit. \"I know there\") = \"who knows / no idea,\" often with a shrug."
-   ],
+   "culture": [],
    "notes": [],
    "accept_also": [],
    "tags": [
@@ -3921,10 +7513,7 @@
     "Italian molto bene",
     "French très bien"
    ],
-   "pt_family": [
-    "bem (well)",
-    "muito (very)"
-   ],
+   "pt_family": [],
    "synonyms": [
     "ótimo"
    ],
@@ -3973,9 +7562,7 @@
     "French très obligé"
    ],
    "pt_family": [
-    "obrigado (thank you, said by a man)",
     "obrigada (thank you, said by a woman)",
-    "muito (very)",
     "obrigar (to oblige, to force)"
    ],
    "synonyms": [],
@@ -3998,7 +7585,7 @@
    "lesson": 4,
    "components": [
     "muito=muito#muito",
-    "prazer"
+    "prazer=prazer#prazer"
    ],
    "audio": "muito_prazer.mp3",
    "photo": "",
@@ -4006,23 +7593,15 @@
    "scene": "A warm, easy smile spreading as you meet someone, like a pleasant taste.",
    "root": "Latin multum + placēre ‘to please’",
    "source_language": "Latin",
-   "root_image": "Latin placēre = to please, be agreeable. It's often linked to placāre (to calm, soothe), but the deeper image behind the root is uncertain.",
+   "root_image": "",
    "definition_pt": "O que se diz quando conhece uma pessoa pela primeira vez.",
    "literal": "\"much pleasure\"",
    "parts": "muito (much) + praz- (please) + -er (infinitive, used as a noun)",
-   "parts_meaning": "prazer < Latin placēre \"to please\"; the infinitive works as a noun (\"pleasure\")",
-   "origin": "placēre → prazer. Two regular changes: pl → pr (consonant + l → r) and intervocalic c → z (like facere → fazer, dicere → dizer).",
-   "history": [
-    "Why English split: English kept please and pleasure, but for introductions it says \"nice to meet you.\" Nice comes from Latin nescius (\"not knowing, ignorant\") and meant \"foolish\" in Middle English before softening to \"pleasant.\" Portuguese just says \"much pleasure.\""
-   ],
-   "cognates": [
-    "English please, pleasure, placid, complacent, placebo (\"I will please\")",
-    "Spanish mucho gusto (different word) / placer",
-    "French plaisir",
-    "Italian piacere (also how Italians say \"nice to meet you\")"
-   ],
+   "parts_meaning": "",
+   "origin": "",
+   "history": [],
+   "cognates": [],
    "pt_family": [
-    "prazer (pleasure)",
     "o prazer é meu (the pleasure is mine)",
     "igualmente (likewise)"
    ],
@@ -4100,7 +7679,7 @@
    "part_of_speech": "phrase",
    "lesson": 6,
    "components": [
-    "na",
+    "na=em#na",
     "sua=seu#sua",
     "carteira=carteira#carteira"
    ],
@@ -4116,18 +7695,13 @@
    "parts": "na (in the, fem.) + sua (your, fem.) + carteira (wallet)",
    "parts_meaning": "na = em + a (in + the, feminine); sua = your (fem.); carteira = wallet",
    "origin": "na is the regular contraction of em + a, the same pattern as no = em + o. sua agrees with carteira (feminine). The three pieces fuse into one everyday phrase: na sua carteira.",
-   "history": [
-    "English link: English in is the Germanic cousin of Latin in. English has no everyday contraction like na (in + the). The possessive, as with sua, is a 3rd-person form used for você."
-   ],
+   "history": [],
    "cognates": [
     "Spanish en tu cartera / en su cartera",
     "Italian nella tua cartella (different noun)",
     "French dans ton portefeuille"
    ],
    "pt_family": [
-    "no (em + o)",
-    "na (em + a)",
-    "nos / nas",
     "sua carteira (your wallet)",
     "na minha carteira (in my wallet)"
    ],
@@ -4150,7 +7724,7 @@
    "part_of_speech": "phrase",
    "lesson": 6,
    "components": [
-    "não",
+    "não=nao#nao",
     "é=ser#e",
     "muito=muito#muito"
    ],
@@ -4176,8 +7750,6 @@
    ],
    "pt_family": [
     "não muito (not much)",
-    "é (is)",
-    "muito (much)",
     "é muito pouco (it's very little)"
    ],
    "synonyms": [
@@ -4201,7 +7773,7 @@
    "part_of_speech": "phrase",
    "lesson": 6,
    "components": [
-    "não",
+    "não=nao#nao",
     "muito=muito#muito"
    ],
    "audio": "nao_muito.mp3",
@@ -4226,7 +7798,6 @@
     "French pas beaucoup (different words)"
    ],
    "pt_family": [
-    "muito (much, very)",
     "muitos (many)",
     "não é muito (it's not much)",
     "pouco (little)"
@@ -4254,7 +7825,7 @@
    "part_of_speech": "phrase",
    "lesson": 6,
    "components": [
-    "no",
+    "no=em#no",
     "hotel=hotel#o_hotel"
    ],
    "audio": "no_hotel.mp3",
@@ -4268,10 +7839,8 @@
    "literal": "\"in the hotel\"",
    "parts": "no (in/at the, masc.) + hotel",
    "parts_meaning": "no = em + o (in + the, masculine); hotel from French hôtel ← Latin hospitāle (guesthouse)",
-   "origin": "no is the regular contraction of em + o, the masculine partner of na (em + a). Portuguese almost always contracts em with the article: no hotel, na carteira, nos Estados Unidos. The noun hotel is the same word as in Lesson 4 (silent h, stress on the end).",
-   "history": [
-    "English link: English in is the Germanic cousin of Latin in / Portuguese em. English says in the hotel or at the hotel, with a separate the; Portuguese fuses in + the into no."
-   ],
+   "origin": "",
+   "history": [],
    "cognates": [
     "Spanish en el hotel (no contraction)",
     "Italian in albergo / nell'hotel",
@@ -4279,9 +7848,6 @@
     "English in the hotel, at the hotel"
    ],
    "pt_family": [
-    "na (em + a)",
-    "nos (em + os)",
-    "nas (em + as)",
     "o hotel (the hotel)",
     "no restaurante (at/in the restaurant)"
    ],
@@ -4304,7 +7870,7 @@
    "part_of_speech": "interrogative phrase",
    "lesson": 4,
    "components": [
-    "onde",
+    "onde=onde#onde",
     "está=estar#esta"
    ],
    "audio": "onde_esta.mp3",
@@ -4313,25 +7879,16 @@
    "scene": "You scan the room for something upright in its spot, right now.",
    "root": "Latin unde + stāre ‘to stand’",
    "source_language": "Latin",
-   "root_image": "Latin stāre = to stand: something upright in its spot right now.",
+   "root_image": "",
    "definition_pt": "Pergunta o lugar de alguém ou de alguma coisa agora: “Onde está a mala?”",
    "literal": "\"where does it stand?\" = where is it (right now)?",
    "parts": "onde (where) + est- (stand) + -á (3rd person present)",
-   "parts_meaning": "estar < Latin stāre \"to stand\"",
-   "origin": "stāre → estar (e- added before st-); stat → está.",
-   "history": [
-    "Why English split: English stand is the Germanic cousin of stāre. English uses \"is\" for location; Portuguese asks \"where does it stand?\" Ser = be (by essence); estar = stand (for now)."
-   ],
-   "cognates": [
-    "English stand (Germanic relative), stable, static, station, stay (via Old French ester)",
-    "Spanish está",
-    "Italian sta"
-   ],
+   "parts_meaning": "",
+   "origin": "unde → onde; stat → está (see onde and estar).",
+   "history": [],
+   "cognates": [],
    "pt_family": [
-    "estar (to be: state or place now)",
-    "estou (I am)",
-    "onde fica? (where is it located?)",
-    "estado (state)"
+    "onde fica? (where is it located?)"
    ],
    "synonyms": [
     "cadê? (casual)"
@@ -4339,8 +7896,7 @@
    "antonyms": [],
    "culture": [],
    "notes": [
-    "E.g. \"Onde está o hotel?\"",
-    "estar = temporary state or location; ser = identity. In speech, está is often shortened to tá: Onde tá?, Tá bom (\"OK\"). Onde está o hotel?"
+    "E.g. \"Onde está o hotel?\""
    ],
    "accept_also": [],
    "tags": [
@@ -4355,8 +7911,8 @@
    "part_of_speech": "interrogative phrase",
    "lesson": 4,
    "components": [
-    "onde",
-    "fica"
+    "onde=onde#onde",
+    "fica=ficar#fica"
    ],
    "audio": "onde_fica.mp3",
    "photo": "",
@@ -4364,33 +7920,20 @@
    "scene": "You look for the place a stake was driven — fixed, unmoving.",
    "root": "Latin unde + fīgere ‘to fix, fasten’ (via reconstructed *figicāre)",
    "source_language": "Latin",
-   "root_image": "Latin fīgere = to fix, fasten, drive in: hammering a nail or stake so something can't move. A crucifix is something fixed to a cross. Ficar comes from a reconstructed Late Latin form, *figicāre.",
+   "root_image": "",
    "definition_pt": "Pergunta o lugar fixo de alguma coisa: “Onde fica o hotel?”",
    "literal": "\"where is it fixed?\", which is why it's used for buildings, cities, and things that don't move",
    "parts": "onde (where) + fic- (fix, fasten) + -a (3rd person present)",
-   "parts_meaning": "ficar < Vulgar Latin *figicāre, from Latin fīgere \"to fix, fasten\"",
-   "origin": "*figicāre (reconstructed) → ficar: \"to be fixed\" → \"to remain, stay\" → \"to be located.\" Spanish has fincar (\"to plant, fix\") and Italian ficcare (\"to thrust in\").",
-   "history": [
-    "Why English split: English got fix from the Latin participle fixus, but for these senses it uses stay (from Old French ester < stāre, \"to stand\") or \"be located.\""
-   ],
-   "cognates": [
-    "English fix, fixture, affix, prefix, suffix, crucifix"
-   ],
+   "parts_meaning": "",
+   "origin": "",
+   "history": [],
+   "cognates": [],
    "pt_family": [
-    "ficar (to be located; to stay; to become)",
-    "fica lá (it's over there)",
-    "fico (I stay)",
-    "fixo (fixed)"
+    "fica lá (it's over there)"
    ],
    "synonyms": [],
    "antonyms": [],
-   "culture": [
-    "ficar is one of Brazil's busiest verbs:",
-    "\"to stay\": Fico aqui = I'll stay here",
-    "\"to become\": ficar triste = to get sad",
-    "Fica à vontade = \"make yourself at home\"",
-    "slang ficar com alguém = to hook up or make out casually, without dating"
-   ],
+   "culture": [],
    "notes": [
     "Used for places and other fixed locations."
    ],
@@ -4407,8 +7950,8 @@
    "part_of_speech": "phrase",
    "lesson": 1,
    "components": [
-    "por",
-    "favor"
+    "por=por#por",
+    "favor=favor#favor"
    ],
    "audio": "por_favor.mp3",
    "photo": "",
@@ -4416,7 +7959,7 @@
    "scene": "An open hand, offered with warmth, asking a kindness in return.",
    "root": "Latin prō/per + favor (favēre ‘to be well-disposed’)",
    "source_language": "Latin",
-   "root_image": "Latin favēre = to be well-disposed toward someone, to back them. At Roman rites the call favete linguis (\"favor with your tongues\") meant \"keep holy silence,\" so no ill-omened word would spoil the ceremony. Favor = goodwill shown.",
+   "root_image": "",
    "definition_pt": "Palavras educadas para pedir alguma coisa.",
    "literal": "\"as a favor\"",
    "parts": "por (for, by) + favor (goodwill)",
@@ -4426,15 +7969,10 @@
     "Why English split: English kept favor almost unchanged, but its polite word is please, short for \"if you please,\" from Latin placēre (the same root as prazer). English says \"if it pleases you\"; Portuguese says \"as a favor.\""
    ],
    "cognates": [
-    "English favor, favorite, favorable, pro-",
     "Spanish por favor",
     "Italian per favore"
    ],
-   "pt_family": [
-    "favor (favor)",
-    "favorito (favorite)",
-    "favorável (favorable)"
-   ],
+   "pt_family": [],
    "synonyms": [
     "por gentileza",
     "faz favor (mostly Portugal)"
@@ -4457,7 +7995,7 @@
    "part_of_speech": "phrase",
    "lesson": 2,
    "components": [
-    "tudo",
+    "tudo=tudo#tudo",
     "bem=bem#bem"
    ],
    "audio": "tudo_bem.mp3",
@@ -4466,24 +8004,19 @@
    "scene": "The whole scene is at ease — nothing out of place.",
    "root": "Latin tōtum + bene",
    "source_language": "Latin",
-   "root_image": "Latin tōtus = whole, entire, undivided. English total; in music, tutti = \"everyone plays.\"",
+   "root_image": "",
    "definition_pt": "Pergunta e resposta do dia a dia: “Tudo bem?” “Tudo bem!” Também quer dizer “sem problema”.",
    "literal": "\"everything (is) well\"",
    "parts": "tudo (everything) + bem (well)",
-   "parts_meaning": "tudo < Latin tōtum \"all, the whole\"",
-   "origin": "tōtum → tudo (intervocalic t → d).",
+   "parts_meaning": "",
+   "origin": "",
    "history": [],
    "cognates": [
-    "English total, totality, tutti (music)",
     "Spanish todo bien",
     "Italian tutto bene",
     "French tout va bien"
    ],
-   "pt_family": [
-    "tudo (everything)",
-    "todo (every, whole)",
-    "bem (well)"
-   ],
+   "pt_family": [],
    "synonyms": [
     "tudo bom",
     "tudo certo",
@@ -4497,8 +8030,7 @@
     "It often comes with a thumbs up, which Brazilians call joia (\"jewel\")."
    ],
    "notes": [
-    "Literally \"all well.\"",
-    "tudo (everything, unchanging) vs todo/toda (\"all, the whole,\" agrees with its noun)."
+    "Literally \"all well.\""
    ],
    "accept_also": [],
    "tags": [
@@ -4514,7 +8046,7 @@
    "lesson": 1,
    "components": [
     "um=um#um",
-    "pouco"
+    "pouco=pouco#pouco"
    ],
    "audio": "um_pouco.mp3",
    "photo": "",
@@ -4528,22 +8060,14 @@
    "parts": "um (a, one) + pouco (little, few)",
    "parts_meaning": "um < Latin unum \"one\"; pouco < Latin paucum \"few, little\"",
    "origin": "unum → um (the n became nasalization); paucum → pouco (au → ou, a regular change).",
-   "history": [
-    "English link: English few is the Germanic relative of Latin paucus (same Indo-European root). Paucity is the learned borrowing."
-   ],
+   "history": [],
    "cognates": [
     "English one, unit, unique (unus)",
-    "paucity (paucus), and English few shares the same ancient root",
-    "music term poco a poco",
     "Spanish un poco",
     "Italian un poco",
     "French un peu"
    ],
-   "pt_family": [
-    "pouco (little, few)",
-    "pouquinho (a tiny bit)",
-    "poucos (few)"
-   ],
+   "pt_family": [],
    "synonyms": [
     "um pouquinho"
    ],
@@ -4558,6 +8082,159 @@
    "tags": [
     "pimsleur",
     "lesson01"
+   ]
+  },
+  {
+   "id": "cento_e_um",
+   "phrase": "cento e um",
+   "english": "a hundred and one",
+   "part_of_speech": "phrase",
+   "lesson": 8,
+   "components": [
+    "cento=cem#cento",
+    "e=e_and#e_and",
+    "um=um#um"
+   ],
+   "audio": "cento_e_um.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "One past a full hundred: the next number after cem.",
+   "root": "cento (100, combining form) + e + um",
+   "source_language": "Portuguese",
+   "root_image": "cento e um = hundred and one: cento is the form of cem you use before e + a number.",
+   "definition_pt": "101. O modelo para 101–199: cento e dois, cento e vinte, etc.",
+   "literal": "“hundred and one”",
+   "parts": "cento + e + um",
+   "parts_meaning": "cento = 100 (combining form); e = and; um = one",
+   "origin": "Built in Portuguese from cento, the combining form of cem, plus e and the unit.",
+   "history": [],
+   "cognates": [],
+   "pt_family": [],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "This is why cem has two forms: cem reais, but cento e um reais."
+   ],
+   "accept_also": [],
+   "tags": [
+    "lesson08",
+    "number"
+   ]
+  },
+  {
+   "id": "quem_e",
+   "phrase": "Quem é?",
+   "english": "Who is it?",
+   "part_of_speech": "phrase",
+   "lesson": 7,
+   "components": [
+    "Quem=quem#quem",
+    "é=ser#e"
+   ],
+   "audio": "quem_e.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "A knock at the door; someone on the inside calling out who is there.",
+   "root": "quem ‘who’ + é ‘is’",
+   "source_language": "Portuguese",
+   "root_image": "Quem é? = Who is (it)? The regular way to ask who is at the door, or who someone is.",
+   "definition_pt": "Pergunta quem é a pessoa — na porta, no telefone, ou apontando.",
+   "literal": "“Who is?”",
+   "parts": "quem + é",
+   "parts_meaning": "quem = who; é = is",
+   "origin": "A short, everyday question built from quem and the verb ser.",
+   "history": [],
+   "cognates": [],
+   "pt_family": [],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "The question mark is part of how it is written; you only type the words."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson07"
+   ]
+  },
+  {
+   "id": "o_que_e_isso",
+   "phrase": "O que é isso?",
+   "english": "What is that? / What is this?",
+   "part_of_speech": "phrase",
+   "lesson": 7,
+   "components": [
+    "O=o#o",
+    "que=que#que",
+    "é=ser#e",
+    "isso=isso#isso"
+   ],
+   "audio": "o_que_e_isso.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Pointing at a thing near the other person — or, in casual speech, at almost anything — and asking what it is.",
+   "root": "o que ‘what’ + é ‘is’ + isso ‘that/this’",
+   "source_language": "Portuguese",
+   "root_image": "O que é isso? = What is that? The workhorse question for naming a thing.",
+   "definition_pt": "Pergunta o que é a coisa. No Brasil, isso serve muitas vezes para isto e isso.",
+   "literal": "“The what is that?”",
+   "parts": "o + que + é + isso",
+   "parts_meaning": "o que = what; é = is; isso = that (near you) / this-or-that in speech",
+   "origin": "The usual spoken question, built from o que, é, and the mid demonstrative isso.",
+   "history": [],
+   "cognates": [],
+   "pt_family": [],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "This is the form you will hear most. For something clearly in the speaker’s own hands, O que é isto? is more precise."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson07"
+   ]
+  },
+  {
+   "id": "o_que_e_isto",
+   "phrase": "O que é isto?",
+   "english": "What is this?",
+   "part_of_speech": "phrase",
+   "lesson": 7,
+   "components": [
+    "O=o#o",
+    "que=que#que",
+    "é=ser#e",
+    "isto=isso#isto"
+   ],
+   "audio": "o_que_e_isto.mp3",
+   "photo": "",
+   "photo_credit": "",
+   "scene": "Holding something up, close to yourself, and asking what this is.",
+   "root": "o que ‘what’ + é ‘is’ + isto ‘this’ (near the speaker)",
+   "source_language": "Portuguese",
+   "root_image": "O que é isto? = What is this (here, by me)?",
+   "definition_pt": "Pergunta o que é a coisa que está perto de quem fala.",
+   "literal": "“The what is this?”",
+   "parts": "o + que + é + isto",
+   "parts_meaning": "o que = what; é = is; isto = this, near the speaker",
+   "origin": "The same frame as O que é isso?, with isto when the thing is clearly here, by the speaker.",
+   "history": [],
+   "cognates": [],
+   "pt_family": [],
+   "synonyms": [],
+   "antonyms": [],
+   "culture": [],
+   "notes": [
+    "Slightly more precise or careful than O que é isso? Both are correct."
+   ],
+   "accept_also": [],
+   "tags": [
+    "pimsleur",
+    "lesson07"
    ]
   }
  ],
@@ -5567,6 +9244,192 @@
    "answer": "muito obrigado",
    "sentence_en": "Thank you very much, goodbye. (a man speaking)",
    "accept_also": []
+  },
+  {
+   "id": "tres__1",
+   "item_id": "tres",
+   "sentence_pt": "Tenho ___ malas.",
+   "answer": "três",
+   "sentence_en": "I have three suitcases.",
+   "accept_also": []
+  },
+  {
+   "id": "quatro__1",
+   "item_id": "quatro",
+   "sentence_pt": "O hotel tem ___ restaurantes.",
+   "answer": "quatro",
+   "sentence_en": "The hotel has four restaurants.",
+   "accept_also": []
+  },
+  {
+   "id": "cinco__1",
+   "item_id": "cinco",
+   "sentence_pt": "São ___ reais.",
+   "answer": "cinco",
+   "sentence_en": "It's five reais.",
+   "accept_also": []
+  },
+  {
+   "id": "dez__1",
+   "item_id": "dez",
+   "sentence_pt": "Tenho ___ dólares.",
+   "answer": "dez",
+   "sentence_en": "I have ten dollars.",
+   "accept_also": []
+  },
+  {
+   "id": "onze__1",
+   "item_id": "onze",
+   "sentence_pt": "O quarto é o número ___.",
+   "answer": "onze",
+   "sentence_en": "The room is number eleven.",
+   "accept_also": []
+  },
+  {
+   "id": "quinze__1",
+   "item_id": "quinze",
+   "sentence_pt": "São ___ reais.",
+   "answer": "quinze",
+   "sentence_en": "It's fifteen reais.",
+   "accept_also": []
+  },
+  {
+   "id": "dezesseis__1",
+   "item_id": "dezesseis",
+   "sentence_pt": "São ___ dólares.",
+   "answer": "dezesseis",
+   "sentence_en": "It's sixteen dollars.",
+   "accept_also": []
+  },
+  {
+   "id": "vinte__1",
+   "item_id": "vinte",
+   "sentence_pt": "O restaurante abre às ___.",
+   "answer": "vinte",
+   "sentence_en": "The restaurant opens at twenty (8 p.m. on a 24-hour clock).",
+   "accept_also": []
+  },
+  {
+   "id": "cem__1",
+   "item_id": "cem",
+   "sentence_pt": "A mala custa ___ reais.",
+   "answer": "cem",
+   "sentence_en": "The suitcase costs a hundred reais.",
+   "accept_also": []
+  },
+  {
+   "id": "cento__1",
+   "item_id": "cento",
+   "sentence_pt": "São ___ e um dólares.",
+   "answer": "cento",
+   "sentence_en": "It's a hundred and one dollars.",
+   "accept_also": []
+  },
+  {
+   "id": "mil__1",
+   "item_id": "mil",
+   "sentence_pt": "O hotel custa ___ reais.",
+   "answer": "mil",
+   "sentence_en": "The hotel costs a thousand reais.",
+   "accept_also": []
+  },
+  {
+   "id": "ele__1",
+   "item_id": "ele",
+   "sentence_pt": "___ é brasileiro.",
+   "answer": "Ele",
+   "sentence_en": "He is Brazilian.",
+   "accept_also": [
+    "ele"
+   ]
+  },
+  {
+   "id": "ela__1",
+   "item_id": "ela",
+   "sentence_pt": "___ é americana.",
+   "answer": "Ela",
+   "sentence_en": "She is American.",
+   "accept_also": [
+    "ela"
+   ]
+  },
+  {
+   "id": "eles__1",
+   "item_id": "eles",
+   "sentence_pt": "___ são brasileiros.",
+   "answer": "Eles",
+   "sentence_en": "They are Brazilian.",
+   "accept_also": [
+    "eles"
+   ]
+  },
+  {
+   "id": "elas__1",
+   "item_id": "elas",
+   "sentence_pt": "___ são americanas.",
+   "answer": "Elas",
+   "sentence_en": "They are American.",
+   "accept_also": [
+    "elas"
+   ]
+  },
+  {
+   "id": "quem__1",
+   "item_id": "quem",
+   "sentence_pt": "___ é?",
+   "answer": "Quem",
+   "sentence_en": "Who is it?",
+   "accept_also": [
+    "quem"
+   ]
+  },
+  {
+   "id": "que__1",
+   "item_id": "que",
+   "sentence_pt": "O ___ é isso?",
+   "answer": "que",
+   "sentence_en": "What is that?",
+   "accept_also": []
+  },
+  {
+   "id": "isso__1",
+   "item_id": "isso",
+   "sentence_pt": "O que é ___?",
+   "answer": "isso",
+   "sentence_en": "What is that?",
+   "accept_also": []
+  },
+  {
+   "id": "isto__1",
+   "item_id": "isto",
+   "sentence_pt": "O que é ___?",
+   "answer": "isto",
+   "sentence_en": "What is this?",
+   "accept_also": []
+  },
+  {
+   "id": "quem_e__1",
+   "item_id": "quem_e",
+   "sentence_pt": "___ O senhor.",
+   "answer": "Quem é?",
+   "sentence_en": "Who is it? The gentleman.",
+   "accept_also": [
+    "Quem é",
+    "quem é",
+    "quem é?"
+   ]
+  },
+  {
+   "id": "o_que_e_isso__1",
+   "item_id": "o_que_e_isso",
+   "sentence_pt": "___ É a sua mala.",
+   "answer": "O que é isso?",
+   "sentence_en": "What is that? It's your suitcase.",
+   "accept_also": [
+    "O que é isso",
+    "o que é isso",
+    "o que é isso?"
+   ]
   }
  ],
  "id_map": [
@@ -5939,6 +9802,944 @@
    "old_id": "muito_obrigado",
    "new_id": "muito_obrigado",
    "note": "phrase"
+  }
+ ],
+ "contrasts": [
+  {
+   "id": "tem_tenho_entende",
+   "title": "tem, tenho, entende",
+   "explanation": "These three words all show ten or tem on the page, but the letters are doing different jobs. In Brazilian Portuguese as spoken in Rio and São Paulo: tem ends in a nasal diphthong, not a consonant m; in tenho the n belongs to nh (a palatal “ny”) and the vowel before it is nasal; in entende each en is a nasal vowel with no n consonant, and final de is pronounced “jee.”",
+   "item_ids": [
+    "tem",
+    "tenho",
+    "entende_cx"
+   ],
+   "tags": [
+    "nasal",
+    "nh",
+    "palatal"
+   ]
+  },
+  {
+   "id": "e_vs_e",
+   "title": "é and e",
+   "explanation": "The accent is the whole difference, in both spelling and sound. é (with an accent) is the verb “is,” an open eh [ɛ]. e (no accent) is the conjunction “and,” and sounds like ee [i]. Mixing them up changes the word.",
+   "item_ids": [
+    "e_is",
+    "e_and_cx"
+   ],
+   "tags": [
+    "accent",
+    "vowel"
+   ]
+  },
+  {
+   "id": "sei_sabe",
+   "title": "sei and sabe",
+   "explanation": "Two present-tense forms of saber, with different vowel letters and different sounds. sei is a diphthong [sej], like English “say.” sabe is SAH-bee [ˈsabi]: the final unstressed e is pronounced [i], and the b stays a plain b.",
+   "item_ids": [
+    "sei",
+    "sabe"
+   ],
+   "tags": [
+    "diphthong",
+    "unstressed-e"
+   ]
+  },
+  {
+   "id": "muito_nasal_ui",
+   "title": "muito’s hidden nasal",
+   "explanation": "muito has no tilde, but the ui is still a nasal diphthong [ũj]. Brazilians say something like MOOYN-too [ˈmũjtu], not “moo-ee-too.” This is a well-known quirk of the spelling.",
+   "item_ids": [
+    "muito_cx"
+   ],
+   "tags": [
+    "nasal",
+    "tilde"
+   ]
+  },
+  {
+   "id": "nao_vs_no",
+   "title": "não and no",
+   "explanation": "não “no / not” has a tilde: the ão is a nasal diphthong [ɐ̃w̃], like a nasal “own.” no is a different word, the contraction em + o (“in the”), and is just [nu], like “new” without the glide. The tilde is not decoration.",
+   "item_ids": [
+    "nao_cx",
+    "no_cx"
+   ],
+   "tags": [
+    "nasal",
+    "tilde",
+    "contraction"
+   ]
+  },
+  {
+   "id": "o_vs_o",
+   "title": "o and ó",
+   "explanation": "The letter o does not have one sound. The article o (“the”) is unstressed and pronounced [u], like “oo.” The accented ó, as in dólar, is an open o [ɔ], like the vowel in English “thought” (or a rounder “aw”). Same letter, two sounds; the accent on ó marks the open one.",
+   "item_ids": [
+    "o_art",
+    "o_dolar"
+   ],
+   "tags": [
+    "vowel",
+    "accent"
+   ]
+  },
+  {
+   "id": "numbers_pattern",
+   "title": "Numbers: 11–19, 20, 100",
+   "explanation": "From 11 to 15, Portuguese uses irregular -ze forms inherited from Latin -decim (‘ten’): onze, doze, treze, catorze, quinze. At 16 the pattern becomes transparent: dezesseis is dez e seis, and the same ‘ten and…’ run goes through dezenove. vinte is a new word (Latin vīgintī), not *dez e dez. cem is the stand-alone 100; before another number the form is cento (cento e um). Pronunciation is Rio / São Paulo.",
+   "item_ids": [
+    "n_onze",
+    "n_doze",
+    "n_treze",
+    "n_catorze",
+    "n_quinze",
+    "n_dezesseis",
+    "n_dezessete",
+    "n_dezoito",
+    "n_dezenove",
+    "n_vinte",
+    "n_cem",
+    "n_cento"
+   ],
+   "tags": [
+    "pattern",
+    "number"
+   ]
+  },
+  {
+   "id": "isso_isto",
+   "title": "isso and isto",
+   "explanation": "These two look like a single letter’s difference, and they are. isto keeps a t: [ˈistu], ‘this’ near the speaker. isso has no t: [ˈisu], ‘that’ near the listener. In casual Brazilian speech isso often covers both meanings, but the t is still the whole difference in how they are said. (aquilo, ‘that over there,’ is the third of the set.)",
+   "item_ids": [
+    "cx_isso",
+    "cx_isto"
+   ],
+   "tags": [
+    "consonant",
+    "demonstrative"
+   ]
+  },
+  {
+   "id": "que_quem",
+   "title": "que and quem",
+   "explanation": "que (‘what’) is a short [ki], like “kee” — no nasal. quem (‘who’) looks like que plus m, but that -em is not a consonant m. It is the same nasal diphthong as in tem: [kẽj̃]. Mixing them up changes the question (what vs who).",
+   "item_ids": [
+    "cx_que",
+    "cx_quem"
+   ],
+   "tags": [
+    "nasal"
+   ]
+  }
+ ],
+ "contrast_items": [
+  {
+   "id": "tem",
+   "contrast_id": "tem_tenho_entende",
+   "item_id": "voce_tem",
+   "form": "tem",
+   "syllables": "tem",
+   "respelling": "teyn",
+   "ipa": "[tẽj̃]",
+   "spelling_highlight": [
+    "em"
+   ],
+   "sound_highlight": [
+    "[ẽj̃]  nasal “ayn,” not a consonant m"
+   ],
+   "note": "3rd person of ter (você / ele / ela tem). The ending -em is a nasal diphthong.",
+   "audio": "tem.mp3",
+   "sort": 1
+  },
+  {
+   "id": "tenho",
+   "contrast_id": "tem_tenho_entende",
+   "item_id": "eu_tenho",
+   "form": "tenho",
+   "syllables": "te-nho",
+   "respelling": "TEH-nyoo",
+   "ipa": "[ˈtẽɲu]",
+   "spelling_highlight": [
+    "nh"
+   ],
+   "sound_highlight": [
+    "[ɲ]  palatal “ny”; the n is not a separate [n]"
+   ],
+   "note": "1st person of ter (eu tenho). The vowel before nh is nasal. Final -o is [u].",
+   "audio": "tenho.mp3",
+   "sort": 2
+  },
+  {
+   "id": "entende_cx",
+   "contrast_id": "tem_tenho_entende",
+   "item_id": "entende",
+   "form": "entende",
+   "syllables": "en-ten-de",
+   "respelling": "en-TEN-jee",
+   "ipa": "[ẽˈtẽdʒi]",
+   "spelling_highlight": [
+    "en",
+    "de"
+   ],
+   "sound_highlight": [
+    "[ẽ]  nasal vowel, no n consonant",
+    "[dʒi]  “jee” (d palatalizes before this [i])"
+   ],
+   "note": "3rd person of entender. Unstressed final e sounds like [i], so de becomes [dʒi] in Rio and São Paulo.",
+   "audio": "entende.mp3",
+   "sort": 3
+  },
+  {
+   "id": "e_is",
+   "contrast_id": "e_vs_e",
+   "item_id": "e",
+   "form": "é",
+   "syllables": "é",
+   "respelling": "eh",
+   "ipa": "[ɛ]",
+   "spelling_highlight": [
+    "é"
+   ],
+   "sound_highlight": [
+    "[ɛ]  open “eh,” and the accent marks it"
+   ],
+   "note": "Form of ser: “is / you are.”",
+   "audio": "e.mp3",
+   "sort": 1
+  },
+  {
+   "id": "e_and_cx",
+   "contrast_id": "e_vs_e",
+   "item_id": "e_and",
+   "form": "e",
+   "syllables": "e",
+   "respelling": "ee",
+   "ipa": "[i]",
+   "spelling_highlight": [
+    "e"
+   ],
+   "sound_highlight": [
+    "[i]  “ee,” no accent"
+   ],
+   "note": "The conjunction “and”: você e eu.",
+   "audio": "e_and.mp3",
+   "sort": 2
+  },
+  {
+   "id": "sei",
+   "contrast_id": "sei_sabe",
+   "item_id": "eu_sei",
+   "form": "sei",
+   "syllables": "sei",
+   "respelling": "say",
+   "ipa": "[sej]",
+   "spelling_highlight": [
+    "ei"
+   ],
+   "sound_highlight": [
+    "[ej]  diphthong, like English “say”"
+   ],
+   "note": "1st person of saber (eu sei). Irregular: not *sabo.",
+   "audio": "sei.mp3",
+   "sort": 1
+  },
+  {
+   "id": "sabe",
+   "contrast_id": "sei_sabe",
+   "item_id": "voce_sabe",
+   "form": "sabe",
+   "syllables": "sa-be",
+   "respelling": "SAH-bee",
+   "ipa": "[ˈsabi]",
+   "spelling_highlight": [
+    "e"
+   ],
+   "sound_highlight": [
+    "[i]  unstressed final e is “ee”"
+   ],
+   "note": "3rd person of saber (você / ele / ela sabe). The b stays [b].",
+   "audio": "sabe.mp3",
+   "sort": 2
+  },
+  {
+   "id": "muito_cx",
+   "contrast_id": "muito_nasal_ui",
+   "item_id": "muito",
+   "form": "muito",
+   "syllables": "mui-to",
+   "respelling": "MOOYN-too",
+   "ipa": "[ˈmũjtu]",
+   "spelling_highlight": [
+    "ui"
+   ],
+   "sound_highlight": [
+    "[ũj]  nasal diphthong, even with no tilde"
+   ],
+   "note": "Adverb / adjective “very; a lot.” A well-known spelling quirk.",
+   "audio": "muito.mp3",
+   "sort": 1
+  },
+  {
+   "id": "nao_cx",
+   "contrast_id": "nao_vs_no",
+   "item_id": "nao",
+   "form": "não",
+   "syllables": "não",
+   "respelling": "nown",
+   "ipa": "[nɐ̃w̃]",
+   "spelling_highlight": [
+    "ão"
+   ],
+   "sound_highlight": [
+    "[ɐ̃w̃]  nasal “own”; the tilde marks it"
+   ],
+   "note": "“No / not.”",
+   "audio": "nao.mp3",
+   "sort": 1
+  },
+  {
+   "id": "no_cx",
+   "contrast_id": "nao_vs_no",
+   "item_id": "no",
+   "form": "no",
+   "syllables": "no",
+   "respelling": "noo",
+   "ipa": "[nu]",
+   "spelling_highlight": [
+    "o"
+   ],
+   "sound_highlight": [
+    "[u]  plain “oo,” no tilde — this is em + o"
+   ],
+   "note": "Contraction of em + o (“in the, at the”). Not a nasal.",
+   "audio": "no.mp3",
+   "sort": 2
+  },
+  {
+   "id": "o_art",
+   "contrast_id": "o_vs_o",
+   "item_id": "o",
+   "form": "o",
+   "syllables": "o",
+   "respelling": "oo",
+   "ipa": "[u]",
+   "spelling_highlight": [
+    "o"
+   ],
+   "sound_highlight": [
+    "[u]  unstressed article, sounds like “oo”"
+   ],
+   "note": "The masculine singular article “the.”",
+   "audio": "o.mp3",
+   "sort": 1
+  },
+  {
+   "id": "o_dolar",
+   "contrast_id": "o_vs_o",
+   "item_id": "dolar",
+   "form": "dólar",
+   "syllables": "dó-lar",
+   "respelling": "DAW-lar",
+   "ipa": "[ˈdɔlaʁ]",
+   "spelling_highlight": [
+    "ó"
+   ],
+   "sound_highlight": [
+    "[ɔ]  open “aw,” marked by the accent"
+   ],
+   "note": "The noun “dollar.” The accent marks both stress and the open vowel.",
+   "audio": "dolar.mp3",
+   "sort": 2
+  },
+  {
+   "id": "n_onze",
+   "contrast_id": "numbers_pattern",
+   "item_id": "onze",
+   "form": "onze",
+   "syllables": "on-ze",
+   "respelling": "ON-zee",
+   "ipa": "[ˈõzi]",
+   "spelling_highlight": [
+    "ze"
+   ],
+   "sound_highlight": [
+    "[zi]  the irregular -ze, from Latin -decim"
+   ],
+   "note": "11. First of the -ze teens (Latin ūndecim, one + ten).",
+   "audio": "onze.mp3",
+   "sort": 1
+  },
+  {
+   "id": "n_doze",
+   "contrast_id": "numbers_pattern",
+   "item_id": "doze",
+   "form": "doze",
+   "syllables": "do-ze",
+   "respelling": "DO-zee",
+   "ipa": "[ˈdozi]",
+   "spelling_highlight": [
+    "ze"
+   ],
+   "sound_highlight": [
+    "[zi]  same -ze as onze–quinze"
+   ],
+   "note": "12. Latin duodecim, two + ten. Also the root of dúzia (dozen).",
+   "audio": "doze.mp3",
+   "sort": 2
+  },
+  {
+   "id": "n_treze",
+   "contrast_id": "numbers_pattern",
+   "item_id": "treze",
+   "form": "treze",
+   "syllables": "tre-ze",
+   "respelling": "TREH-zee",
+   "ipa": "[ˈtɾɛzi]",
+   "spelling_highlight": [
+    "ze"
+   ],
+   "sound_highlight": [
+    "[zi]  same -ze family"
+   ],
+   "note": "13. Latin tredecim, three + ten.",
+   "audio": "treze.mp3",
+   "sort": 3
+  },
+  {
+   "id": "n_catorze",
+   "contrast_id": "numbers_pattern",
+   "item_id": "catorze",
+   "form": "catorze",
+   "syllables": "ca-tor-ze",
+   "respelling": "ka-TOR-zee",
+   "ipa": "[kaˈtoʁzi]",
+   "spelling_highlight": [
+    "ze"
+   ],
+   "sound_highlight": [
+    "[zi]  last consonant of the -ze teens, with catorze / quatorze"
+   ],
+   "note": "14. Also spelled quatorze. Latin quattuordecim.",
+   "audio": "catorze.mp3",
+   "sort": 4
+  },
+  {
+   "id": "n_quinze",
+   "contrast_id": "numbers_pattern",
+   "item_id": "quinze",
+   "form": "quinze",
+   "syllables": "quin-ze",
+   "respelling": "KEEN-zee",
+   "ipa": "[ˈkĩzi]",
+   "spelling_highlight": [
+    "ze"
+   ],
+   "sound_highlight": [
+    "[zi]  last of the irregular -ze forms"
+   ],
+   "note": "15. After this, 16–19 switch to dez + e + the unit.",
+   "audio": "quinze.mp3",
+   "sort": 5
+  },
+  {
+   "id": "n_dezesseis",
+   "contrast_id": "numbers_pattern",
+   "item_id": "dezesseis",
+   "form": "dezesseis",
+   "syllables": "de-zes-seis",
+   "respelling": "jee-ze-SAYS",
+   "ipa": "[dʒizeˈsejs]",
+   "spelling_highlight": [
+    "dez",
+    "seis"
+   ],
+   "sound_highlight": [
+    "dez  ‘ten’",
+    "seis  ‘six’ — the whole word is dez e seis"
+   ],
+   "note": "16. The transparent pattern begins: dezesseis = dez e seis.",
+   "audio": "dezesseis.mp3",
+   "sort": 6
+  },
+  {
+   "id": "n_dezessete",
+   "contrast_id": "numbers_pattern",
+   "item_id": "dezessete",
+   "form": "dezessete",
+   "syllables": "de-zes-se-te",
+   "respelling": "jee-ze-SEH-chee",
+   "ipa": "[dʒizeˈsɛtʃi]",
+   "spelling_highlight": [
+    "dez",
+    "sete"
+   ],
+   "sound_highlight": [
+    "dez  ‘ten’",
+    "sete  ‘seven’"
+   ],
+   "note": "17. dez e sete, written as one word.",
+   "audio": "dezessete.mp3",
+   "sort": 7
+  },
+  {
+   "id": "n_dezoito",
+   "contrast_id": "numbers_pattern",
+   "item_id": "dezoito",
+   "form": "dezoito",
+   "syllables": "de-zoi-to",
+   "respelling": "jee-ZOY-too",
+   "ipa": "[dʒiˈzojtu]",
+   "spelling_highlight": [
+    "dez",
+    "oito"
+   ],
+   "sound_highlight": [
+    "dez  ‘ten’",
+    "oito  ‘eight’ — the e is swallowed in the spelling"
+   ],
+   "note": "18. dez e oito → dezoito.",
+   "audio": "dezoito.mp3",
+   "sort": 8
+  },
+  {
+   "id": "n_dezenove",
+   "contrast_id": "numbers_pattern",
+   "item_id": "dezenove",
+   "form": "dezenove",
+   "syllables": "de-ze-no-ve",
+   "respelling": "jee-ze-NAW-vee",
+   "ipa": "[dʒizeˈnɔvi]",
+   "spelling_highlight": [
+    "dez",
+    "nove"
+   ],
+   "sound_highlight": [
+    "dez  ‘ten’",
+    "nove  ‘nine’"
+   ],
+   "note": "19. Last of the ‘ten-and-’ teens.",
+   "audio": "dezenove.mp3",
+   "sort": 9
+  },
+  {
+   "id": "n_vinte",
+   "contrast_id": "numbers_pattern",
+   "item_id": "vinte",
+   "form": "vinte",
+   "syllables": "vin-te",
+   "respelling": "VEEN-chee",
+   "ipa": "[ˈvĩtʃi]",
+   "spelling_highlight": [
+    "vinte"
+   ],
+   "sound_highlight": [
+    "[ˈvĩtʃi]  a new root, from Latin vīgintī — not *dez e dez"
+   ],
+   "note": "20. After this, 21 is vinte e um, on the same model as cento e um.",
+   "audio": "vinte.mp3",
+   "sort": 10
+  },
+  {
+   "id": "n_cem",
+   "contrast_id": "numbers_pattern",
+   "item_id": "cem",
+   "form": "cem",
+   "syllables": "cem",
+   "respelling": "seyn",
+   "ipa": "[sẽj̃]",
+   "spelling_highlight": [
+    "em"
+   ],
+   "sound_highlight": [
+    "[ẽj̃]  nasal diphthong, the same ending as in tem — used standing alone"
+   ],
+   "note": "100 on its own: cem reais. Before another number, use cento.",
+   "audio": "cem.mp3",
+   "sort": 11
+  },
+  {
+   "id": "n_cento",
+   "contrast_id": "numbers_pattern",
+   "item_id": "cento",
+   "form": "cento",
+   "syllables": "cen-to",
+   "respelling": "SEN-too",
+   "ipa": "[ˈsẽtu]",
+   "spelling_highlight": [
+    "en"
+   ],
+   "sound_highlight": [
+    "[ẽ]  nasal vowel (no n consonant), then [tu] — the combining form"
+   ],
+   "note": "Used in 101+: cento e um, cento e vinte.",
+   "audio": "cento.mp3",
+   "sort": 12
+  },
+  {
+   "id": "cx_isso",
+   "contrast_id": "isso_isto",
+   "item_id": "isso",
+   "form": "isso",
+   "syllables": "is-so",
+   "respelling": "EE-soo",
+   "ipa": "[ˈisu]",
+   "spelling_highlight": [
+    "ss"
+   ],
+   "sound_highlight": [
+    "[s]  no t — ‘that’ (near the listener); also the casual all-purpose form"
+   ],
+   "note": "Demonstrative. In everyday Brazilian speech, isso often covers ‘this’ and ‘that.’",
+   "audio": "isso.mp3",
+   "sort": 1
+  },
+  {
+   "id": "cx_isto",
+   "contrast_id": "isso_isto",
+   "item_id": "isto",
+   "form": "isto",
+   "syllables": "is-to",
+   "respelling": "EE-stoo",
+   "ipa": "[ˈistu]",
+   "spelling_highlight": [
+    "st"
+   ],
+   "sound_highlight": [
+    "[st]  the t is the whole difference — ‘this’ near the speaker"
+   ],
+   "note": "Demonstrative. More precise when the thing is right here, in the speaker’s hands.",
+   "audio": "isto.mp3",
+   "sort": 2
+  },
+  {
+   "id": "cx_que",
+   "contrast_id": "que_quem",
+   "item_id": "que",
+   "form": "que",
+   "syllables": "que",
+   "respelling": "kee",
+   "ipa": "[ki]",
+   "spelling_highlight": [
+    "que"
+   ],
+   "sound_highlight": [
+    "[ki]  a plain “kee,” no nasal"
+   ],
+   "note": "‘What.’ In questions about a thing, it usually comes as o que.",
+   "audio": "que.mp3",
+   "sort": 1
+  },
+  {
+   "id": "cx_quem",
+   "contrast_id": "que_quem",
+   "item_id": "quem",
+   "form": "quem",
+   "syllables": "quem",
+   "respelling": "keyn",
+   "ipa": "[kẽj̃]",
+   "spelling_highlight": [
+    "em"
+   ],
+   "sound_highlight": [
+    "[ẽj̃]  nasal diphthong, the same ending as in tem — not a consonant m"
+   ],
+   "note": "‘Who.’ Quem é? is the usual ‘Who is it?’",
+   "audio": "quem.mp3",
+   "sort": 2
+  }
+ ],
+ "comparisons": [
+  {
+   "id": "ficar_estar",
+   "title": "ficar and estar",
+   "explanation": "Both can talk about location or a state, but they are not interchangeable. Use ficar for where something fixed is (a hotel, a city, a street): Onde fica o hotel? Use estar for where a person or a movable thing is right now: Onde está a mala? Estar also names a temporary state (estou bem). Ficar, besides location, can mean to stay or to become: eu fico no hotel (I’m staying), fico feliz (I become / end up happy).",
+   "lemma_ids": [
+    "ficar",
+    "estar"
+   ],
+   "tags": [
+    "location",
+    "state"
+   ]
+  },
+  {
+   "id": "ser_estar",
+   "title": "ser and estar",
+   "explanation": "Portuguese has two everyday verbs for English “to be.” ser is for what something is — identity, origin, profession, a lasting quality, the time of day: ela é brasileira, são três horas. estar is for how or where it is right now: ela está no hotel, estou bem. Some adjectives change meaning with the verb (ele é gentil = that’s his nature; ele está gentil = he is being kind at the moment).",
+   "lemma_ids": [
+    "ser",
+    "estar"
+   ],
+   "tags": [
+    "state",
+    "identity"
+   ]
+  },
+  {
+   "id": "isto_isso_aquilo",
+   "title": "isto, isso, and aquilo",
+   "explanation": "These three point at things at different distances. isto is this, near the speaker (in my hands). isso is that, near the listener — and in everyday Brazilian speech it often covers both “this” and “that.” aquilo is that over there, away from both of you. The t in isto is also the sound that sets it apart from isso; see Spelling & sounds.",
+   "lemma_ids": [
+    "isso"
+   ],
+   "tags": [
+    "demonstrative"
+   ]
+  },
+  {
+   "id": "quem_que",
+   "title": "quem and que",
+   "explanation": "quem asks for a person: Quem é? (Who is it?). que, usually as o que, asks for a thing: O que é isso? (What is that?). They also sound different: que is a plain “kee” [ki]; quem ends in the nasal diphthong [kẽj̃], like tem. See Spelling & sounds.",
+   "lemma_ids": [
+    "quem",
+    "que"
+   ],
+   "tags": [
+    "question"
+   ]
+  },
+  {
+   "id": "em_de",
+   "title": "em and de",
+   "explanation": "A common mix-up is origin versus location. de is of / from: Sou de Nova York (I’m from New York), de onde você é? em is in / at / on: Estou em Nova York, estou no hotel. de also marks possession or what something is made of (a mala do senhor). em almost always contracts with the article: no, na, nos, nas.",
+   "lemma_ids": [
+    "em",
+    "de"
+   ],
+   "tags": [
+    "preposition"
+   ]
+  },
+  {
+   "id": "bom_bem",
+   "title": "bom and bem",
+   "explanation": "bom is an adjective, “good,” and it agrees with the noun: um bom hotel, uma boa tarde, bom dia. bem is an adverb, “well,” and does not change: estou bem, tudo bem, muito bem. English “I’m good” is usually estou bem in Portuguese, not estou bom.",
+   "lemma_ids": [
+    "bom",
+    "bem"
+   ],
+   "tags": [
+    "adjective",
+    "adverb"
+   ]
+  },
+  {
+   "id": "tarde_noite",
+   "title": "tarde and noite",
+   "explanation": "tarde is the afternoon (from around noon until dusk) and the greeting is boa tarde. noite is night, once it’s dark; the greeting is boa noite, used both as a hello in the evening and as a good-night. tarde is also the word for “late”: é tarde, cheguei tarde. The two greetings are not interchangeable — boa tarde in the afternoon, boa noite at night.",
+   "lemma_ids": [
+    "tarde",
+    "noite"
+   ],
+   "tags": [
+    "time"
+   ]
+  },
+  {
+   "id": "senhor_voce",
+   "title": "o senhor and você",
+   "explanation": "Both mean “you,” and both take a third-person verb (você é, o senhor é). você is the everyday form in most of Brazil — informal to neutral, used with almost anyone you would first-name in English. o senhor (and a senhora) is the respectful, formal “you”: older people, customers, official or polite situations. The same words, without being used as “you,” can also mean “the gentleman / the lady.”",
+   "lemma_ids": [
+    "senhor",
+    "voce"
+   ],
+   "tags": [
+    "formality",
+    "pronoun"
+   ]
+  }
+ ],
+ "comparison_items": [
+  {
+   "id": "fe_ficar_lugar",
+   "comparison_id": "ficar_estar",
+   "lemma_id": "ficar",
+   "form_id": "fica",
+   "example_pt": "Onde fica o hotel? O hotel fica na praia.",
+   "example_en": "Where is the hotel (located)? The hotel is on the beach. (a fixed place)",
+   "sort": 1
+  },
+  {
+   "id": "fe_ficar_ficar",
+   "comparison_id": "ficar_estar",
+   "lemma_id": "ficar",
+   "form_id": "fica",
+   "example_pt": "Eu fico no hotel. Fico feliz.",
+   "example_en": "I’m staying at the hotel. I become / end up happy.",
+   "sort": 2
+  },
+  {
+   "id": "fe_estar_lugar",
+   "comparison_id": "ficar_estar",
+   "lemma_id": "estar",
+   "form_id": "esta",
+   "example_pt": "Onde está a mala? Ela está no hotel.",
+   "example_en": "Where is the suitcase? She is at the hotel (right now).",
+   "sort": 3
+  },
+  {
+   "id": "fe_estar_estado",
+   "comparison_id": "ficar_estar",
+   "lemma_id": "estar",
+   "form_id": "",
+   "example_pt": "Estou bem.",
+   "example_en": "I’m well (right now).",
+   "sort": 4
+  },
+  {
+   "id": "se_ser_id",
+   "comparison_id": "ser_estar",
+   "lemma_id": "ser",
+   "form_id": "e",
+   "example_pt": "Ela é brasileira. Você é americano?",
+   "example_en": "She is Brazilian. Are you American? (identity)",
+   "sort": 1
+  },
+  {
+   "id": "se_ser_tempo",
+   "comparison_id": "ser_estar",
+   "lemma_id": "ser",
+   "form_id": "",
+   "example_pt": "São três horas.",
+   "example_en": "It’s three o’clock. (time uses ser)",
+   "sort": 2
+  },
+  {
+   "id": "se_estar_lugar",
+   "comparison_id": "ser_estar",
+   "lemma_id": "estar",
+   "form_id": "esta",
+   "example_pt": "Ela está no Brasil.",
+   "example_en": "She is in Brazil (right now, not “she is Brazilian”).",
+   "sort": 3
+  },
+  {
+   "id": "se_estar_estado",
+   "comparison_id": "ser_estar",
+   "lemma_id": "estar",
+   "form_id": "",
+   "example_pt": "Estou bem.",
+   "example_en": "I’m well (a state right now).",
+   "sort": 4
+  },
+  {
+   "id": "ii_isto",
+   "comparison_id": "isto_isso_aquilo",
+   "lemma_id": "isso",
+   "form_id": "isto",
+   "example_pt": "O que é isto?",
+   "example_en": "What is this (here, by me)?",
+   "sort": 1
+  },
+  {
+   "id": "ii_isso",
+   "comparison_id": "isto_isso_aquilo",
+   "lemma_id": "isso",
+   "form_id": "isso",
+   "example_pt": "O que é isso?",
+   "example_en": "What is that (by you)? — and, casually, this/that in general.",
+   "sort": 2
+  },
+  {
+   "id": "ii_aquilo",
+   "comparison_id": "isto_isso_aquilo",
+   "lemma_id": "isso",
+   "form_id": "aquilo",
+   "example_pt": "O que é aquilo?",
+   "example_en": "What is that over there (away from both of us)?",
+   "sort": 3
+  },
+  {
+   "id": "qq_quem",
+   "comparison_id": "quem_que",
+   "lemma_id": "quem",
+   "form_id": "quem",
+   "example_pt": "Quem é?",
+   "example_en": "Who is it? (a person)",
+   "sort": 1
+  },
+  {
+   "id": "qq_que",
+   "comparison_id": "quem_que",
+   "lemma_id": "que",
+   "form_id": "que",
+   "example_pt": "O que é isso?",
+   "example_en": "What is that? (a thing)",
+   "sort": 2
+  },
+  {
+   "id": "ed_de_origem",
+   "comparison_id": "em_de",
+   "lemma_id": "de",
+   "form_id": "de",
+   "example_pt": "Sou de Nova York. De onde você é?",
+   "example_en": "I’m from New York. Where are you from?",
+   "sort": 1
+  },
+  {
+   "id": "ed_em_lugar",
+   "comparison_id": "em_de",
+   "lemma_id": "em",
+   "form_id": "em",
+   "example_pt": "Estou em Nova York. Estou no hotel.",
+   "example_en": "I’m in New York. I’m at the hotel.",
+   "sort": 2
+  },
+  {
+   "id": "bb_bom",
+   "comparison_id": "bom_bem",
+   "lemma_id": "bom",
+   "form_id": "bom",
+   "example_pt": "É um bom hotel. Boa tarde!",
+   "example_en": "It’s a good hotel. Good afternoon! (adjective; agrees)",
+   "sort": 1
+  },
+  {
+   "id": "bb_bem",
+   "comparison_id": "bom_bem",
+   "lemma_id": "bem",
+   "form_id": "bem",
+   "example_pt": "Estou bem. Tudo bem?",
+   "example_en": "I’m well. Everything all right? (adverb; does not agree)",
+   "sort": 2
+  },
+  {
+   "id": "tn_tarde",
+   "comparison_id": "tarde_noite",
+   "lemma_id": "tarde",
+   "form_id": "tarde",
+   "example_pt": "Boa tarde! É tarde.",
+   "example_en": "Good afternoon! It’s late. (afternoon, or the word “late”)",
+   "sort": 1
+  },
+  {
+   "id": "tn_noite",
+   "comparison_id": "tarde_noite",
+   "lemma_id": "noite",
+   "form_id": "noite",
+   "example_pt": "Boa noite!",
+   "example_en": "Good evening / good night. (once it’s dark, or as a goodbye at night)",
+   "sort": 2
+  },
+  {
+   "id": "sv_voce",
+   "comparison_id": "senhor_voce",
+   "lemma_id": "voce",
+   "form_id": "voce",
+   "example_pt": "Você é americano?",
+   "example_en": "Are you American? (everyday “you”)",
+   "sort": 1
+  },
+  {
+   "id": "sv_senhor",
+   "comparison_id": "senhor_voce",
+   "lemma_id": "senhor",
+   "form_id": "o_senhor",
+   "example_pt": "O senhor é americano?",
+   "example_en": "Are you American? (formal, respectful “you”)",
+   "sort": 2
   }
  ]
 }
